@@ -107,6 +107,9 @@ public class MainActivity extends AbsSlidingMusicPanelActivity {
         if (!checkShowIntro()) {
             checkShowChangelog();
         }
+
+        //Set up dynamic shortcuts if needed
+        new DynamicShortcutManager(getApplicationContext()).initDynamicShortcuts();
     }
 
     private void setMusicChooser(int key) {
