@@ -7,7 +7,6 @@ import android.media.MediaPlayer;
 import android.media.audiofx.AudioEffect;
 import android.net.Uri;
 import android.os.PowerManager;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.Toast;
@@ -46,7 +45,7 @@ public class MultiPlayer implements Playback, MediaPlayer.OnErrorListener, Media
      * ready to play, false otherwise
      */
     @Override
-    public boolean setDataSource(@NonNull final String path) {
+    public boolean setDataSource(final String path) {
         mIsInitialized = false;
         mIsInitialized = setDataSourceImpl(mCurrentMediaPlayer, path);
         if (mIsInitialized) {
@@ -62,7 +61,7 @@ public class MultiPlayer implements Playback, MediaPlayer.OnErrorListener, Media
      * @return True if the <code>player</code> has been prepared and is
      * ready to play, false otherwise
      */
-    private boolean setDataSourceImpl(@NonNull final MediaPlayer player, @NonNull final String path) {
+    private boolean setDataSourceImpl(final MediaPlayer player, final String path) {
         if (context == null) {
             return false;
         }
@@ -122,7 +121,7 @@ public class MultiPlayer implements Playback, MediaPlayer.OnErrorListener, Media
             if (setDataSourceImpl(mNextMediaPlayer, path)) {
                 try {
                     mCurrentMediaPlayer.setNextMediaPlayer(mNextMediaPlayer);
-                } catch (@NonNull IllegalArgumentException | IllegalStateException e) {
+                } catch (IllegalArgumentException | IllegalStateException e) {
                     Log.e(TAG, "setNextDataSource: setNextMediaPlayer()", e);
                     if (mNextMediaPlayer != null) {
                         mNextMediaPlayer.release();
@@ -281,7 +280,7 @@ public class MultiPlayer implements Playback, MediaPlayer.OnErrorListener, Media
         try {
             mCurrentMediaPlayer.setAudioSessionId(sessionId);
             return true;
-        } catch (@NonNull IllegalArgumentException | IllegalStateException e) {
+        } catch (IllegalArgumentException | IllegalStateException e) {
             return false;
         }
     }

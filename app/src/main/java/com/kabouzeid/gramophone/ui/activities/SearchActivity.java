@@ -8,13 +8,13 @@ import android.support.v4.content.Loader;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.kabouzeid.appthemehelper.ThemeStore;
@@ -32,19 +32,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 public class SearchActivity extends AbsMusicServiceActivity implements SearchView.OnQueryTextListener, LoaderManager.LoaderCallbacks<List<Object>> {
     public static final String TAG = SearchActivity.class.getSimpleName();
     public static final String QUERY = "query";
     private static final int LOADER_ID = LoaderIds.SEARCH_ACTIVITY;
 
-    @BindView(R.id.recycler_view)
     RecyclerView recyclerView;
-    @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @BindView(android.R.id.empty)
     TextView empty;
 
     SearchView searchView;
@@ -57,7 +51,9 @@ public class SearchActivity extends AbsMusicServiceActivity implements SearchVie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         setDrawUnderStatusbar(true);
-        ButterKnife.bind(this);
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        empty = (TextView) findViewById(android.R.id.empty);
 
         setStatusbarColorAuto();
         setNavigationbarColorAuto();
@@ -131,6 +127,9 @@ public class SearchActivity extends AbsMusicServiceActivity implements SearchVie
                 return false;
             }
         });
+
+        // by default, expand searchView when clicking
+        searchView.setIconified(false);
 
         searchView.setQuery(query, false);
         searchView.post(new Runnable() {

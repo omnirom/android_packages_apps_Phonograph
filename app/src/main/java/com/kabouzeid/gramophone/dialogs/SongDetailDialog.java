@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
 import android.text.Html;
 import android.text.Spanned;
@@ -35,7 +34,6 @@ public class SongDetailDialog extends DialogFragment {
 
     public static final String TAG = SongDetailDialog.class.getSimpleName();
 
-    @NonNull
     public static SongDetailDialog create(Song song) {
         SongDetailDialog dialog = new SongDetailDialog();
         Bundle args = new Bundle();
@@ -44,7 +42,7 @@ public class SongDetailDialog extends DialogFragment {
         return dialog;
     }
 
-    private static Spanned makeTextWithTitle(@NonNull Context context, int titleResId, String text) {
+    private static Spanned makeTextWithTitle(Context context, int titleResId, String text) {
         return Html.fromHtml("<b>" + context.getResources().getString(titleResId) + ": " + "</b>" + text);
     }
 
@@ -54,7 +52,6 @@ public class SongDetailDialog extends DialogFragment {
         return fileSizeInMB + " MB";
     }
 
-    @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         final Activity context = getActivity();
@@ -99,7 +96,7 @@ public class SongDetailDialog extends DialogFragment {
                     samplingRate.setText(makeTextWithTitle(context, R.string.label_sampling_rate, audioHeader.getSampleRate() + " Hz"));
                 }
             }
-        } catch (@NonNull CannotReadException | IOException | TagException | ReadOnlyFileException | InvalidAudioFrameException e) {
+        } catch (CannotReadException | IOException | TagException | ReadOnlyFileException | InvalidAudioFrameException e) {
             Log.e(TAG, "error while reading the song file", e);
         }
         return dialog;

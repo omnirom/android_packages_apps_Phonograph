@@ -3,6 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-sdk android:minSdkVersion='25'
+              android:targetSdkVersion='25' />
+
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -104,9 +107,6 @@
             </intent-filter>
         </receiver>
         
-        <meta-data
-            android:name="com.crashlytics.ApiKey"
-            android:value="b23725bd3d266aa65c5a3dd1816b2f801524a189" />
         <meta-data
             android:name="com.kabouzeid.gramophone.glide.PhonographGlideModule"
             android:value="GlideModule" />

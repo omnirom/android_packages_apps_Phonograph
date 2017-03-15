@@ -45,9 +45,6 @@ import com.kabouzeid.gramophone.util.NavigationUtil;
 import com.kabouzeid.gramophone.util.PhonographColorUtil;
 import com.kabouzeid.gramophone.util.Util;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 /**
  * Be careful when changing things in this Activity!
  */
@@ -61,15 +58,10 @@ public class AlbumDetailActivity extends AbsSlidingMusicPanelActivity implements
 
     private Album album;
 
-    @BindView(R.id.list)
     ObservableRecyclerView recyclerView;
-    @BindView(R.id.image)
     ImageView albumArtImageView;
-    @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @BindView(R.id.title)
     TextView albumTitleView;
-    @BindView(R.id.list_background)
     View songsBackgroundView;
 
     private AlbumSongAdapter adapter;
@@ -85,7 +77,11 @@ public class AlbumDetailActivity extends AbsSlidingMusicPanelActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setDrawUnderStatusbar(true);
-        ButterKnife.bind(this);
+        recyclerView = (ObservableRecyclerView) findViewById(R.id.list);
+        albumArtImageView = (ImageView) findViewById(R.id.image);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        albumTitleView = (TextView) findViewById(R.id.title);
+        songsBackgroundView = findViewById(R.id.list_background);
 
         supportPostponeEnterTransition();
 

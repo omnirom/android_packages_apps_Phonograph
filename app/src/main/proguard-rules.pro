@@ -23,24 +23,17 @@
 -keepattributes Exceptions
 
 # Glide
+-keep class com.bumptech.** { *; }
 -keep public class * implements com.bumptech.glide.module.GlideModule
 -keep public enum com.bumptech.glide.load.resource.bitmap.ImageHeaderParser$** {
     **[] $VALUES;
     public *;
 }
 
-# ButterKnife
--keep class butterknife.** { *; }
--dontwarn butterknife.internal.**
--keep class **$$ViewBinder { *; }
--keepclasseswithmembernames class * {
-    @butterknife.* <fields>;
-}
--keepclasseswithmembernames class * {
-    @butterknife.* <methods>;
-}
+# jaudiotagger
+-keep class org.jaudiotagger.** { *; }
 
--keep class !android.support.v7.internal.view.menu.**,** {*;}
+#-keep class !android.support.v7.internal.view.menu.**,** {*;}
 
 -dontwarn
 -ignorewarnings

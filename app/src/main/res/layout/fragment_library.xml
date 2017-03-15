@@ -29,7 +29,7 @@
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_scrollFlags="scroll|enterAlways">
+                app:layout_scrollFlags="enterAlways">
 
                 <android.support.v7.widget.Toolbar
                     android:id="@+id/toolbar"
@@ -50,8 +50,7 @@
                 android:id="@+id/tabs"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/tab_height"
-                app:tabContentStart="72dp"
-                app:tabMode="scrollable" />
+                app:tabContentStart="72dp" />
 
         </android.support.design.widget.AppBarLayout>
 
@@ -59,7 +58,7 @@
             android:id="@+id/pager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+            android:layout_marginTop="104dp"/>
 
     </android.support.design.widget.CoordinatorLayout>
 

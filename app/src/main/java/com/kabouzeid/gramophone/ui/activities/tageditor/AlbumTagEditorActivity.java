@@ -36,8 +36,6 @@ import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -46,13 +44,9 @@ public class AlbumTagEditorActivity extends AbsTagEditorActivity implements Text
 
     public static final String TAG = AlbumTagEditorActivity.class.getSimpleName();
 
-    @BindView(R.id.title)
     EditText albumTitle;
-    @BindView(R.id.album_artist)
     EditText albumArtist;
-    @BindView(R.id.genre)
     EditText genre;
-    @BindView(R.id.year)
     EditText year;
 
     private Bitmap albumArtBitmap;
@@ -62,7 +56,10 @@ public class AlbumTagEditorActivity extends AbsTagEditorActivity implements Text
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ButterKnife.bind(this);
+        albumTitle = (EditText) findViewById(R.id.title);
+        albumArtist = (EditText) findViewById(R.id.album_artist);
+        genre = (EditText) findViewById(R.id.genre);
+        year = (EditText) findViewById(R.id.year);
 
         lastFMRestClient = new LastFMRestClient(this);
 
@@ -261,6 +258,7 @@ public class AlbumTagEditorActivity extends AbsTagEditorActivity implements Text
     @Override
     protected void setColors(int color) {
         super.setColors(color);
-        albumTitle.setTextColor(ToolbarContentTintHelper.toolbarTitleColor(this, color));
+        if(albumTitle != null)
+            albumTitle.setTextColor(ToolbarContentTintHelper.toolbarTitleColor(this, color));
     }
 }

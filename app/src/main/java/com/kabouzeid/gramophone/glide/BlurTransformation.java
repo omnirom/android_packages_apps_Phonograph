@@ -15,7 +15,6 @@ import android.support.annotation.NonNull;
 
 import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool;
 import com.bumptech.glide.load.resource.bitmap.BitmapTransformation;
-import com.kabouzeid.gramophone.BuildConfig;
 import com.kabouzeid.gramophone.helper.StackBlur;
 import com.kabouzeid.gramophone.util.ImageUtil;
 
@@ -134,7 +133,6 @@ public class BlurTransformation extends BitmapTransformation {
 
             } catch (RSRuntimeException e) {
                 // on some devices RenderScript.create() throws: android.support.v8.renderscript.RSRuntimeException: Error loading libRSSupport library
-                if (BuildConfig.DEBUG) e.printStackTrace();
             }
         }
 

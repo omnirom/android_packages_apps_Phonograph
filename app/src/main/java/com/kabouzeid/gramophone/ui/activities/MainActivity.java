@@ -29,7 +29,6 @@ import com.kabouzeid.appthemehelper.util.ATHUtil;
 import com.kabouzeid.appthemehelper.util.NavigationViewUtil;
 import com.kabouzeid.gramophone.R;
 import com.kabouzeid.gramophone.dialogs.ChangelogDialog;
-import com.kabouzeid.gramophone.dialogs.DonationsDialog;
 import com.kabouzeid.gramophone.glide.SongGlideRequest;
 import com.kabouzeid.gramophone.helper.MusicPlayerRemote;
 import com.kabouzeid.gramophone.helper.SearchQueryHelper;
@@ -49,9 +48,6 @@ import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 import java.io.File;
 import java.util.ArrayList;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 public class MainActivity extends AbsSlidingMusicPanelActivity {
 
     public static final String TAG = MainActivity.class.getSimpleName();
@@ -60,9 +56,7 @@ public class MainActivity extends AbsSlidingMusicPanelActivity {
     private static final int LIBRARY = 0;
     private static final int FOLDERS = 1;
 
-    @BindView(R.id.navigation_view)
     NavigationView navigationView;
-    @BindView(R.id.drawer_layout)
     DrawerLayout drawerLayout;
 
     @Nullable
@@ -76,7 +70,8 @@ public class MainActivity extends AbsSlidingMusicPanelActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ButterKnife.bind(this);
+        navigationView = (NavigationView) findViewById(R.id.navigation_view);
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
         if (Build.VERSION.SDK_INT == Build.VERSION_CODES.KITKAT) {
             Util.setStatusBarTranslucent(getWindow());
@@ -151,7 +146,7 @@ public class MainActivity extends AbsSlidingMusicPanelActivity {
     protected View createContentView() {
         @SuppressLint("InflateParams")
         View contentView = getLayoutInflater().inflate(R.layout.activity_main_drawer_layout, null);
-        ViewGroup drawerContent = ButterKnife.findById(contentView, R.id.drawer_content_container);
+        ViewGroup drawerContent = (ViewGroup) contentView.findViewById(R.id.drawer_content_container);
         drawerContent.addView(wrapSlidingMusicPanel(R.layout.activity_main_content));
         return contentView;
     }
@@ -179,14 +174,6 @@ public class MainActivity extends AbsSlidingMusicPanelActivity {
                             @Override
                             public void run() {
                                 setMusicChooser(FOLDERS);
-                            }
-                        }, 200);
-                        break;
-                    case R.id.support_development:
-                        new Handler().postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                DonationsDialog.create().show(getSupportFragmentManager(), "DONATION_DIALOG");
                             }
                         }, 200);
                         break;

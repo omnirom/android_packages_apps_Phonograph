@@ -10,7 +10,6 @@ import android.graphics.BitmapFactory;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.Toolbar;
@@ -53,9 +52,6 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 /**
  * @author Karim Abou Zeid (kabouzeid)
  */
@@ -65,15 +61,10 @@ public abstract class AbsTagEditorActivity extends AbsBaseActivity {
     public static final String EXTRA_PALETTE = "extra_palette";
     private static final String TAG = AbsTagEditorActivity.class.getSimpleName();
     private static final int REQUEST_CODE_SELECT_IMAGE = 1337;
-    @BindView(R.id.play_pause_fab)
     FloatingActionButton fab;
-    @BindView(R.id.observableScrollView)
     ObservableScrollView observableScrollView;
-    @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @BindView(R.id.image)
     ImageView image;
-    @BindView(R.id.header)
     LinearLayout header;
     private int id;
     private int headerVariableSpace;
@@ -99,7 +90,11 @@ public abstract class AbsTagEditorActivity extends AbsBaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getContentViewLayout());
-        ButterKnife.bind(this);
+        fab = (FloatingActionButton) findViewById(R.id.play_pause_fab);
+        observableScrollView = (ObservableScrollView) findViewById(R.id.observableScrollView);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        image = (ImageView) findViewById(R.id.image);
+        header = (LinearLayout) findViewById(R.id.header);
 
         getIntentExtras();
 
@@ -205,7 +200,6 @@ public abstract class AbsTagEditorActivity extends AbsBaseActivity {
 
     protected abstract int getContentViewLayout();
 
-    @NonNull
     protected abstract List<String> getSongPaths();
 
     protected void searchWebFor(String... keys) {
@@ -222,7 +216,7 @@ public abstract class AbsTagEditorActivity extends AbsBaseActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         switch (id) {
             case android.R.id.home:
@@ -275,7 +269,7 @@ public abstract class AbsTagEditorActivity extends AbsBaseActivity {
         setTaskDescriptionColor(paletteColorPrimary);
     }
 
-    protected void writeValuesToFiles(@NonNull final Map<FieldKey, String> fieldKeyValueMap, @Nullable final ArtworkInfo artworkInfo) {
+    protected void writeValuesToFiles(final Map<FieldKey, String> fieldKeyValueMap, @Nullable final ArtworkInfo artworkInfo) {
         Util.hideSoftKeyboard(this);
 
         new WriteTagsAsyncTask(this).execute(new WriteTagsAsyncTask.LoadingInfo(getSongPaths(), fieldKeyValueMap, artworkInfo));
@@ -337,7 +331,7 @@ public abstract class AbsTagEditorActivity extends AbsBaseActivity {
                         }
 
                         audioFile.commit();
-                    } catch (@NonNull CannotReadException | IOException | CannotWriteException | TagException | ReadOnlyFileException | InvalidAudioFrameException e) {
+                    } catch (CannotReadException | IOException | CannotWriteException | TagException | ReadOnlyFileException | InvalidAudioFrameException e) {
                         e.printStackTrace();
                     }
                 }
@@ -376,7 +370,7 @@ public abstract class AbsTagEditorActivity extends AbsBaseActivity {
         }
 
         @Override
-        protected Dialog createDialog(@NonNull Context context) {
+        protected Dialog createDialog(Context context) {
             return new MaterialDialog.Builder(context)
                     .title(R.string.saving_changes)
                     .cancelable(false)
@@ -385,7 +379,7 @@ public abstract class AbsTagEditorActivity extends AbsBaseActivity {
         }
 
         @Override
-        protected void onProgressUpdate(@NonNull Dialog dialog, Integer... values) {
+        protected void onProgressUpdate(Dialog dialog, Integer... values) {
             super.onProgressUpdate(dialog, values);
             ((MaterialDialog) dialog).setMaxProgress(values[1]);
             ((MaterialDialog) dialog).setProgress(values[0]);
@@ -421,7 +415,7 @@ public abstract class AbsTagEditorActivity extends AbsBaseActivity {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @NonNull Intent imageReturnedIntent) {
+    protected void onActivityResult(int requestCode, int resultCode,Intent imageReturnedIntent) {
         super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
         switch (requestCode) {
             case REQUEST_CODE_SELECT_IMAGE:
@@ -434,8 +428,7 @@ public abstract class AbsTagEditorActivity extends AbsBaseActivity {
 
     protected abstract void loadImageFromFile(Uri selectedFile);
 
-    @NonNull
-    private AudioFile getAudioFile(@NonNull String path) {
+    private AudioFile getAudioFile(String path) {
         try {
             return AudioFileIO.read(new File(path));
         } catch (Exception e) {

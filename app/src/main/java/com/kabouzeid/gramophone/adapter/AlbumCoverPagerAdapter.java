@@ -19,10 +19,6 @@ import com.kabouzeid.gramophone.util.PreferenceUtil;
 
 import java.util.ArrayList;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
-
 /**
  * @author Karim Abou Zeid (kabouzeid)
  */
@@ -76,9 +72,6 @@ public class AlbumCoverPagerAdapter extends CustomFragmentStatePagerAdapter {
     public static class AlbumCoverFragment extends Fragment implements SharedPreferences.OnSharedPreferenceChangeListener {
         private static final String SONG_ARG = "song";
 
-        private Unbinder unbinder;
-
-        @BindView(R.id.player_image)
         ImageView albumCover;
 
         private boolean isColorReady;
@@ -105,7 +98,8 @@ public class AlbumCoverPagerAdapter extends CustomFragmentStatePagerAdapter {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View view = inflater.inflate(R.layout.fragment_album_cover, container, false);
-            unbinder = ButterKnife.bind(this, view);
+            albumCover = (ImageView) view.findViewById(R.id.player_image);
+
             return view;
         }
 
@@ -123,7 +117,6 @@ public class AlbumCoverPagerAdapter extends CustomFragmentStatePagerAdapter {
         public void onDestroyView() {
             super.onDestroyView();
             PreferenceUtil.getInstance(getActivity()).unregisterOnSharedPreferenceChangedListener(this);
-            unbinder.unbind();
             colorReceiver = null;
         }
 

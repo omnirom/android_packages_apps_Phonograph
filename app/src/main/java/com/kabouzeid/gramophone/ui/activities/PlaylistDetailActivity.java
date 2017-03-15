@@ -41,9 +41,6 @@ import com.kabouzeid.gramophone.util.PlaylistsUtil;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 public class PlaylistDetailActivity extends AbsSlidingMusicPanelActivity implements CabHolder, LoaderManager.LoaderCallbacks<ArrayList<Song>> {
 
     public static final String TAG = PlaylistDetailActivity.class.getSimpleName();
@@ -53,11 +50,8 @@ public class PlaylistDetailActivity extends AbsSlidingMusicPanelActivity impleme
     @NonNull
     public static String EXTRA_PLAYLIST = "extra_playlist";
 
-    @BindView(R.id.recycler_view)
     RecyclerView recyclerView;
-    @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @BindView(android.R.id.empty)
     TextView empty;
 
     private Playlist playlist;
@@ -72,7 +66,9 @@ public class PlaylistDetailActivity extends AbsSlidingMusicPanelActivity impleme
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setDrawUnderStatusbar(true);
-        ButterKnife.bind(this);
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        empty = (TextView) findViewById(android.R.id.empty);
 
         setStatusbarColorAuto();
         setNavigationbarColorAuto();

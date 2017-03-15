@@ -55,8 +55,6 @@ import com.kabouzeid.gramophone.util.NavigationUtil;
 import com.kabouzeid.gramophone.util.PhonographColorUtil;
 import com.kabouzeid.gramophone.util.Util;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -71,15 +69,10 @@ public class ArtistDetailActivity extends AbsSlidingMusicPanelActivity implement
 
     public static final String EXTRA_ARTIST_ID = "extra_artist_id";
 
-    @BindView(R.id.image)
     ImageView artistImage;
-    @BindView(R.id.list_background)
     View songListBackground;
-    @BindView(R.id.list)
     ObservableListView songListView;
-    @BindView(R.id.title)
     TextView artistName;
-    @BindView(R.id.toolbar)
     Toolbar toolbar;
 
     View songListHeader;
@@ -104,7 +97,11 @@ public class ArtistDetailActivity extends AbsSlidingMusicPanelActivity implement
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setDrawUnderStatusbar(true);
-        ButterKnife.bind(this);
+        artistImage = (ImageView) findViewById(R.id.image);
+        songListBackground = findViewById(R.id.list_background);
+        songListView = (ObservableListView) findViewById(R.id.list);
+        artistName = (TextView) findViewById(R.id.title);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         supportPostponeEnterTransition();
 
@@ -162,7 +159,7 @@ public class ArtistDetailActivity extends AbsSlidingMusicPanelActivity implement
 
     private void initViews() {
         songListHeader = LayoutInflater.from(this).inflate(R.layout.artist_detail_header, songListView, false);
-        albumRecyclerView = ButterKnife.findById(songListHeader, R.id.recycler_view);
+        albumRecyclerView = (RecyclerView) songListHeader.findViewById(R.id.recycler_view);
     }
 
     private void setUpViews() {

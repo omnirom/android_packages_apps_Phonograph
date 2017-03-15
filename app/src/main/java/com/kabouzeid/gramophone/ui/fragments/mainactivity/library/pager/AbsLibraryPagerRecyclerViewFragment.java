@@ -18,10 +18,6 @@ import com.kabouzeid.gramophone.R;
 import com.kabouzeid.gramophone.util.ViewUtil;
 import com.simplecityapps.recyclerview_fastscroll.views.FastScrollRecyclerView;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
-
 /**
  * @author Karim Abou Zeid (kabouzeid)
  */
@@ -29,14 +25,9 @@ public abstract class AbsLibraryPagerRecyclerViewFragment<A extends RecyclerView
 
     public static final String TAG = AbsLibraryPagerRecyclerViewFragment.class.getSimpleName();
 
-    private Unbinder unbinder;
-
-    @BindView(R.id.container)
-    View container;
-    @BindView(R.id.recycler_view)
+    ViewGroup container;
     RecyclerView recyclerView;
     @Nullable
-    @BindView(android.R.id.empty)
     TextView empty;
 
     private A adapter;
@@ -45,7 +36,10 @@ public abstract class AbsLibraryPagerRecyclerViewFragment<A extends RecyclerView
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(getLayoutRes(), container, false);
-        unbinder = ButterKnife.bind(this, view);
+        container =  (ViewGroup) view.findViewById(R.id.container);
+        recyclerView =  (RecyclerView) view.findViewById(R.id.recycler_view);
+        empty =  (TextView) view.findViewById(android.R.id.empty);
+
         return view;
     }
 
@@ -108,7 +102,9 @@ public abstract class AbsLibraryPagerRecyclerViewFragment<A extends RecyclerView
 
     @Override
     public void onOffsetChanged(AppBarLayout appBarLayout, int i) {
-        container.setPadding(container.getPaddingLeft(), container.getPaddingTop(), container.getPaddingRight(), getLibraryFragment().getTotalAppBarScrollingRange() + i);
+        // it is always null at this point, needs fixing
+        if(container != null && getLibraryFragment() != null)
+            container.setPadding(container.getPaddingLeft(), container.getPaddingTop(), container.getPaddingRight(), getLibraryFragment().getTotalAppBarScrollingRange() + i);
     }
 
     private void checkIsEmpty() {
@@ -137,6 +133,5 @@ public abstract class AbsLibraryPagerRecyclerViewFragment<A extends RecyclerView
     public void onDestroyView() {
         super.onDestroyView();
         getLibraryFragment().removeOnAppBarOffsetChangedListener(this);
-        unbinder.unbind();
     }
 }

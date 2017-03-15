@@ -21,10 +21,7 @@ import android.os.Message;
 import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
 import android.support.v4.content.WakefulBroadcastReceiver;
-import android.util.Log;
 import android.view.KeyEvent;
-
-import com.kabouzeid.gramophone.BuildConfig;
 
 /**
  * Used to control headset playback.
@@ -33,7 +30,6 @@ import com.kabouzeid.gramophone.BuildConfig;
  * Triple press: previous track
  */
 public class MediaButtonIntentReceiver extends WakefulBroadcastReceiver {
-    private static final boolean DEBUG = BuildConfig.DEBUG;
     public static final String TAG = MediaButtonIntentReceiver.class.getSimpleName();
 
     private static final int MSG_HEADSET_DOUBLE_CLICK_TIMEOUT = 2;
@@ -54,7 +50,6 @@ public class MediaButtonIntentReceiver extends WakefulBroadcastReceiver {
                     final int clickCount = msg.arg1;
                     final String command;
 
-                    if (DEBUG) Log.v(TAG, "Handling headset click, count = " + clickCount);
                     switch (clickCount) {
                         case 1:
                             command = MusicService.ACTION_TOGGLE_PAUSE;
@@ -82,7 +77,6 @@ public class MediaButtonIntentReceiver extends WakefulBroadcastReceiver {
 
     @Override
     public void onReceive(final Context context, final Intent intent) {
-        if (DEBUG) Log.v(TAG, "Received intent: " + intent);
         if (handleIntent(context, intent) && isOrderedBroadcast()) {
             abortBroadcast();
         }
@@ -138,7 +132,6 @@ public class MediaButtonIntentReceiver extends WakefulBroadcastReceiver {
                             }
 
                             mClickCounter++;
-                            if (DEBUG) Log.v(TAG, "Got headset click, count = " + mClickCounter);
                             mHandler.removeMessages(MSG_HEADSET_DOUBLE_CLICK_TIMEOUT);
 
                             Message msg = mHandler.obtainMessage(
@@ -174,7 +167,6 @@ public class MediaButtonIntentReceiver extends WakefulBroadcastReceiver {
             mWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "Phonograph headset button");
             mWakeLock.setReferenceCounted(false);
         }
-        if (DEBUG) Log.v(TAG, "Acquiring wake lock and sending " + msg.what);
         // Make sure we don't indefinitely hold the wake lock under any circumstances
         mWakeLock.acquire(10000);
 
@@ -183,12 +175,10 @@ public class MediaButtonIntentReceiver extends WakefulBroadcastReceiver {
 
     private static void releaseWakeLockIfHandlerIdle() {
         if (mHandler.hasMessages(MSG_HEADSET_DOUBLE_CLICK_TIMEOUT)) {
-            if (DEBUG) Log.v(TAG, "Handler still has messages pending, not releasing wake lock");
             return;
         }
 
         if (mWakeLock != null) {
-            if (DEBUG) Log.v(TAG, "Releasing wake lock");
             mWakeLock.release();
             mWakeLock = null;
         }

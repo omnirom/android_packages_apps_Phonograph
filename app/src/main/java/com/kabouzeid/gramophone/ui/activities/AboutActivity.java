@@ -17,13 +17,10 @@ import com.afollestad.materialdialogs.internal.ThemeSingleton;
 import com.kabouzeid.appthemehelper.ThemeStore;
 import com.kabouzeid.gramophone.R;
 import com.kabouzeid.gramophone.dialogs.ChangelogDialog;
-import com.kabouzeid.gramophone.dialogs.DonationsDialog;
 import com.kabouzeid.gramophone.ui.activities.base.AbsBaseActivity;
 import com.kabouzeid.gramophone.ui.activities.bugreport.BugReportActivity;
 import com.kabouzeid.gramophone.ui.activities.intro.AppIntroActivity;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import de.psdev.licensesdialog.LicensesDialog;
 
 /**
@@ -51,45 +48,24 @@ public class AboutActivity extends AbsBaseActivity implements View.OnClickListen
 
     private static String ALEKSANDAR_TESIC_GOOGLE_PLUS = "https://google.com/+aleksandartešić";
 
-    @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @BindView(R.id.app_version)
     TextView appVersion;
-    @BindView(R.id.changelog)
     LinearLayout changelog;
-    @BindView(R.id.intro)
     LinearLayout intro;
-    @BindView(R.id.licenses)
     LinearLayout licenses;
-    @BindView(R.id.add_to_google_plus_circles)
     LinearLayout addToGooglePlusCircles;
-    @BindView(R.id.follow_on_twitter)
     LinearLayout followOnTwitter;
-    @BindView(R.id.fork_on_git_hub)
     LinearLayout forkOnGitHub;
-    @BindView(R.id.visit_website)
     LinearLayout visitWebsite;
-    @BindView(R.id.report_bugs)
     LinearLayout reportBugs;
-    @BindView(R.id.join_google_plus_community)
     LinearLayout joinGooglePlusCommunity;
-    @BindView(R.id.translate)
     LinearLayout translate;
-    @BindView(R.id.donate)
     LinearLayout donate;
-    @BindView(R.id.rate_on_google_play)
-    LinearLayout rateOnGooglePlay;
-    @BindView(R.id.aidan_follestad_google_plus)
     AppCompatButton aidanFollestadGooglePlus;
-    @BindView(R.id.aidan_follestad_git_hub)
     AppCompatButton aidanFollestadGitHub;
-    @BindView(R.id.michael_cook_google_plus)
     AppCompatButton michaelCookGooglePlus;
-    @BindView(R.id.michael_cook_website)
     AppCompatButton michaelCookWebsite;
-    @BindView(R.id.maarten_corpel_google_plus)
     AppCompatButton maartenCorpelGooglePlus;
-    @BindView(R.id.aleksandar_tesic_google_plus)
     AppCompatButton aleksandarTesicGooglePlus;
 
     @Override
@@ -97,7 +73,25 @@ public class AboutActivity extends AbsBaseActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
         setDrawUnderStatusbar(true);
-        ButterKnife.bind(this);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        appVersion = (TextView) findViewById(R.id.app_version);
+        changelog = (LinearLayout) findViewById(R.id.changelog);
+        intro = (LinearLayout) findViewById(R.id.intro);
+        licenses = (LinearLayout) findViewById(R.id.licenses);
+        addToGooglePlusCircles = (LinearLayout) findViewById(R.id.add_to_google_plus_circles);
+        followOnTwitter = (LinearLayout) findViewById(R.id.follow_on_twitter);
+        forkOnGitHub = (LinearLayout) findViewById(R.id.fork_on_git_hub);
+        visitWebsite = (LinearLayout) findViewById(R.id.visit_website);
+        reportBugs = (LinearLayout) findViewById(R.id.report_bugs);
+        joinGooglePlusCommunity = (LinearLayout) findViewById(R.id.join_google_plus_community);
+        translate = (LinearLayout) findViewById(R.id.translate);
+        donate = (LinearLayout) findViewById(R.id.donate);
+        aidanFollestadGooglePlus = (AppCompatButton) findViewById(R.id.aidan_follestad_google_plus);
+        aidanFollestadGitHub = (AppCompatButton) findViewById(R.id.aidan_follestad_git_hub);
+        michaelCookGooglePlus = (AppCompatButton) findViewById(R.id.michael_cook_google_plus);
+        michaelCookWebsite = (AppCompatButton) findViewById(R.id.michael_cook_website);
+        maartenCorpelGooglePlus = (AppCompatButton) findViewById(R.id.maarten_corpel_google_plus);
+        aleksandarTesicGooglePlus = (AppCompatButton) findViewById(R.id.aleksandar_tesic_google_plus);
 
         setStatusbarColorAuto();
         setNavigationbarColorAuto();
@@ -134,7 +128,6 @@ public class AboutActivity extends AbsBaseActivity implements View.OnClickListen
         reportBugs.setOnClickListener(this);
         joinGooglePlusCommunity.setOnClickListener(this);
         translate.setOnClickListener(this);
-        rateOnGooglePlay.setOnClickListener(this);
         donate.setOnClickListener(this);
         aidanFollestadGooglePlus.setOnClickListener(this);
         aidanFollestadGitHub.setOnClickListener(this);
@@ -184,10 +177,6 @@ public class AboutActivity extends AbsBaseActivity implements View.OnClickListen
             openUrl(GOOGLE_PLUS_COMMUNITY);
         } else if (v == translate) {
             openUrl(TRANSLATE);
-        } else if (v == rateOnGooglePlay) {
-            openUrl(RATE_ON_GOOGLE_PLAY);
-        } else if (v == donate) {
-            DonationsDialog.create().show(getSupportFragmentManager(), "DONATION_DIALOG");
         } else if (v == aidanFollestadGooglePlus) {
             openUrl(AIDAN_FOLLESTAD_GOOGLE_PLUS);
         } else if (v == aidanFollestadGitHub) {

@@ -24,16 +24,11 @@ import com.kabouzeid.gramophone.util.MusicUtil;
 import com.kabouzeid.gramophone.util.PreferenceUtil;
 import com.triggertrap.seekarc.SeekArc;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 /**
  * @author Karim Abou Zeid (kabouzeid)
  */
 public class SleepTimerDialog extends DialogFragment {
-    @BindView(R.id.seek_arc)
     SeekArc seekArc;
-    @BindView(R.id.timer_display)
     TextView timerDisplay;
 
     private int seekArcProgress;
@@ -101,7 +96,8 @@ public class SleepTimerDialog extends DialogFragment {
             return materialDialog;
         }
 
-        ButterKnife.bind(this, materialDialog.getCustomView());
+        seekArc = (SeekArc) materialDialog.getCustomView().findViewById(R.id.seek_arc);
+        timerDisplay = (TextView) materialDialog.getCustomView().findViewById(R.id.timer_display);
 
         seekArc.setProgressColor(ThemeSingleton.get().positiveColor.getDefaultColor());
         seekArc.setThumbColor(ThemeSingleton.get().positiveColor.getDefaultColor());

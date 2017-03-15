@@ -54,25 +54,14 @@ import org.jaudiotagger.tag.FieldKey;
 
 import java.io.File;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
-
 public class FlatPlayerFragment extends AbsPlayerFragment implements PlayerAlbumCoverFragment.Callbacks, SlidingUpPanelLayout.PanelSlideListener {
     public static final String TAG = FlatPlayerFragment.class.getSimpleName();
 
-    private Unbinder unbinder;
-
-    @BindView(R.id.player_status_bar)
     View playerStatusBar;
-    @BindView(R.id.player_toolbar)
     Toolbar toolbar;
     @Nullable
-    @BindView(R.id.player_sliding_layout)
     SlidingUpPanelLayout slidingUpPanelLayout;
-    @BindView(R.id.player_recycler_view)
     RecyclerView recyclerView;
-    @BindView(R.id.player_queue_sub_header)
     TextView playerQueueSubHeader;
 
     private int lastColor;
@@ -103,7 +92,12 @@ public class FlatPlayerFragment extends AbsPlayerFragment implements PlayerAlbum
         }
 
         View view = inflater.inflate(R.layout.fragment_flat_player, container, false);
-        unbinder = ButterKnife.bind(this, view);
+        playerStatusBar = view.findViewById(R.id.player_status_bar);
+        toolbar = (Toolbar) view.findViewById(R.id.player_toolbar);
+        slidingUpPanelLayout = (SlidingUpPanelLayout) view.findViewById(R.id.player_sliding_layout);
+        recyclerView = (RecyclerView) view.findViewById(R.id.player_recycler_view);
+        playerQueueSubHeader = (TextView) view.findViewById(R.id.player_queue_sub_header);
+
         return view;
     }
 
@@ -155,7 +149,6 @@ public class FlatPlayerFragment extends AbsPlayerFragment implements PlayerAlbum
         playingQueueAdapter = null;
         layoutManager = null;
         super.onDestroyView();
-        unbinder.unbind();
     }
 
     @Override

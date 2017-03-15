@@ -25,33 +25,19 @@ import com.kabouzeid.gramophone.ui.fragments.AbsMusicServiceFragment;
 import com.kabouzeid.gramophone.util.MusicUtil;
 import com.kabouzeid.gramophone.views.PlayPauseDrawable;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
-
 /**
  * @author Karim Abou Zeid (kabouzeid)
  */
 public class CardPlayerPlaybackControlsFragment extends AbsMusicServiceFragment implements MusicProgressViewUpdateHelper.Callback {
 
-    private Unbinder unbinder;
-
-    @BindView(R.id.player_play_pause_fab)
     FloatingActionButton playPauseFab;
-    @BindView(R.id.player_prev_button)
     ImageButton prevButton;
-    @BindView(R.id.player_next_button)
     ImageButton nextButton;
-    @BindView(R.id.player_repeat_button)
     ImageButton repeatButton;
-    @BindView(R.id.player_shuffle_button)
     ImageButton shuffleButton;
 
-    @BindView(R.id.player_progress_slider)
     SeekBar progressSlider;
-    @BindView(R.id.player_song_total_time)
     TextView songTotalTime;
-    @BindView(R.id.player_song_current_progress)
     TextView songCurrentProgress;
 
     private PlayPauseDrawable playerFabPlayPauseDrawable;
@@ -76,7 +62,15 @@ public class CardPlayerPlaybackControlsFragment extends AbsMusicServiceFragment 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        unbinder = ButterKnife.bind(this, view);
+        playPauseFab = (FloatingActionButton) view.findViewById(R.id.player_play_pause_fab);
+        prevButton = (ImageButton) view.findViewById(R.id.player_prev_button);
+        nextButton = (ImageButton) view.findViewById(R.id.player_next_button);
+        repeatButton = (ImageButton) view.findViewById(R.id.player_repeat_button);
+        shuffleButton = (ImageButton) view.findViewById(R.id.player_shuffle_button);
+        progressSlider = (SeekBar) view.findViewById(R.id.player_progress_slider);
+        songTotalTime = (TextView) view.findViewById(R.id.player_song_total_time);
+        songCurrentProgress = (TextView) view.findViewById(R.id.player_song_current_progress);
+
         setUpMusicControllers();
         updateProgressTextColor();
     }
@@ -84,7 +78,6 @@ public class CardPlayerPlaybackControlsFragment extends AbsMusicServiceFragment 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        unbinder.unbind();
     }
 
     @Override

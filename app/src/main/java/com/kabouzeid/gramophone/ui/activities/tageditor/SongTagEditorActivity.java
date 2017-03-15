@@ -18,33 +18,28 @@ import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 public class SongTagEditorActivity extends AbsTagEditorActivity implements TextWatcher {
 
     public static final String TAG = SongTagEditorActivity.class.getSimpleName();
 
-    @BindView(R.id.title1)
     EditText songTitle;
-    @BindView(R.id.title2)
     EditText albumTitle;
-    @BindView(R.id.artist)
     EditText artist;
-    @BindView(R.id.genre)
     EditText genre;
-    @BindView(R.id.year)
     EditText year;
-    @BindView(R.id.image_text)
     EditText trackNumber;
-    @BindView(R.id.lyrics)
     EditText lyrics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ButterKnife.bind(this);
-
+        songTitle = (EditText) findViewById(R.id.title1);
+        albumTitle = (EditText) findViewById(R.id.title2);
+        artist = (EditText) findViewById(R.id.artist);
+        genre = (EditText) findViewById(R.id.genre);
+        year = (EditText) findViewById(R.id.year);
+        trackNumber = (EditText) findViewById(R.id.image_text);
+        lyrics = (EditText) findViewById(R.id.lyrics);
         setNoImageMode();
         setUpViews();
 

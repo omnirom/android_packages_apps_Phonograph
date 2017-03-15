@@ -2,6 +2,7 @@ package com.kabouzeid.gramophone.ui.fragments.mainactivity.library;
 
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,6 +12,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
+import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -40,22 +42,12 @@ import com.kabouzeid.gramophone.util.PhonographColorUtil;
 import com.kabouzeid.gramophone.util.PreferenceUtil;
 import com.kabouzeid.gramophone.util.Util;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
-
 public class LibraryFragment extends AbsMainActivityFragment implements CabHolder, MainActivity.MainActivityFragmentCallbacks, ViewPager.OnPageChangeListener {
     public static final String TAG = LibraryFragment.class.getSimpleName();
 
-    private Unbinder unbinder;
-
-    @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @BindView(R.id.tabs)
     TabLayout tabs;
-    @BindView(R.id.appbar)
     AppBarLayout appbar;
-    @BindView(R.id.pager)
     ViewPager pager;
 
     private MusicLibraryPagerAdapter pagerAdapter;
@@ -68,10 +60,18 @@ public class LibraryFragment extends AbsMainActivityFragment implements CabHolde
     public LibraryFragment() {
     }
 
+    public LibraryFragment(Context context, AttributeSet attrs) {
+        super();
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_library, container, false);
-        unbinder = ButterKnife.bind(this, view);
+        toolbar = (Toolbar) view.findViewById(R.id.toolbar);
+        tabs = (TabLayout) view.findViewById(R.id.tabs);
+        appbar = (AppBarLayout) view.findViewById(R.id.appbar);
+        pager = (ViewPager) view.findViewById(R.id.pager);
+
         return view;
     }
 
@@ -79,7 +79,6 @@ public class LibraryFragment extends AbsMainActivityFragment implements CabHolde
     public void onDestroyView() {
         super.onDestroyView();
         pager.removeOnPageChangeListener(this);
-        unbinder.unbind();
     }
 
     @Override
