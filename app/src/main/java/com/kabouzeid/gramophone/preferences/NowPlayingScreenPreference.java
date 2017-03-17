@@ -3,12 +3,12 @@ package com.kabouzeid.gramophone.preferences;
 import android.content.Context;
 import android.util.AttributeSet;
 
-import com.kabouzeid.appthemehelper.common.prefs.supportv7.ATEDialogPreference;
+import android.preference.DialogPreference;
 
 /**
  * @author Karim Abou Zeid (kabouzeid)
  */
-public class NowPlayingScreenPreference extends ATEDialogPreference {
+public class NowPlayingScreenPreference extends DialogPreference  {
     public NowPlayingScreenPreference(Context context) {
         super(context);
     }

@@ -39,4 +39,14 @@
         <item>never</item>
     </string-array>
 
+    <string-array name="pref_now_playing_list_titles" translatable="false">
+        <item>@string/card</item>
+        <item>@string/flat</item>
+    </string-array>
+
+    <string-array name="pref_now_playing_list_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
 </resources>

@@ -161,7 +161,8 @@
 
         <activity
             android:name=".ui.activities.SettingsActivity"
-            android:label="@string/action_settings" />
+            android:label="@string/action_settings"
+            android:theme="@style/Theme.Phonograph.Settings" />
         <activity android:name=".ui.activities.PlaylistDetailActivity" />
         <activity
             android:name=".ui.activities.AboutActivity"

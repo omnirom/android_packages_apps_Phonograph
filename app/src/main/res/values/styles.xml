@@ -10,6 +10,12 @@
 
     <style name="Theme.Phonograph.Notification.Title" parent="@android:style/TextAppearance.StatusBar.EventContent.Title" />
 
+    <style name="Theme.Phonograph.Settings" parent="@android:style/Theme.Material.Light.DarkActionBar" >
+        <item name="android:colorAccent">@color/colorAccent</item>
+        <item name="android:colorPrimary">@color/colorPrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
+    </style>
+
     <style name="OverFlowButton">
         <item name="srcCompat">@drawable/ic_more_vert_white_24dp</item>
         <item name="android:layout_margin">8dp</item>

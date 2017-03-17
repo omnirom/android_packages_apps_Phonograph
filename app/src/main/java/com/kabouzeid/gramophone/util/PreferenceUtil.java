@@ -130,9 +130,16 @@ public final class PreferenceUtil {
     }
 
     public final NowPlayingScreen getNowPlayingScreen() {
-        int id = mPreferences.getInt(NOW_PLAYING_SCREEN_ID, 0);
-        for (NowPlayingScreen nowPlayingScreen : NowPlayingScreen.values()) {
-            if (nowPlayingScreen.id == id) return nowPlayingScreen;
+        try {
+            int id = NowPlayingScreen.CARD.id;
+            String idString = mPreferences.getString(NOW_PLAYING_SCREEN_ID, String.valueOf(id));
+            if (idString !=  null) {
+                id = Integer.valueOf(idString);
+            }
+            for (NowPlayingScreen nowPlayingScreen : NowPlayingScreen.values()) {
+                if (nowPlayingScreen.id == id) return nowPlayingScreen;
+            }
+        } catch (Exception e) {
         }
         return NowPlayingScreen.CARD;
     }
@@ -140,12 +147,12 @@ public final class PreferenceUtil {
     @SuppressLint("CommitPrefEdits")
     public void setNowPlayingScreen(NowPlayingScreen nowPlayingScreen) {
         final SharedPreferences.Editor editor = mPreferences.edit();
-        editor.putInt(NOW_PLAYING_SCREEN_ID, nowPlayingScreen.id);
+        editor.putString(NOW_PLAYING_SCREEN_ID, String.valueOf(nowPlayingScreen.id));
         editor.commit();
     }
 
     public final boolean coloredNotification() {
-        return mPreferences.getBoolean(COLORED_NOTIFICATION, true);
+        return mPreferences.getBoolean(COLORED_NOTIFICATION, false);
     }
 
     public final boolean gaplessPlayback() {

@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <com.kabouzeid.appthemehelper.common.prefs.supportv7.ATEPreferenceCategory android:title="@string/pref_header_now_playing_screen">
+    <PreferenceCategory android:title="@string/pref_header_now_playing_screen">
 
-        <com.kabouzeid.gramophone.preferences.NowPlayingScreenPreference
+        <!--<com.kabouzeid.gramophone.preferences.NowPlayingScreenPreference
+            android:key="now_playing_screen_id"
+        android:title="@string/pref_title_now_playing_screen_appearance" />-->
+
+        <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/pref_now_playing_list_titles"
+            android:entryValues="@array/pref_now_playing_list_values"
             android:key="now_playing_screen_id"
             android:title="@string/pref_title_now_playing_screen_appearance" />
+    </PreferenceCategory>
 
-    </com.kabouzeid.appthemehelper.common.prefs.supportv7.ATEPreferenceCategory>
-
-</android.support.v7.preference.PreferenceScreen>
+</PreferenceScreen>
