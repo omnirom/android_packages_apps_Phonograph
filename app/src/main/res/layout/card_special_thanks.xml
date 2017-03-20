@@ -5,7 +5,8 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     app:cardBackgroundColor="?cardBackgroundColor"
-    app:cardUseCompatPadding="true">
+    app:cardUseCompatPadding="true"
+    android:visibility="gone" >
 
     <LinearLayout
         android:layout_width="match_parent"
