@@ -6,7 +6,8 @@ import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
 
 import com.kabouzeid.appthemehelper.util.ATHUtil;
-import com.kabouzeid.gramophone.R;
+
+import org.omnirom.gramophone.R;
 
 /**
  * @author Karim Abou Zeid (kabouzeid)

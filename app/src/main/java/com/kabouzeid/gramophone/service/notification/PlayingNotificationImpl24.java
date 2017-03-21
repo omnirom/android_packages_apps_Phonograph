@@ -17,7 +17,6 @@ import android.text.TextUtils;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
-import com.kabouzeid.gramophone.R;
 import com.kabouzeid.gramophone.glide.SongGlideRequest;
 import com.kabouzeid.gramophone.glide.palette.BitmapPaletteWrapper;
 import com.kabouzeid.gramophone.model.Song;
@@ -29,6 +28,8 @@ import static android.content.Context.NOTIFICATION_SERVICE;
 import static com.kabouzeid.gramophone.service.MusicService.ACTION_REWIND;
 import static com.kabouzeid.gramophone.service.MusicService.ACTION_SKIP;
 import static com.kabouzeid.gramophone.service.MusicService.ACTION_TOGGLE_PAUSE;
+
+import org.omnirom.gramophone.R;
 
 /**
  * @author Karim Abou Zeid (kabouzeid)

@@ -25,7 +25,8 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
 import com.kabouzeid.appthemehelper.util.TintHelper;
-import com.kabouzeid.gramophone.R;
+
+import org.omnirom.gramophone.R;
 
 /**
  * @author Karim Abou Zeid (kabouzeid)

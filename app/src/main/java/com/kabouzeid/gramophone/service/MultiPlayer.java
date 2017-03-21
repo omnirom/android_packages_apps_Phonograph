@@ -11,9 +11,10 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.kabouzeid.gramophone.R;
 import com.kabouzeid.gramophone.service.playback.Playback;
 import com.kabouzeid.gramophone.util.PreferenceUtil;
+
+import org.omnirom.gramophone.R;
 
 /**
  * @author Andrew Neal, Karim Abou Zeid (kabouzeid)

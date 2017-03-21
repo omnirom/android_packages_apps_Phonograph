@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import android.widget.PopupMenu;
 
 import com.kabouzeid.appthemehelper.util.ATHUtil;
-import com.kabouzeid.gramophone.R;
 import com.kabouzeid.gramophone.adapter.base.AbsMultiSelectAdapter;
 import com.kabouzeid.gramophone.adapter.base.MediaEntryViewHolder;
 import com.kabouzeid.gramophone.dialogs.ClearSmartPlaylistDialog;
@@ -27,6 +26,8 @@ import com.kabouzeid.gramophone.model.Song;
 import com.kabouzeid.gramophone.model.smartplaylist.AbsSmartPlaylist;
 import com.kabouzeid.gramophone.util.MusicUtil;
 import com.kabouzeid.gramophone.util.NavigationUtil;
+
+import org.omnirom.gramophone.R;
 
 import java.util.ArrayList;
 import java.util.List;

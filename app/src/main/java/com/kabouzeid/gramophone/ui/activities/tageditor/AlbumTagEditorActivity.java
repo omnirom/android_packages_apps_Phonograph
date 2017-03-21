@@ -19,7 +19,6 @@ import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.kabouzeid.appthemehelper.util.ATHUtil;
 import com.kabouzeid.appthemehelper.util.ToolbarContentTintHelper;
-import com.kabouzeid.gramophone.R;
 import com.kabouzeid.gramophone.glide.palette.BitmapPaletteTranscoder;
 import com.kabouzeid.gramophone.glide.palette.BitmapPaletteWrapper;
 import com.kabouzeid.gramophone.lastfm.rest.LastFMRestClient;
@@ -30,6 +29,8 @@ import com.kabouzeid.gramophone.util.LastFMUtil;
 import com.kabouzeid.gramophone.util.PhonographColorUtil;
 
 import org.jaudiotagger.tag.FieldKey;
+
+import org.omnirom.gramophone.R;
 
 import java.util.ArrayList;
 import java.util.EnumMap;

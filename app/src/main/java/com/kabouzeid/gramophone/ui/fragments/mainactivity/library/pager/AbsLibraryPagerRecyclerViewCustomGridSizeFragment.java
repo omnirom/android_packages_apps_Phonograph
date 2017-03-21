@@ -6,8 +6,9 @@ import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.kabouzeid.gramophone.R;
 import com.kabouzeid.gramophone.util.Util;
+
+import org.omnirom.gramophone.R;
 
 /**
  * @author Karim Abou Zeid (kabouzeid)

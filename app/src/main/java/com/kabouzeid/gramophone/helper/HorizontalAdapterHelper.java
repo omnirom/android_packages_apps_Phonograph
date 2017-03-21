@@ -3,7 +3,7 @@ package com.kabouzeid.gramophone.helper;
 import android.content.Context;
 import android.view.ViewGroup;
 
-import com.kabouzeid.gramophone.R;
+import org.omnirom.gramophone.R;
 
 /**
  * @author Karim Abou Zeid (kabouzeid)

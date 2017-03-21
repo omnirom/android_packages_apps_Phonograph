@@ -3,7 +3,7 @@ package com.kabouzeid.gramophone.ui.fragments.player;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.StringRes;
 
-import com.kabouzeid.gramophone.R;
+import org.omnirom.gramophone.R;
 
 public enum NowPlayingScreen {
     CARD(R.string.card, R.drawable.np_card, 0),

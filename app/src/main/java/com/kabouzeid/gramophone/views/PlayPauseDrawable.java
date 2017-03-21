@@ -17,7 +17,7 @@ import android.support.annotation.NonNull;
 import android.util.Property;
 import android.view.animation.DecelerateInterpolator;
 
-import com.kabouzeid.gramophone.R;
+import org.omnirom.gramophone.R;
 
 public class PlayPauseDrawable extends Drawable {
     private static final long PLAY_PAUSE_ANIMATION_DURATION = 250;

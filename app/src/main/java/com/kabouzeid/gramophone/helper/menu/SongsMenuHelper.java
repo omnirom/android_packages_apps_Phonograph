@@ -3,11 +3,12 @@ package com.kabouzeid.gramophone.helper.menu;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
 
-import com.kabouzeid.gramophone.R;
 import com.kabouzeid.gramophone.dialogs.AddToPlaylistDialog;
 import com.kabouzeid.gramophone.dialogs.DeleteSongsDialog;
 import com.kabouzeid.gramophone.helper.MusicPlayerRemote;
 import com.kabouzeid.gramophone.model.Song;
+
+import org.omnirom.gramophone.R;
 
 import java.util.ArrayList;
 

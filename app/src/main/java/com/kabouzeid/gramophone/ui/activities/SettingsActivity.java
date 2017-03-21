@@ -22,13 +22,13 @@ import android.preference.TwoStatePreference;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.kabouzeid.gramophone.R;
 import com.kabouzeid.gramophone.preferences.NowPlayingScreenPreference;
 import com.kabouzeid.gramophone.preferences.NowPlayingScreenPreferenceDialog;
 import com.kabouzeid.gramophone.ui.fragments.player.NowPlayingScreen;
 import com.kabouzeid.gramophone.util.NavigationUtil;
 import com.kabouzeid.gramophone.util.PreferenceUtil;
 
+import org.omnirom.gramophone.R;
 
 public class SettingsActivity extends PreferenceActivity implements OnPreferenceChangeListener {
     public static final String TAG = SettingsActivity.class.getSimpleName();

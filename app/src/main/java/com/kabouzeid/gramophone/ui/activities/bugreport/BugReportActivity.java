@@ -29,7 +29,6 @@ import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.kabouzeid.appthemehelper.ThemeStore;
 import com.kabouzeid.appthemehelper.util.TintHelper;
-import com.kabouzeid.gramophone.R;
 import com.kabouzeid.gramophone.misc.DialogAsyncTask;
 import com.kabouzeid.gramophone.ui.activities.base.AbsThemeActivity;
 import com.kabouzeid.gramophone.ui.activities.bugreport.model.DeviceInfo;
@@ -42,6 +41,8 @@ import org.eclipse.egit.github.core.Issue;
 import org.eclipse.egit.github.core.client.GitHubClient;
 import org.eclipse.egit.github.core.client.RequestException;
 import org.eclipse.egit.github.core.service.IssueService;
+
+import org.omnirom.gramophone.R;
 
 import java.io.IOException;
 import java.lang.annotation.Retention;

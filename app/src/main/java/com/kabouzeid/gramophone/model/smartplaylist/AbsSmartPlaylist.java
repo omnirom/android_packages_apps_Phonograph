@@ -5,9 +5,10 @@ import android.os.Parcel;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.Nullable;
 
-import com.kabouzeid.gramophone.R;
 import com.kabouzeid.gramophone.model.Playlist;
 import com.kabouzeid.gramophone.model.Song;
+
+import org.omnirom.gramophone.R;
 
 import java.util.ArrayList;
 

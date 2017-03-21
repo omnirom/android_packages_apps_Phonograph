@@ -8,9 +8,10 @@ import android.text.Html;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.kabouzeid.gramophone.R;
 import com.kabouzeid.gramophone.model.Playlist;
 import com.kabouzeid.gramophone.util.PlaylistsUtil;
+
+import org.omnirom.gramophone.R;
 
 import java.util.ArrayList;
 

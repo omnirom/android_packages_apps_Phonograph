@@ -16,7 +16,6 @@ import android.widget.TextView;
 
 import com.afollestad.materialcab.MaterialCab;
 import com.bumptech.glide.Glide;
-import com.kabouzeid.gramophone.R;
 import com.kabouzeid.gramophone.glide.SongGlideRequest;
 import com.kabouzeid.gramophone.helper.MusicPlayerRemote;
 import com.kabouzeid.gramophone.helper.menu.SongMenuHelper;
@@ -24,6 +23,8 @@ import com.kabouzeid.gramophone.helper.menu.SongsMenuHelper;
 import com.kabouzeid.gramophone.interfaces.CabHolder;
 import com.kabouzeid.gramophone.model.Song;
 import com.kabouzeid.gramophone.util.NavigationUtil;
+
+import org.omnirom.gramophone.R;
 
 import java.util.ArrayList;
 

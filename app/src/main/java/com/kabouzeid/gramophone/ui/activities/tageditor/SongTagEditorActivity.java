@@ -8,10 +8,11 @@ import android.text.TextWatcher;
 import android.widget.EditText;
 
 import com.kabouzeid.appthemehelper.util.ToolbarContentTintHelper;
-import com.kabouzeid.gramophone.R;
 import com.kabouzeid.gramophone.loader.SongLoader;
 
 import org.jaudiotagger.tag.FieldKey;
+
+import org.omnirom.gramophone.R;
 
 import java.util.ArrayList;
 import java.util.EnumMap;

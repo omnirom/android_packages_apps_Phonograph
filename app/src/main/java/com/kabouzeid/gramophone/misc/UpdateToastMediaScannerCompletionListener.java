@@ -6,7 +6,7 @@ import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.widget.Toast;
 
-import com.kabouzeid.gramophone.R;
+import org.omnirom.gramophone.R;
 
 import java.lang.ref.WeakReference;
 
