@@ -30,9 +30,6 @@
     public *;
 }
 
-# jaudiotagger
--keep class org.jaudiotagger.** { *; }
-
 #-keep class !android.support.v7.internal.view.menu.**,** {*;}
 
 -dontwarn

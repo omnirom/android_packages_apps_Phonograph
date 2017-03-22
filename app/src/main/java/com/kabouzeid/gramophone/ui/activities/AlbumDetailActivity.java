@@ -38,8 +38,6 @@ import com.kabouzeid.gramophone.misc.SimpleObservableScrollViewCallbacks;
 import com.kabouzeid.gramophone.misc.WrappedAsyncTaskLoader;
 import com.kabouzeid.gramophone.model.Album;
 import com.kabouzeid.gramophone.ui.activities.base.AbsSlidingMusicPanelActivity;
-import com.kabouzeid.gramophone.ui.activities.tageditor.AbsTagEditorActivity;
-import com.kabouzeid.gramophone.ui.activities.tageditor.AlbumTagEditorActivity;
 import com.kabouzeid.gramophone.util.NavigationUtil;
 import com.kabouzeid.gramophone.util.PhonographColorUtil;
 import com.kabouzeid.gramophone.util.Util;
@@ -245,11 +243,6 @@ public class AlbumDetailActivity extends AbsSlidingMusicPanelActivity implements
                 return true;
             case android.R.id.home:
                 super.onBackPressed();
-                return true;
-            case R.id.action_tag_editor:
-                Intent intent = new Intent(this, AlbumTagEditorActivity.class);
-                intent.putExtra(AbsTagEditorActivity.EXTRA_ID, getAlbum().getId());
-                startActivityForResult(intent, TAG_EDITOR_REQUEST);
                 return true;
             case R.id.action_go_to_artist:
                 NavigationUtil.goToArtist(this, getAlbum().getArtistId());
