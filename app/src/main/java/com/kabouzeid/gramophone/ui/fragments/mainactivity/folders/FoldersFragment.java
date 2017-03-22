@@ -448,7 +448,7 @@ public class FoldersFragment extends AbsMainActivityFragment implements MainActi
     FileFilter audioFileFilter = new FileFilter() {
         @Override
         public boolean accept(File file) {
-            return !file.isHidden() && (file.isDirectory() || FileUtil.fileIsMimeType(file, "audio/*", MimeTypeMap.getSingleton()));
+            return !file.isHidden() && (file.isDirectory() || FileUtil.fileIsAudioFile(file, MimeTypeMap.getSingleton()));
         }
     };
 

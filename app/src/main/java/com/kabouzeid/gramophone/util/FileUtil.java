@@ -160,4 +160,14 @@ public final class FileUtil {
         }
         return false;
     }
+
+    public static boolean fileIsAudioFile(File file, MimeTypeMap mimeTypeMap) {
+        final String[] audioMimeTypes = { "audio/*", "application/ogg", "application/x-ogg" };
+        for (String mimeType : audioMimeTypes) {
+            if (fileIsMimeType(file, mimeType, mimeTypeMap)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
