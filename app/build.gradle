@@ -17,8 +17,8 @@ android {
         vectorDrawables.useSupportLibrary = true
 
         applicationId "org.omnirom.gramophone"
-        versionCode 125
-        versionName "0.13.6"
+        versionCode 130
+        versionName "0.15.0 BETA 1"
     }
     buildTypes {
         release {
@@ -57,8 +57,8 @@ dependencies {
     compile 'com.android.support:preference-v14:25.3.0'
     compile 'com.android.support:palette-v7:25.3.0'
 
-    compile 'com.afollestad.material-dialogs:material-dialogs-core:0.9.3.0@aar'
-    compile 'com.afollestad.material-dialogs:material-dialogs-commons:0.9.3.0@aar'
+    compile 'com.afollestad.material-dialogs:material-dialogs-core:0.9.4.2@aar'
+    compile 'com.afollestad.material-dialogs:material-dialogs-commons:0.9.4.2@aar'
     compile 'com.afollestad:material-cab:0.1.12@aar'
 
     compile 'com.github.kabouzeid:SeekArc:1.2-kmod@aar'

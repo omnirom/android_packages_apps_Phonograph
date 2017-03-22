@@ -172,8 +172,9 @@
             android:label="@string/intro_label"
             android:theme="@style/Theme.Intro" />
         <activity
-            android:name="com.kabouzeid.gramophone.ui.activities.bugreport.BugReportActivity"
-            android:label="@string/report_an_issue" />
+            android:name="com.kabouzeid.gramophone.appshortcuts.AppShortcutLauncherActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:launchMode="singleInstance"/>
     </application>
 
 </manifest>

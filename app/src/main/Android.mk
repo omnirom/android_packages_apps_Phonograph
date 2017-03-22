@@ -110,8 +110,8 @@ include $(CLEAR_VARS)
 LOCAL_MODULE_TAGS := optional
 LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES := \
     app-theme-helper:libs/aar/app-theme-helper-1.3.4.aar \
-    material-dialogs-core:libs/aar/material-dialogs-core-0.9.3.0.aar \
-    material-dialogs-commons:libs/aar/material-dialogs-commons-0.9.3.0.aar \
+    material-dialogs-core:libs/aar/material-dialogs-core-0.9.4.2.aar \
+    material-dialogs-commons:libs/aar/material-dialogs-commons-0.9.4.2.aar \
     material-cab:libs/aar/material-cab-0.1.12.aar \
     SeekArc:libs/aar/SeekArc-1.2-kmod.aar \
     AndroidSlidingUpPanel:libs/aar/AndroidSlidingUpPanel-3.3.0-kmod3.aar \
@@ -120,8 +120,8 @@ LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES := \
     material-intro:libs/aar/material-intro-1.6.aar \
     material-progressbar-library:libs/aar/material-progressbar-library-1.3.0.aar \
     android-observablescrollview:libs/android-observablescrollview-1.6.0.jar \
-    retrofit:libs/retrofit-2.1.0.jar \
-    converter-gson:libs/converter-gson-2.1.0.jar \
+    retrofit:libs/retrofit-2.2.0.jar \
+    converter-gson:libs/converter-gson-2.2.0.jar \
     anjlab-library:libs/anjlab-library-2.4.0.jar \
     glide-local:libs/glide-3.7.0.jar \
     okhttp3:libs/okhttp-3.3.0.jar \

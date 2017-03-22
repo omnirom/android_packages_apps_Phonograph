@@ -134,7 +134,7 @@ public class PlayingNotificationImpl implements PlayingNotification {
 
                                 if (stopped)
                                     return; // notification has been stopped before loading was finished
-                                service.startForeground(1, notification);
+                                service.startForeground(NOTIFICATION_ID, notification);
                             }
 
                             private void setBackgroundColor(int color) {

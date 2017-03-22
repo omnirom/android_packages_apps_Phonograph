@@ -215,11 +215,6 @@ public class FlatPlayerFragment extends AbsPlayerFragment implements PlayerAlbum
         toolbar.setOnMenuItemClickListener(this);
     }
 
-    @Override
-    public boolean onMenuItemClick(MenuItem item) {
-        return super.onMenuItemClick(item);
-    }
-
     private void setUpRecyclerView() {
         recyclerViewDragDropManager = new RecyclerViewDragDropManager();
         final GeneralItemAnimator animator = new RefactoredDefaultItemAnimator();
