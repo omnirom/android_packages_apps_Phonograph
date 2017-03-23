@@ -17,7 +17,6 @@ import com.afollestad.materialdialogs.internal.ThemeSingleton;
 import com.kabouzeid.appthemehelper.ThemeStore;
 import com.kabouzeid.gramophone.dialogs.ChangelogDialog;
 import com.kabouzeid.gramophone.ui.activities.base.AbsBaseActivity;
-import com.kabouzeid.gramophone.ui.activities.bugreport.BugReportActivity;
 import com.kabouzeid.gramophone.ui.activities.intro.AppIntroActivity;
 
 import org.omnirom.gramophone.R;
@@ -172,8 +171,6 @@ public class AboutActivity extends AbsBaseActivity implements View.OnClickListen
             openUrl(GITHUB);
         } else if (v == visitWebsite) {
             openUrl(WEBSITE);
-        } else if (v == reportBugs) {
-            startActivity(new Intent(this, BugReportActivity.class));
         } else if (v == joinGooglePlusCommunity) {
             openUrl(GOOGLE_PLUS_COMMUNITY);
         } else if (v == translate) {
