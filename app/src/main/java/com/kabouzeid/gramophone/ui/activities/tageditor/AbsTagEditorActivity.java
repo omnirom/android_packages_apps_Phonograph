@@ -19,6 +19,7 @@ import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.github.ksoichiro.android.observablescrollview.ObservableScrollView;
@@ -278,6 +279,8 @@ public abstract class AbsTagEditorActivity extends AbsBaseActivity {
 
     private static class WriteTagsAsyncTask extends DialogAsyncTask<WriteTagsAsyncTask.LoadingInfo, Integer, String[]> {
         Context applicationContext;
+        boolean writeError = false;
+
 
         public WriteTagsAsyncTask(Context context) {
             super(context);
@@ -304,6 +307,7 @@ public abstract class AbsTagEditorActivity extends AbsBaseActivity {
                 int counter = 0;
                 boolean wroteArtwork = false;
                 boolean deletedArtwork = false;
+                writeError = false;
                 for (String filePath : info.filePaths) {
                     publishProgress(++counter, info.filePaths.size());
                     try {
@@ -333,7 +337,9 @@ public abstract class AbsTagEditorActivity extends AbsBaseActivity {
 
                         audioFile.commit();
                     } catch (CannotReadException | IOException | CannotWriteException | TagException | ReadOnlyFileException | InvalidAudioFrameException e) {
-                        e.printStackTrace();
+                        //e.printStackTrace();
+                        // remember error state to show toast
+                        writeError = true;
                     }
                 }
 
@@ -356,6 +362,9 @@ public abstract class AbsTagEditorActivity extends AbsBaseActivity {
         @Override
         protected void onPostExecute(String[] toBeScanned) {
             super.onPostExecute(toBeScanned);
+            if (writeError) {
+                Toast.makeText(getContext(), R.string.write_tag_error_toast, Toast.LENGTH_LONG).show();
+            }
             scan(toBeScanned);
         }
 
