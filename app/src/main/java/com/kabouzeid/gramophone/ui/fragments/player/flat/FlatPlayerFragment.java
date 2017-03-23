@@ -34,7 +34,6 @@ import com.kabouzeid.appthemehelper.util.ColorUtil;
 import com.kabouzeid.appthemehelper.util.ToolbarContentTintHelper;
 import com.kabouzeid.gramophone.adapter.base.MediaEntryViewHolder;
 import com.kabouzeid.gramophone.adapter.song.PlayingQueueAdapter;
-import com.kabouzeid.gramophone.dialogs.LyricsDialog;
 import com.kabouzeid.gramophone.dialogs.SongShareDialog;
 import com.kabouzeid.gramophone.helper.MusicPlayerRemote;
 import com.kabouzeid.gramophone.helper.menu.SongMenuHelper;
@@ -47,9 +46,6 @@ import com.kabouzeid.gramophone.util.Util;
 import com.kabouzeid.gramophone.util.ViewUtil;
 import com.kabouzeid.gramophone.views.WidthFitSquareLayout;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
-
-import org.jaudiotagger.audio.AudioFileIO;
-import org.jaudiotagger.tag.FieldKey;
 
 import org.omnirom.gramophone.R;
 
@@ -78,9 +74,6 @@ public class FlatPlayerFragment extends AbsPlayerFragment implements PlayerAlbum
     private RecyclerViewDragDropManager recyclerViewDragDropManager;
 
     private AsyncTask updateIsFavoriteTask;
-    private AsyncTask updateLyricsAsyncTask;
-
-    private LyricsDialog.LyricInfo lyricsInfo;
 
     private Impl impl;
 
@@ -165,7 +158,6 @@ public class FlatPlayerFragment extends AbsPlayerFragment implements PlayerAlbum
         updateQueue();
         updateCurrentSong();
         updateIsFavorite();
-        updateLyrics();
     }
 
     @Override
@@ -173,7 +165,6 @@ public class FlatPlayerFragment extends AbsPlayerFragment implements PlayerAlbum
         updateCurrentSong();
         updateIsFavorite();
         updateQueuePosition();
-        updateLyrics();
     }
 
     @Override
@@ -226,12 +217,6 @@ public class FlatPlayerFragment extends AbsPlayerFragment implements PlayerAlbum
 
     @Override
     public boolean onMenuItemClick(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_show_lyrics:
-                if (lyricsInfo != null)
-                    LyricsDialog.create(lyricsInfo).show(getFragmentManager(), "LYRICS");
-                return true;
-        }
         return super.onMenuItemClick(item);
     }
 
@@ -287,58 +272,6 @@ public class FlatPlayerFragment extends AbsPlayerFragment implements PlayerAlbum
                 }
             }
         }.execute(MusicPlayerRemote.getCurrentSong());
-    }
-
-    private void updateLyrics() {
-        if (updateLyricsAsyncTask != null) updateLyricsAsyncTask.cancel(false);
-        final Song song = MusicPlayerRemote.getCurrentSong();
-        updateLyricsAsyncTask = new AsyncTask<Void, Void, String>() {
-            @Override
-            protected void onPreExecute() {
-                super.onPreExecute();
-                lyricsInfo = null;
-                toolbar.getMenu().removeItem(R.id.action_show_lyrics);
-            }
-
-            @Override
-            protected String doInBackground(Void... params) {
-                try {
-                    return AudioFileIO.read(new File(song.data)).getTagOrCreateDefault().getFirst(FieldKey.LYRICS);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    cancel(false);
-                    return null;
-                }
-            }
-
-            @Override
-            protected void onPostExecute(String lyrics) {
-                super.onPostExecute(lyrics);
-                if (TextUtils.isEmpty(lyrics)) {
-                    lyricsInfo = null;
-                    if (toolbar != null) {
-                        toolbar.getMenu().removeItem(R.id.action_show_lyrics);
-                    }
-                } else {
-                    lyricsInfo = new LyricsDialog.LyricInfo(song.title, lyrics);
-                    Activity activity = getActivity();
-                    if (toolbar != null && activity != null)
-                        if (toolbar.getMenu().findItem(R.id.action_show_lyrics) == null) {
-                            int color = ToolbarContentTintHelper.toolbarContentColor(activity, Color.TRANSPARENT);
-                            Drawable drawable = Util.getTintedVectorDrawable(activity, R.drawable.ic_comment_text_outline_white_24dp, color);
-                            toolbar.getMenu()
-                                    .add(Menu.NONE, R.id.action_show_lyrics, Menu.NONE, R.string.action_show_lyrics)
-                                    .setIcon(drawable)
-                                    .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
-                        }
-                }
-            }
-
-            @Override
-            protected void onCancelled(String s) {
-                onPostExecute(null);
-            }
-        }.execute();
     }
 
     @Override
