@@ -217,6 +217,12 @@ public class FlatPlayerFragment extends AbsPlayerFragment implements PlayerAlbum
 
     @Override
     public boolean onMenuItemClick(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_show_lyrics:
+                if (lyricsInfo != null)
+                    LyricsDialog.create(lyricsInfo).show(getFragmentManager(), "LYRICS");
+                return true;
+        }
         return super.onMenuItemClick(item);
     }
 
