@@ -11,6 +11,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.kabouzeid.appthemehelper.ThemeStore;
@@ -21,8 +22,6 @@ import com.kabouzeid.gramophone.helper.PlayPauseButtonOnClickHandler;
 import com.kabouzeid.gramophone.ui.fragments.AbsMusicServiceFragment;
 import com.kabouzeid.gramophone.views.PlayPauseDrawable;
 
-import me.zhanghai.android.materialprogressbar.MaterialProgressBar;
-
 import org.omnirom.gramophone.R;
 
 /**
@@ -32,7 +31,7 @@ public class MiniPlayerFragment extends AbsMusicServiceFragment implements Music
 
     TextView miniPlayerTitle;
     ImageView miniPlayerPlayPauseButton;
-    MaterialProgressBar progressBar;
+    ProgressBar progressBar;
 
     private PlayPauseDrawable miniPlayerPlayPauseDrawable;
 
@@ -55,7 +54,7 @@ public class MiniPlayerFragment extends AbsMusicServiceFragment implements Music
         super.onViewCreated(view, savedInstanceState);
         miniPlayerTitle = (TextView) getView().findViewById(R.id.mini_player_title);
         miniPlayerPlayPauseButton = (ImageView) getView().findViewById(R.id.mini_player_play_pause_button);
-        progressBar = (MaterialProgressBar) getView().findViewById(R.id.progress_bar);
+        progressBar = (ProgressBar) getView().findViewById(R.id.progress_bar);
 
         view.setOnTouchListener(new FlingPlayBackController(getActivity()));
         setUpMiniPlayer();

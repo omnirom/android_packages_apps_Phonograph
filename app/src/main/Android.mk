@@ -63,8 +63,7 @@ LOCAL_STATIC_JAVA_AAR_LIBRARIES += app-theme-helper \
     AndroidSlidingUpPanel \
     licensesdialog \
     RecyclerView-FastScroll \
-    material-intro \
-    material-progressbar-library
+    material-intro
 
 LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res \
                       $(support_library_root_dir)/v14/preference/res \
@@ -93,7 +92,6 @@ LOCAL_AAPT_FLAGS := --auto-add-overlay \
     --extra-packages com.heinrichreimersoftware.materialintro \
     --extra-packages com.simplecityapps.recyclerview_fastscroll \
     --extra-packages com.sothree.slidinguppanel.library \
-    --extra-packages me.zhanghai.android.materialprogressbar \
     --extra-packages de.psdev.licensesdialog \
     --extra-packages com.triggertrap.seekarc \
     --extra-packages com.kabouzeid.appthemehelper
@@ -118,7 +116,6 @@ LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES := \
     licensesdialog:libs/aar/licensesdialog-1.8.1.aar \
     RecyclerView-FastScroll:libs/aar/RecyclerView-FastScroll-1.9-kmod.aar \
     material-intro:libs/aar/material-intro-1.6.aar \
-    material-progressbar-library:libs/aar/material-progressbar-library-1.3.0.aar \
     android-observablescrollview:libs/android-observablescrollview-1.6.0.jar \
     retrofit:libs/retrofit-2.1.0.jar \
     converter-gson:libs/converter-gson-2.1.0.jar \
