@@ -80,7 +80,6 @@ public class CardPlayerFragment extends AbsPlayerFragment implements PlayerAlbum
     private RecyclerViewDragDropManager recyclerViewDragDropManager;
 
     private AsyncTask updateIsFavoriteTask;
-    private AsyncTask updateLyricsAsyncTask;
 
     private LyricsDialog.LyricInfo lyricsInfo;
 
