@@ -46,7 +46,6 @@ import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 import org.omnirom.gramophone.R;
 
-import java.io.File;
 import java.util.ArrayList;
 
 public class MainActivity extends AbsSlidingMusicPanelActivity {
@@ -288,7 +287,7 @@ public class MainActivity extends AbsSlidingMusicPanelActivity {
         }
 
         if (uri != null && uri.toString().length() > 0) {
-            MusicPlayerRemote.playFile(new File(uri.getPath()).getAbsolutePath());
+            MusicPlayerRemote.playFromUri(uri);
             handled = true;
         } else if (MediaStore.Audio.Playlists.CONTENT_TYPE.equals(mimeType)) {
             final int id = (int) parseIdFromIntent(intent, "playlistId", "playlist");
