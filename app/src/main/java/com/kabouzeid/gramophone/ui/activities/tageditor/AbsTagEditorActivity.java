@@ -384,15 +384,7 @@ public abstract class AbsTagEditorActivity extends AbsBaseActivity {
             return new MaterialDialog.Builder(context)
                     .title(R.string.saving_changes)
                     .cancelable(false)
-                    .progress(false, 0)
                     .build();
-        }
-
-        @Override
-        protected void onProgressUpdate(Dialog dialog, Integer... values) {
-            super.onProgressUpdate(dialog, values);
-            ((MaterialDialog) dialog).setMaxProgress(values[1]);
-            ((MaterialDialog) dialog).setProgress(values[0]);
         }
 
         public static class LoadingInfo {

@@ -718,8 +718,6 @@ public class FoldersFragment extends AbsMainActivityFragment implements MainActi
         protected Dialog createDialog(@NonNull Context context) {
             return new MaterialDialog.Builder(context)
                     .title(R.string.listing_files)
-                    .progress(true, 0)
-                    .progressIndeterminateStyle(true)
                     .cancelListener(new DialogInterface.OnCancelListener() {
                         @Override
                         public void onCancel(DialogInterface dialog) {
