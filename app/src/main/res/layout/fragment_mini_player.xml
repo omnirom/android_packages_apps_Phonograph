@@ -52,11 +52,13 @@
 
     </LinearLayout>
 
-    <ProgressBar
+    <me.zhanghai.android.materialprogressbar.MaterialProgressBar
         android:id="@+id/progress_bar"
-        style="@android:style/Widget.ProgressBar.Horizontal"
+        style="@style/Widget.MaterialProgressBar.ProgressBar.Horizontal"
         android:layout_width="match_parent"
         android:layout_height="3dp"
-        android:layout_gravity="bottom"/>
+        android:layout_gravity="bottom"
+        app:mpb_progressStyle="horizontal"
+        app:mpb_useIntrinsicPadding="false" />
 
 </FrameLayout>
