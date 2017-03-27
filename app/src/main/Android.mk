@@ -128,7 +128,6 @@ LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES := \
     okhttp3-integration:libs/okhttp3-integration-1.4.0.jar \
     okio-sink:libs/okio-1.8.0.jar \
     advrecycler-view:libs/advrecyclerview-0.10.0.jar \
-    jaudiotagger:libs/jaudiotagger-android-2.2.3.jar \
-    gson:libs/gson-2.7.jar \
+    jaudiotagger:libs/jaudiotagger-android-2.2.3.jar
 
 include $(BUILD_MULTI_PREBUILT)
