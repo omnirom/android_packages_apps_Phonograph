@@ -4,9 +4,10 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.pm.ShortcutInfo;
 
-import com.kabouzeid.gramophone.R;
 import com.kabouzeid.gramophone.appshortcuts.AppShortcutIconGenerator;
 import com.kabouzeid.gramophone.appshortcuts.AppShortcutLauncherActivity;
+
+import org.omnirom.gramophone.R;
 
 /**
  * @author Adrian Campos

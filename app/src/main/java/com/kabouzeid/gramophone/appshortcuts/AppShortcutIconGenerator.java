@@ -11,9 +11,10 @@ import android.support.annotation.RequiresApi;
 import android.util.TypedValue;
 
 import com.kabouzeid.appthemehelper.ThemeStore;
-import com.kabouzeid.gramophone.R;
 import com.kabouzeid.gramophone.util.PreferenceUtil;
 import com.kabouzeid.gramophone.util.Util;
+
+import org.omnirom.gramophone.R;
 
 /**
  * @author Adrian Campos

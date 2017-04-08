@@ -215,17 +215,6 @@ public class FlatPlayerFragment extends AbsPlayerFragment implements PlayerAlbum
         toolbar.setOnMenuItemClickListener(this);
     }
 
-    @Override
-    public boolean onMenuItemClick(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_show_lyrics:
-                if (lyricsInfo != null)
-                    LyricsDialog.create(lyricsInfo).show(getFragmentManager(), "LYRICS");
-                return true;
-        }
-        return super.onMenuItemClick(item);
-    }
-
     private void setUpRecyclerView() {
         recyclerViewDragDropManager = new RecyclerViewDragDropManager();
         final GeneralItemAnimator animator = new RefactoredDefaultItemAnimator();
