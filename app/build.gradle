@@ -17,8 +17,8 @@ android {
         vectorDrawables.useSupportLibrary = true
 
         applicationId "org.omnirom.gramophone"
-        versionCode 130
-        versionName "0.15.0 BETA 1"
+        versionCode 131
+        versionName "0.15.0 BETA 2"
     }
     buildTypes {
         release {
