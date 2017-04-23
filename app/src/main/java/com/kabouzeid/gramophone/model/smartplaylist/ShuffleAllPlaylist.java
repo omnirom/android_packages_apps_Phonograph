@@ -4,10 +4,10 @@ import android.content.Context;
 import android.os.Parcel;
 import android.support.annotation.NonNull;
 
-import com.kabouzeid.gramophone.R;
 import com.kabouzeid.gramophone.loader.SongLoader;
 import com.kabouzeid.gramophone.model.Song;
 
+import org.omnirom.gramophone.R;
 import java.util.ArrayList;
 
 public class ShuffleAllPlaylist extends AbsSmartPlaylist {
