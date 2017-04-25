@@ -264,4 +264,5 @@
   <string name="copied_device_info_to_clipboard">Đã sao chép thông tin thiết bị vào bảng nhớ tạm (Clipboard).</string>
   <string name="your_account_data_is_only_used_for_authentication">Thông tin tài khoản của bạn chỉ dùng để chứng thực.</string>
   <string name="you_will_be_forwarded_to_the_issue_tracker_website">Bạn sẽ được đưa đến trang web theo dõi vấn đề.</string>
+  <!-- App Shortcuts -->
 </resources>

@@ -14,12 +14,12 @@
   <string name="action_skip">Ignorer</string>
   <string name="action_about">À propos</string>
   <string name="action_show_intro">Afficher l\'introduction</string>
-  <string name="action_clear_playlist">Effacer la playlist</string>
+  <string name="action_clear_playlist">Effacer la liste de lecture</string>
   <string name="action_playing_queue">Liste de lecture</string>
   <string name="action_add_to_favorites">Ajouter aux favoris</string>
   <string name="action_remove_from_favorites">Retirer des favoris</string>
   <string name="action_search">Rechercher</string>
-  <string name="action_play_next">Jouer ensuite</string>
+  <string name="action_play_next">Lecture suivante</string>
   <string name="action_play">Lecture</string>
   <string name="action_play_pause">Lecture/Pause</string>
   <string name="action_previous">Précédent</string>
@@ -63,7 +63,7 @@
   <string name="label_sampling_rate">Taux d\'échantillonnage</string>
   <string name="action_go_to_artist">Voir l\'artiste</string>
   <string name="action_go_to_album">Voir l\'album</string>
-  <string name="label_playing_queue">Jouer la file de lecture</string>
+  <string name="label_playing_queue">File de lecture</string>
   <string name="save_as_playlist">Sauvegarder en tant que playlist</string>
   <string name="no_results">Aucun résultats</string>
   <string name="action_re_download_artist_image">Actualiser l\'image de l\'artiste</string>
@@ -276,4 +276,5 @@
   <string name="copied_device_info_to_clipboard">Informations sur l\'appareil copiées dans le presse-papiers.</string>
   <string name="your_account_data_is_only_used_for_authentication">Vos données de compte sont utilisées pour l\'authentification uniquement.</string>
   <string name="you_will_be_forwarded_to_the_issue_tracker_website">Vous serez redirigé vers le site internet du traqueur de problèmes.</string>
+  <!-- App Shortcuts -->
 </resources>

@@ -264,4 +264,5 @@
   <string name="copied_device_info_to_clipboard">Apparaat info gekopieerd naar klembord.</string>
   <string name="your_account_data_is_only_used_for_authentication">Je accountgegevens worden alleen gebruikt voor authenticatie.</string>
   <string name="you_will_be_forwarded_to_the_issue_tracker_website">Je wordt doorverwezen naar de probleem bijhoud website.</string>
+  <!-- App Shortcuts -->
 </resources>

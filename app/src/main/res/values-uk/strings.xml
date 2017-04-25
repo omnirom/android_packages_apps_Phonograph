@@ -46,6 +46,7 @@
   <string name="year">Рік</string>
   <string name="track">Доріжка</string>
   <string name="track_hint">"Доріжка (2 для доріжки 2 або 3004 для CD3 доріжки 4)"</string>
+  <string name="lyrics">Тексти пісень</string>
   <string name="album_or_artist_empty">Назва або виконавець відсутні.</string>
   <string name="saving_changes">Збереження змін</string>
   <string name="saving_to_file">Збереження в файл...</string>
@@ -240,4 +241,5 @@
   <string name="app_widget_big_name">Phonograph - Великий</string>
   <string name="app_widget_classic_name">Phonograph - Класичний</string>
   <string name="app_widget_small_name">Phonograph - Малий</string>
+  <!-- App Shortcuts -->
 </resources>

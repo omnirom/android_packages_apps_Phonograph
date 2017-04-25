@@ -21,6 +21,9 @@
   <string name="action_search">Suche</string>
   <string name="action_play_next">Spiele als nächstes</string>
   <string name="action_play">Abspielen</string>
+  <string name="action_play_pause">Wiedergabe/Pause</string>
+  <string name="action_previous">Vorheriger Titel</string>
+  <string name="action_next">Nächster Titel</string>
   <string name="action_add_to_playing_queue">Zur Warteschlange hinzufügen</string>
   <string name="action_remove_from_playing_queue">Von Warteschlange entfernen</string>
   <string name="action_add_to_playlist">Zu Wiedergabeliste hinzufügen…</string>
@@ -46,6 +49,7 @@
   <string name="year">Jahr</string>
   <string name="track">Titel</string>
   <string name="track_hint">"Track (2 für Track 2 oder 3004 für CD 3 Track 4)"</string>
+  <string name="lyrics">Songtexte</string>
   <string name="album_or_artist_empty">Der Titel oder der Interpret ist leer.</string>
   <string name="saving_changes">Speichere Änderungen…</string>
   <string name="saving_to_file">In Datei speichern...</string>
@@ -187,6 +191,14 @@
   <string name="sleep_timer_set">Der Schlaf Timer geht ab jetzt %d Minuten lang.</string>
   <string name="action_new_playlist">Neue Wiedergabeliste…</string>
   <string name="new_playlist_title">Neue Wiedergabeliste</string>
+  <string name="grid_size_1">1</string>
+  <string name="grid_size_2">2</string>
+  <string name="grid_size_3">3</string>
+  <string name="grid_size_4">4</string>
+  <string name="grid_size_5">5</string>
+  <string name="grid_size_6">6</string>
+  <string name="grid_size_7">7</string>
+  <string name="grid_size_8">8</string>
   <string name="colored_footers">Farbige Balken</string>
   <string name="special_thanks_to">Besonderes Dankeschön an</string>
   <string name="changelog">Änderungen</string>
@@ -264,4 +276,5 @@
   <string name="copied_device_info_to_clipboard">Geräteinformation wurde in die Zwischenablage kopiert.</string>
   <string name="your_account_data_is_only_used_for_authentication">Deine Konto Daten werden ausschließlich zur Authentifizierung genutzt.</string>
   <string name="you_will_be_forwarded_to_the_issue_tracker_website">Du wirst zur Issue Tracker Webseite weitergeleitet.</string>
+  <!-- App Shortcuts -->
 </resources>
