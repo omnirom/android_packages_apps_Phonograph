@@ -120,6 +120,7 @@
   <string name="pref_header_images">Görüntüler</string>
   <string name="pref_header_lockscreen">Kilit ekranı</string>
   <string name="pref_title_navigation_bar">Renkli gezinti çubuğu</string>
+  <string name="pref_title_app_shortcuts">Renkli uygulama kısayolları</string>
   <string name="pref_title_set_default_start_page">Başlangıç sayfası</string>
   <string name="pref_title_album_art_on_lockscreen">Albüm kapağını göster</string>
   <string name="pref_title_auto_download_artist_images">Sanatçı resimlerini otomatik indir</string>
@@ -159,6 +160,7 @@
   <string name="playlist_name_empty">Çalma listesi adı</string>
   <string name="song">Şarkı</string>
   <string name="pref_only_lollipop">"Sadece Lollipop için."</string>
+  <string name="pref_only_nougat_mr1">"Sadece Nougat 7.1 üzerinde mevcuttur."</string>
   <string name="pref_summary_album_art_on_lockscreen">Kilit ekranı duvar kağıdı olarak çalan şarkının albüm kapağını kullanır.</string>
   <string name="pref_summary_blurred_album_art">Kilit ekranındaki bulanık albüm kapağı. 3. parti uygulama ve araçlarda problem oluşturabilir.</string>
   <string name="pref_summary_colored_notification">"Bildirimler alb\u00fcm kapa\u011f\u0131n\u0131n canl\u0131 renkleriyle renklendirilir."</string>
@@ -172,6 +174,7 @@
   <string name="pref_summary_ignore_media_store_artwork">Albüm kapağı kalitesinin artırılması daha yavaş görüntü yükleme sürelerine neden olabilir. Düşük çözünürlükte olan albüm kapakları ile ilgili sorunlar varsa bunu etkinleştirin.</string>
   <string name="pref_summary_colored_playback_controls_now_playing">Oynat/durdur, kar\u0131\u015ft\u0131r ve tekrar tu\u015flar\u0131n\u0131n yan\u0131 s\u0131ra ilerleme kayd\u0131r\u0131c\u0131 alb\u00fcm kapa\u011f\u0131n\u0131n canl\u0131 rengi ile renklendirilir.</string>
   <string name="pref_summary_colored_navigation_bar">Gezinme çubuğu renkleri birincil renkler içinden.</string>
+  <string name="pref_summary_colored_app_shortcuts">Uygulama kısayolları renkleri birincil renkler içinden.</string>
   <string name="pref_summary_audio_ducking">Bildirimler, gezinti vb.</string>
   <string name="could_not_download_album_cover">"E\u015flenen bir alb\u00fcm kapa\u011f\u0131 indirilemedi."</string>
   <string name="search_hint">Kütüphaneniz taranıyor...</string>
@@ -277,4 +280,10 @@
   <string name="your_account_data_is_only_used_for_authentication">Hesabınız ile ilgili veriler yalnızca kimlik doğrulaması için kullanılır.</string>
   <string name="you_will_be_forwarded_to_the_issue_tracker_website">Sorununuz sorun takip web sitesine iletilir.</string>
   <!-- App Shortcuts -->
+  <string name="app_shortcut_shuffle_all_long">Hepsini karıştır</string>
+  <string name="app_shortcut_shuffle_all_short">Karıştır</string>
+  <string name="app_shortcut_top_tracks_long">En iyi parçalarım</string>
+  <string name="app_shortcut_top_tracks_short">En İyi Parçalar</string>
+  <string name="app_shortcut_last_added_long">Son eklenen</string>
+  <string name="app_shortcut_last_added_short">Son eklenen</string>
 </resources>

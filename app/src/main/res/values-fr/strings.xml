@@ -159,6 +159,7 @@
   <string name="playlist_name_empty">Nom de la liste de lecture</string>
   <string name="song">Titre</string>
   <string name="pref_only_lollipop">"Disponible sur Lollipop uniquement."</string>
+  <string name="pref_only_nougat_mr1">"Disponible uniquement sur Nougat 7.1."</string>
   <string name="pref_summary_album_art_on_lockscreen">La pochette d\'album du titre actuel est utilisée comme fond d\'écran de verrouillage.</string>
   <string name="pref_summary_blurred_album_art">Floute la pochette d\'album sur l\'écran de verrouillage. Peut causer des problèmes avec des applications et des widgets tiers.</string>
   <string name="pref_summary_colored_notification">"Colore la notification en fonction de la pochette de l'album."</string>
@@ -277,4 +278,10 @@
   <string name="your_account_data_is_only_used_for_authentication">Vos données de compte sont utilisées pour l\'authentification uniquement.</string>
   <string name="you_will_be_forwarded_to_the_issue_tracker_website">Vous serez redirigé vers le site internet du traqueur de problèmes.</string>
   <!-- App Shortcuts -->
+  <string name="app_shortcut_shuffle_all_long">@string/action_shuffle_all</string>
+  <string name="app_shortcut_shuffle_all_short">Aléatoire</string>
+  <string name="app_shortcut_top_tracks_long">@string/my_top_tracks</string>
+  <string name="app_shortcut_top_tracks_short">Titres populaires</string>
+  <string name="app_shortcut_last_added_long">@string/last_added</string>
+  <string name="app_shortcut_last_added_short">@string/last_added</string>
 </resources>

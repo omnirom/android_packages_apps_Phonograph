@@ -21,6 +21,9 @@
   <string name="action_search">Szukaj</string>
   <string name="action_play_next">Odtwarzaj następny</string>
   <string name="action_play">Graj</string>
+  <string name="action_play_pause">Odtwarzanie/Pauza</string>
+  <string name="action_previous">Poprzedni</string>
+  <string name="action_next">Następny</string>
   <string name="action_add_to_playing_queue">Dodaj do kolejki odtwarzania</string>
   <string name="action_remove_from_playing_queue">Usuń z kolejki odtwarzania</string>
   <string name="action_add_to_playlist">Dodaj do listy odtwarzania...</string>
@@ -117,6 +120,7 @@
   <string name="pref_header_images">Obrazy</string>
   <string name="pref_header_lockscreen">Ekran blokady</string>
   <string name="pref_title_navigation_bar">Kolorowy pasek nawigacyjny</string>
+  <string name="pref_title_app_shortcuts">Kolorowe skróty aplikacji</string>
   <string name="pref_title_set_default_start_page">Strona startowa</string>
   <string name="pref_title_album_art_on_lockscreen">Pokazuj okładki albumów</string>
   <string name="pref_title_auto_download_artist_images">Automatyczne pobieranie zdjęć wykonawców</string>
@@ -156,6 +160,7 @@
   <string name="playlist_name_empty">Nazwa listy odtwarzania</string>
   <string name="song">Utwór</string>
   <string name="pref_only_lollipop">"Dostępne tylko w androidzie Lollipop"</string>
+  <string name="pref_only_nougat_mr1">"Ta funkcja jest dostępna tylko na Nougat 7.1."</string>
   <string name="pref_summary_album_art_on_lockscreen">Okładki albumów obecnie granych utworów będą zastępowały tapetę na ekranie blokady</string>
   <string name="pref_summary_blurred_album_art">Rozmywa okładki albumów na ekranie blokady. Mogą wystąpić problemy z aplikacjami firm trzecich oraz widżetami</string>
   <string name="pref_summary_colored_notification">"Odtwarzacz w pasku powiadomie\u0144 ma tonacj\u0119 ok\u0142adki albumu"</string>
@@ -169,6 +174,7 @@
   <string name="pref_summary_ignore_media_store_artwork">Polepszy to jakość okładek, ale może spowodować ich wolniejsze ładowanie. Zaznacz tylko wtedy, gdy masz kłopoty z niską jakością grafik</string>
   <string name="pref_summary_colored_playback_controls_now_playing">Przyciski Graj/Pauzuj, Losowo, Powt\u00f3rz oraz pasek post\u0119pu, b\u0119d\u0105 w tonacjach ok\u0142adek album\u00f3w</string>
   <string name="pref_summary_colored_navigation_bar">Kolory paska nawigacyjnego będą odpowiadały kolorowi podstawowemu</string>
+  <string name="pref_summary_colored_app_shortcuts">Koloruje skróty aplikacji na główny kolor.</string>
   <string name="pref_summary_audio_ducking">Notyfikacje, nawigacja, itp.</string>
   <string name="could_not_download_album_cover">"Nie uda\u0142o si\u0119 pobra\u0107 pasuj\u0105cej ok\u0142adki albumu"</string>
   <string name="search_hint">Szukaj w bibliotece...</string>
@@ -188,6 +194,14 @@
   <string name="sleep_timer_set">Wyłącznik czasowy ustawiony na %d minut od teraz</string>
   <string name="action_new_playlist">Nowa lista odtwarzania...</string>
   <string name="new_playlist_title">Nowa lista odtwarzania</string>
+  <string name="grid_size_1">1</string>
+  <string name="grid_size_2">2</string>
+  <string name="grid_size_3">3</string>
+  <string name="grid_size_4">4</string>
+  <string name="grid_size_5">5</string>
+  <string name="grid_size_6">6</string>
+  <string name="grid_size_7">7</string>
+  <string name="grid_size_8">8</string>
   <string name="colored_footers">Kolorowe stopki</string>
   <string name="special_thanks_to">Specjalne podziękowania dla</string>
   <string name="changelog">Lista zmian</string>
@@ -266,4 +280,10 @@
   <string name="your_account_data_is_only_used_for_authentication">Twoje dane konta używane są tylko do uwierzytelniania</string>
   <string name="you_will_be_forwarded_to_the_issue_tracker_website">Zostaniesz przekierowany do strony umożliwiającej śledzenie błędów</string>
   <!-- App Shortcuts -->
+  <string name="app_shortcut_shuffle_all_long">@string/action_shuffle_all</string>
+  <string name="app_shortcut_shuffle_all_short">Losowo</string>
+  <string name="app_shortcut_top_tracks_long">@string/my_top_tracks</string>
+  <string name="app_shortcut_top_tracks_short">Najlepsze utwory</string>
+  <string name="app_shortcut_last_added_long">@string/last_added</string>
+  <string name="app_shortcut_last_added_short">@string/last_added</string>
 </resources>
