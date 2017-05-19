@@ -160,7 +160,7 @@ public final class PreferenceUtil {
     }
 
     public final boolean classicNotification() {
-        return mPreferences.getBoolean(CLASSIC_NOTIFICATION, true);
+        return mPreferences.getBoolean(CLASSIC_NOTIFICATION, false);
     }
 
     public void setClassicNotification(final boolean value) {
