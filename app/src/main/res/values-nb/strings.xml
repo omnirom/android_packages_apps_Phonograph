@@ -4,5 +4,13 @@
   <string name="dark_theme_name">Mørk</string>
   <string name="black_theme_name">Svart (AMOLED)</string>
   <string name="pref_title_general_theme">Generelt tema</string>
+  <string name="update_image">Oppdater bilde</string>
+  <string name="pick_from_local_storage">Velg fra lokal lagring</string>
+  <string name="action_sleep_timer">Dvaletid</string>
+  <string name="cancel_current_timer">Avslutt gjeldende tidtaker</string>
+  <string name="sleep_timer_canceled">Dvaletid avbrutt.</string>
+  <string name="sleep_timer_set">Dvaletid satt %d minutter fra nå.</string>
+  <string name="permission_external_storage_denied">Tilgang til ekstern lagring avvist.</string>
+  <string name="bug_report_failed_wrong_credentials">Ugyldig brukernavn eller passord</string>
   <!-- App Shortcuts -->
 </resources>

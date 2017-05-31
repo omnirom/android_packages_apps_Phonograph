@@ -21,6 +21,9 @@
   <string name="action_search">Zoeken</string>
   <string name="action_play_next">Afspelen als volgende</string>
   <string name="action_play">Afspelen</string>
+  <string name="action_play_pause">Afspelen/pauzeren</string>
+  <string name="action_previous">Vorige</string>
+  <string name="action_next">Volgende</string>
   <string name="action_add_to_playing_queue">Toevoegen aan afspeelwachtrij</string>
   <string name="action_remove_from_playing_queue">Verwijderen uit afspeelwachtrij</string>
   <string name="action_add_to_playlist">Toevoegen aan afspeellijst…</string>
@@ -46,6 +49,7 @@
   <string name="year">Jaar</string>
   <string name="track">Nummer</string>
   <string name="track_hint">"Nummer (2 voor nr. 2, of 3004 voor CD3 nr. 4)"</string>
+  <string name="lyrics">Songtekst</string>
   <string name="album_or_artist_empty">De titel of artiest is leeg.</string>
   <string name="saving_changes">Wijzigingen opslaan</string>
   <string name="saving_to_file">Opslaan in bestand…</string>
@@ -116,6 +120,7 @@
   <string name="pref_header_images">Illustraties</string>
   <string name="pref_header_lockscreen">Vergrendelscherm</string>
   <string name="pref_title_navigation_bar">Gekleurde navigatiebalk</string>
+  <string name="pref_title_app_shortcuts">Gekleurde app snelkoppelingen</string>
   <string name="pref_title_set_default_start_page">Startpagina</string>
   <string name="pref_title_album_art_on_lockscreen">Toon albumhoes</string>
   <string name="pref_title_auto_download_artist_images">Download artiesten afbeeldingen</string>
@@ -155,6 +160,7 @@
   <string name="playlist_name_empty">Afspeellijstnaam</string>
   <string name="song">Nummer</string>
   <string name="pref_only_lollipop">"Alleen beschikbaar op Lollipop. "</string>
+  <string name="pref_only_nougat_mr1">"Alleen beschikbaar op Nougat 7.1."</string>
   <string name="pref_summary_album_art_on_lockscreen">Albumhoes wordt getoond op het vergrendelscherm.</string>
   <string name="pref_summary_blurred_album_art">Vervaagt de albumhoes op het vergrendelscherm. Kan problemen met andere apps of widgets veroorzaken.</string>
   <string name="pref_summary_colored_notification">"Notificatie wordt gekleurd met het palet van de albumhoes."</string>
@@ -168,6 +174,7 @@
   <string name="pref_summary_ignore_media_store_artwork">Dit kan de albumhoes kwaliteit doen toenemen, maar langere laadtijden veroorzaken. Gebruik dit alleen als je problemen hebt met lage resolutie illustraties.</string>
   <string name="pref_summary_colored_playback_controls_now_playing">De afspeel/pauze, shuffle en herhaal knop, evenals de progressiebalk, worden gekleurd met het palet van de albumhoes.</string>
   <string name="pref_summary_colored_navigation_bar">Kleurt de navigatiebalk in de primaire kleur.</string>
+  <string name="pref_summary_colored_app_shortcuts">De kleuren van de app-snelkoppelingen in de hoofdkleur.</string>
   <string name="pref_summary_audio_ducking">Notificaties, navigatie, etc.</string>
   <string name="could_not_download_album_cover">"Kan geen bijpassende albumhoes downloaden."</string>
   <string name="search_hint">Zoek in je bibliotheek…</string>
@@ -187,6 +194,14 @@
   <string name="sleep_timer_set">Slaaptimer gezet voor %d minuten vanaf nu.</string>
   <string name="action_new_playlist">Nieuwe afspeellijst…</string>
   <string name="new_playlist_title">Nieuwe afspeellijst</string>
+  <string name="grid_size_1">1</string>
+  <string name="grid_size_2">2</string>
+  <string name="grid_size_3">3</string>
+  <string name="grid_size_4">4</string>
+  <string name="grid_size_5">5</string>
+  <string name="grid_size_6">6</string>
+  <string name="grid_size_7">7</string>
+  <string name="grid_size_8">8</string>
   <string name="colored_footers">Gekleurde voetkaders</string>
   <string name="special_thanks_to">Speciale dank aan</string>
   <string name="changelog">Changelog</string>
@@ -265,4 +280,11 @@
   <string name="your_account_data_is_only_used_for_authentication">Je accountgegevens worden alleen gebruikt voor authenticatie.</string>
   <string name="you_will_be_forwarded_to_the_issue_tracker_website">Je wordt doorverwezen naar de probleem bijhoud website.</string>
   <!-- App Shortcuts -->
+  <string name="app_shortcut_shuffle_all_long">@string/action_shuffle_all</string>
+  <string name="app_shortcut_shuffle_all_short">Shuffle</string>
+  <string name="app_shortcut_top_tracks_long">@string/my_top_tracks</string>
+  <string name="app_shortcut_top_tracks_short">Top nummers</string>
+  <string name="app_shortcut_last_added_long">@string/last_added</string>
+  <string name="app_shortcut_last_added_short">@string/last_added</string>
+  <string name="playlist_is_empty">Afspeellijst is leeg</string>
 </resources>

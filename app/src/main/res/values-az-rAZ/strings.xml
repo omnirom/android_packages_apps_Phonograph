@@ -33,5 +33,24 @@
   <string name="year">İl</string>
   <string name="track">Mahnı</string>
   <string name="lyrics">Mahnı Sözləri</string>
+  <string name="label_details">Detallar</string>
+  <string name="label_file_name">Faylın adı</string>
+  <string name="label_file_size">Ölçü</string>
+  <string name="label_file_format">Format</string>
+  <string name="label_track_length">Uzunluq</string>
+  <string name="label_playing_queue">Sıra oynadılır</string>
+  <string name="updating">Yenilənir…</string>
+  <string name="clear_playlist_title">Playlisti təmizlə</string>
+  <string name="action_shuffle_all">Hamısını qarışdır</string>
+  <string name="action_shuffle_album">Albumu qarışdır</string>
+  <string name="light_theme_name">İşıq</string>
+  <string name="dark_theme_name">Tünd</string>
+  <string name="always">Həmişə</string>
+  <string name="never">Heç vaxt</string>
+  <string name="equalizer">Tarazlayıcı</string>
+  <string name="pref_header_colors">Rənglər</string>
+  <string name="pref_header_general">Ümumi</string>
+  <string name="pref_header_images">Şəkillər</string>
+  <string name="pref_header_lockscreen">Kilid ekranı</string>
   <!-- App Shortcuts -->
 </resources>

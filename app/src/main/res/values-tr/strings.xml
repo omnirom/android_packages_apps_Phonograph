@@ -286,4 +286,5 @@
   <string name="app_shortcut_top_tracks_short">En İyi Parçalar</string>
   <string name="app_shortcut_last_added_long">Son eklenen</string>
   <string name="app_shortcut_last_added_short">Son eklenen</string>
+  <string name="playlist_is_empty">Çalma listesi boş</string>
 </resources>

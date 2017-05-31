@@ -286,4 +286,5 @@
   <string name="app_shortcut_top_tracks_short">Legjobb dalok</string>
   <string name="app_shortcut_last_added_long">@string/last_added</string>
   <string name="app_shortcut_last_added_short">@string/last_added</string>
+  <string name="playlist_is_empty">Lejátszási lista üres</string>
 </resources>
