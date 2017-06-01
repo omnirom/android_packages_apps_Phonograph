@@ -47,6 +47,7 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
         addPreferencesFromResource(R.xml.pref_images);
         addPreferencesFromResource(R.xml.pref_lockscreen);
         addPreferencesFromResource(R.xml.pref_audio);
+        addPreferencesFromResource(R.xml.pref_playlists);
 
         Preference equalizer = findPreference("equalizer");
         if (!hasEqualizer()) {
