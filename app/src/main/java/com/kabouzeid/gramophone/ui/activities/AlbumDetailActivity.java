@@ -5,18 +5,23 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
+import android.text.Spanned;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.afollestad.materialcab.MaterialCab;
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.afollestad.materialdialogs.util.DialogUtils;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestListener;
@@ -33,6 +38,8 @@ import com.kabouzeid.gramophone.helper.MusicPlayerRemote;
 import com.kabouzeid.gramophone.interfaces.CabHolder;
 import com.kabouzeid.gramophone.interfaces.LoaderIds;
 import com.kabouzeid.gramophone.interfaces.PaletteColorHolder;
+import com.kabouzeid.gramophone.lastfm.rest.LastFMRestClient;
+import com.kabouzeid.gramophone.lastfm.rest.model.LastFmAlbum;
 import com.kabouzeid.gramophone.loader.AlbumLoader;
 import com.kabouzeid.gramophone.misc.SimpleObservableScrollViewCallbacks;
 import com.kabouzeid.gramophone.misc.WrappedAsyncTaskLoader;
@@ -45,6 +52,10 @@ import com.kabouzeid.gramophone.util.PhonographColorUtil;
 import com.kabouzeid.gramophone.util.Util;
 
 import org.omnirom.gramophone.R;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * Be careful when changing things in this Activity!
@@ -74,6 +85,10 @@ public class AlbumDetailActivity extends AbsSlidingMusicPanelActivity implements
     private int toolbarColor;
     private float toolbarAlpha;
 
+    @Nullable
+    private Spanned wiki;
+    private LastFMRestClient lastFMRestClient;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,6 +100,8 @@ public class AlbumDetailActivity extends AbsSlidingMusicPanelActivity implements
         songsBackgroundView = findViewById(R.id.list_background);
 
         supportPostponeEnterTransition();
+
+        lastFMRestClient = new LastFMRestClient(this);
 
         setUpObservableListViewParams();
         setUpToolBar();
@@ -230,6 +247,42 @@ public class AlbumDetailActivity extends AbsSlidingMusicPanelActivity implements
         return true;
     }
 
+    private MaterialDialog getWikiDialog() {
+        return new MaterialDialog.Builder(AlbumDetailActivity.this)
+                .title(getAlbum().getTitle())
+                .content(wiki != null ? wiki : "")
+                .positiveText(android.R.string.ok)
+                .build();
+    }
+
+    private void loadWiki() {
+        final Callback<LastFmAlbum> wikiCallback = new Callback<LastFmAlbum>(){
+            @Override
+            public void onResponse(Call<LastFmAlbum> call, Response<LastFmAlbum> response) {
+                LastFmAlbum lastFmAlbum = response.body();
+                if (lastFmAlbum.getAlbum().getWiki() != null) {
+                    String wik = lastFmAlbum.getAlbum().getWiki().getContent();
+                    if (wik != null && !wik.trim().equals("")) {
+                        wiki = Html.fromHtml(wik);
+                        return;
+                    }
+                }
+                if(call.request().url().queryParameter("lang") != null){
+                    //If the "lang" parameter is set and no wiki is given, retry with default language
+                    lastFMRestClient.getApiService().getAlbumInfo(getAlbum().getTitle(), getAlbum().getArtistName(), null).enqueue(this);
+                }
+                wiki = null;
+            }
+
+            @Override
+            public void onFailure(Call<LastFmAlbum> call, Throwable t) {
+                t.printStackTrace();
+                wiki = null;
+            }
+        };
+        lastFMRestClient.getApiService().getAlbumInfo(getAlbum().getTitle(), getAlbum().getArtistName(), Locale.getDefault().getLanguage()).enqueue(wikiCallback);
+    }
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
@@ -253,6 +306,13 @@ public class AlbumDetailActivity extends AbsSlidingMusicPanelActivity implements
                 return true;
             case R.id.action_go_to_artist:
                 NavigationUtil.goToArtist(this, getAlbum().getArtistId());
+                return true;
+            case R.id.action_wiki:
+                if (wiki != null) {
+                    getWikiDialog().show();
+                } else {
+                    Toast.makeText(AlbumDetailActivity.this, getResources().getString(R.string.biography_unavailable), Toast.LENGTH_SHORT).show();
+                }
                 return true;
         }
         return super.onOptionsItemSelected(item);
@@ -320,6 +380,7 @@ public class AlbumDetailActivity extends AbsSlidingMusicPanelActivity implements
     private void setAlbum(Album album) {
         this.album = album;
         loadAlbumCover();
+        loadWiki();
         albumTitleView.setText(album.getTitle());
         adapter.swapDataSet(album.songs);
     }
