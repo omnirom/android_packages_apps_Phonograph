@@ -54,8 +54,9 @@ import com.kabouzeid.gramophone.util.NavigationUtil;
 import com.kabouzeid.gramophone.util.PhonographColorUtil;
 import com.kabouzeid.gramophone.util.PreferenceUtil;
 import com.kabouzeid.gramophone.util.Util;
-
 import org.omnirom.gramophone.R;
+
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -217,7 +218,7 @@ public class ArtistDetailActivity extends AbsSlidingMusicPanelActivity implement
     }
 
     private void loadBiography() {
-        lastFMRestClient.getApiService().getArtistInfo(getArtist().getName(), null).enqueue(new Callback<LastFmArtist>() {
+        lastFMRestClient.getApiService().getArtistInfo(getArtist().getName(), Locale.getDefault().getLanguage(), null).enqueue(new Callback<LastFmArtist>() {
             @Override
             public void onResponse(Call<LastFmArtist> call, Response<LastFmArtist> response) {
                 LastFmArtist lastFmArtist = response.body();
