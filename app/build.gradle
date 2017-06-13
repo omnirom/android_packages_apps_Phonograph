@@ -19,9 +19,9 @@ android {
         renderscriptTargetApi 25
         vectorDrawables.useSupportLibrary = true
 
-        applicationId "org.omnirom.gramophone"
+        applicationId 'org.omnirom.gramophone'
         versionCode 132
-        versionName "0.15.0"
+        versionName '0.15.0'
     }
     buildTypes {
         release {
