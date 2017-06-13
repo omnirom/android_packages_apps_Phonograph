@@ -83,7 +83,7 @@ public class AboutActivity extends AbsBaseActivity implements View.OnClickListen
         writeAnEmail = (LinearLayout) findViewById(R.id.write_an_email);
         addToGooglePlusCircles = (LinearLayout) findViewById(R.id.add_to_google_plus_circles);
         followOnTwitter = (LinearLayout) findViewById(R.id.follow_on_twitter);
-        forkOnGitHub = (LinearLayout) findViewById(R.id.fork_on_git_hub);
+        forkOnGitHub = (LinearLayout) findViewById(R.id.fork_on_github);
         visitWebsite = (LinearLayout) findViewById(R.id.visit_website);
         reportBugs = (LinearLayout) findViewById(R.id.report_bugs);
         joinGooglePlusCommunity = (LinearLayout) findViewById(R.id.join_google_plus_community);

@@ -6,7 +6,6 @@ import android.support.annotation.NonNull;
 
 import com.kabouzeid.gramophone.loader.LastAddedLoader;
 import com.kabouzeid.gramophone.model.Song;
-import com.kabouzeid.gramophone.util.PreferenceUtil;
 
 import org.omnirom.gramophone.R;
 

@@ -97,6 +97,31 @@
         </activity>
         <activity android:name="com.kabouzeid.gramophone.ui.activities.AlbumDetailActivity" />
         <activity android:name="com.kabouzeid.gramophone.ui.activities.ArtistDetailActivity" />
+        <activity android:name="com.kabouzeid.gramophone.ui.activities.PlaylistDetailActivity" />
+        <activity
+            android:name="com.kabouzeid.gramophone.ui.activities.tageditor.SongTagEditorActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.kabouzeid.gramophone.ui.activities.tageditor.AlbumTagEditorActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".ui.activities.SearchActivity" />
+        <activity
+            android:name="com.kabouzeid.gramophone.ui.activities.SettingsActivity"
+            android:label="@string/action_settings" />
+        <activity
+            android:name="com.kabouzeid.gramophone.ui.activities.AboutActivity"
+            android:label="@string/action_about" />
+        <activity
+            android:name="com.kabouzeid.gramophone.ui.activities.intro.AppIntroActivity"
+            android:label="@string/intro_label"
+            android:theme="@style/Theme.Intro" />
+        <activity
+            android:name="com.kabouzeid.gramophone.ui.activities.bugreport.BugReportActivity"
+            android:label="@string/report_an_issue" />
+        <activity
+            android:name="com.kabouzeid.gramophone.appshortcuts.AppShortcutLauncherActivity"
+            android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <service
             android:name="com.kabouzeid.gramophone.service.MusicService"
