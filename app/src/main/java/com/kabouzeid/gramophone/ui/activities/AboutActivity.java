@@ -129,6 +129,7 @@ public class AboutActivity extends AbsBaseActivity implements View.OnClickListen
         forkOnGitHub.setOnClickListener(this);
         visitWebsite.setOnClickListener(this);
         reportBugs.setOnClickListener(this);
+        writeAnEmail.setOnClickListener(this);
         joinGooglePlusCommunity.setOnClickListener(this);
         translate.setOnClickListener(this);
         donate.setOnClickListener(this);
