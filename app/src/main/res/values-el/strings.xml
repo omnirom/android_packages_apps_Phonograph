@@ -21,6 +21,8 @@
   <string name="action_search">Αναζήτηση</string>
   <string name="action_play_next">Επόμενο</string>
   <string name="action_play">Αναπαραγωγή</string>
+  <string name="action_play_pause">Αναπαραγωγή/παύση</string>
+  <string name="action_previous">Προηγούμενο</string>
   <string name="action_add_to_playing_queue">Προσθήκη στη σειρά τραγουδιών</string>
   <string name="action_remove_from_playing_queue">Διαγραφή από την σειρά τραγουδιών</string>
   <string name="action_add_to_playlist">Προσθήκη στην λίστα αναπαραγωγής</string>

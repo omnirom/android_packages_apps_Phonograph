@@ -21,6 +21,9 @@
   <string name="action_search">Pesquisar</string>
   <string name="action_play_next">Reproduzir a próxima</string>
   <string name="action_play">Reproduzir</string>
+  <string name="action_play_pause">Reproduzir/pausa</string>
+  <string name="action_previous">Anterior</string>
+  <string name="action_next">Próxima</string>
   <string name="action_add_to_playing_queue">Adicionar à fila de reprodução</string>
   <string name="action_remove_from_playing_queue">Remover da fila de reprodução</string>
   <string name="action_add_to_playlist">Adicionar à lista de reprodução...</string>
@@ -46,6 +49,7 @@
   <string name="year">Ano</string>
   <string name="track">Faixa</string>
   <string name="track_hint">"Faixa (2 para faixa 2 ou 3004 para CD3 faixa 4)"</string>
+  <string name="lyrics">Letra</string>
   <string name="album_or_artist_empty">O título do álbum ou o artista está vazio.</string>
   <string name="saving_changes">A gravar alterações</string>
   <string name="saving_to_file">A gravar no ficheiro...</string>
@@ -116,6 +120,7 @@
   <string name="pref_header_images">Imagens</string>
   <string name="pref_header_lockscreen">Ecrã de Bloqueio</string>
   <string name="pref_title_navigation_bar">Barra de navegação colorida</string>
+  <string name="pref_title_app_shortcuts">Atalhos coloridos da aplicação</string>
   <string name="pref_title_set_default_start_page">Página Inicial</string>
   <string name="pref_title_album_art_on_lockscreen">Mostrar capa do álbum</string>
   <string name="pref_title_auto_download_artist_images">Download automático das imagens dos artistas</string>
@@ -130,6 +135,7 @@
   <string name="pref_title_alternative_progress_slider_now_playing">Controlo deslizante de progresso alternativo</string>
   <string name="pref_title_playback_controller_card_now_playing">Mostrar cartão abaixo dos controlos de reprodução</string>
   <string name="pref_title_colored_playback_controls_now_playing">Controlos de reprodução coloridos</string>
+  <string name="pref_title_audio_ducking">Reduzir o volume em caso de perda de foco de audio</string>
   <string name="no_equalizer">Nenhum equalizador encontrado.</string>
   <string name="no_audio_ID">"Reproduza uma faixa primeiro, e tente outra vez."</string>
   <string name="delete_action">Eliminar</string>
@@ -154,6 +160,7 @@
   <string name="playlist_name_empty">Nome de lista de reprodução</string>
   <string name="song">Música</string>
   <string name="pref_only_lollipop">"Só disponível para Lollipop."</string>
+  <string name="pref_only_nougat_mr1">"Disponível apenas com Nougat 7.1."</string>
   <string name="pref_summary_album_art_on_lockscreen">Usa a capa de álbum da faixa atual como papel de parede da tela de bloqueio.</string>
   <string name="pref_summary_blurred_album_art">Desfoca a capa do álbum no ecrã de bloqueio. Pode causar problemas com aplicações de terceiros e widgets.</string>
   <string name="pref_summary_colored_notification">"Colorir a notifica\u00e7\u00e3o na cor viva da capa de \u00e1lbum."</string>
@@ -167,6 +174,7 @@
   <string name="pref_summary_ignore_media_store_artwork">Pode aumentar a qualidade da capa do album, mas aumenta o tempo de carregamento. Ative isto somente se tiver problemas com capas de baixa resolução.</string>
   <string name="pref_summary_colored_playback_controls_now_playing">Colorir controlos de reprodu\u00e7\u00e3o com a cor vibrante da capa do \u00e1lbum</string>
   <string name="pref_summary_colored_navigation_bar">Colorir a barra de navegação na cor primária.</string>
+  <string name="pref_summary_colored_app_shortcuts">Colorir a barra de navegação com a cor principal.</string>
   <string name="pref_summary_audio_ducking">Notificações, navegação etc.</string>
   <string name="could_not_download_album_cover">"N\u00e3o foi encontrada uma capa para este \u00e1lbum."</string>
   <string name="search_hint">Procurar na biblioteca...</string>
@@ -186,6 +194,14 @@
   <string name="sleep_timer_set">Temporizador para dormir definido para %d minutos a partir de agora.</string>
   <string name="action_new_playlist">Nova lista de reprodução...</string>
   <string name="new_playlist_title">Nova lista de reprodução</string>
+  <string name="grid_size_1">1</string>
+  <string name="grid_size_2">2</string>
+  <string name="grid_size_3">3</string>
+  <string name="grid_size_4">4</string>
+  <string name="grid_size_5">5</string>
+  <string name="grid_size_6">6</string>
+  <string name="grid_size_7">7</string>
+  <string name="grid_size_8">8</string>
   <string name="colored_footers">Rodapés coloridos</string>
   <string name="special_thanks_to">Agradecimentos especiais a</string>
   <string name="changelog">Changelog</string>
@@ -231,9 +247,11 @@
   <string name="folders">Pastas</string>
   <string name="saved_playlist_to">Lista de reprodução %s salva.</string>
   <string name="failed_to_save_playlist">Erro a salvar a lista de reprodução (%s).</string>
+  <string name="not_listed_in_media_store"><![CDATA[<b>%s</b> não consta do armazenamento.]]></string>
   <string name="nothing_to_scan">Nada para verificar.</string>
   <string name="scanned_files">Verificados %1$d de %2$d ficheiros.</string>
   <string name="could_not_scan_files">Não é possível verificar %d ficheiros.</string>
+  <string name="listing_files">Listar arquivos</string>
   <string name="new_start_directory">%s é a nova diretoria principal</string>
   <string name="app_widget_big_name">Phonograph - Grande</string>
   <string name="app_widget_classic_name">Phonograph - Clássico</string>
@@ -257,6 +275,7 @@
   <string name="bug_report_failed_wrong_credentials">Nome ou senha errados</string>
   <string name="bug_report_failed_invalid_token">Token de acesso inválido. Por favor contacte o desenvolvedor da aplicação.</string>
   <string name="bug_report_failed_unknown">Ocorreu um erro inesperado. Por favor contacte o desenvolvedor da aplicação.</string>
+  <string name="copied_device_info_to_clipboard">A informação do dispositivo foi copiada para a área de transferência.</string>
   <string name="your_account_data_is_only_used_for_authentication">A sua informação da conta é apenas usada para a autenticação.</string>
   <string name="you_will_be_forwarded_to_the_issue_tracker_website">Vai ser reencaminhado para o site do rastreador de problemas.</string>
   <!-- App Shortcuts -->

@@ -286,4 +286,5 @@
   <string name="app_shortcut_top_tracks_short">Top-Titel</string>
   <string name="app_shortcut_last_added_long">@string/last_added</string>
   <string name="app_shortcut_last_added_short">@string/last_added</string>
+  <string name="playlist_is_empty">Wiedergabeliste ist leer</string>
 </resources>

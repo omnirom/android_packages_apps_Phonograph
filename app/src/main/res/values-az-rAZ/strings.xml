@@ -52,5 +52,29 @@
   <string name="pref_header_general">Ümumi</string>
   <string name="pref_header_images">Şəkillər</string>
   <string name="pref_header_lockscreen">Kilid ekranı</string>
+  <string name="grid_size_1">1</string>
+  <string name="grid_size_2">2</string>
+  <string name="grid_size_3">3</string>
+  <string name="grid_size_4">4</string>
+  <string name="grid_size_5">5</string>
+  <string name="grid_size_6">6</string>
+  <string name="grid_size_7">7</string>
+  <string name="grid_size_8">8</string>
+  <string name="thank_you">Sağ olun!</string>
+  <string name="version">Versiya</string>
+  <string name="application">Tətbiqetmə</string>
+  <string name="author">Müəllif</string>
+  <string name="visit_website">Səhifəyə nəzər sal</string>
+  <string name="translate">Tərcümə</string>
+  <string name="rate_on_google_play">Qiymətləndir</string>
+  <string name="donate">Hədiyyə et</string>
+  <string name="website">Web səhifə</string>
+  <string name="pref_title_now_playing_screen_appearance">Görünüş</string>
+  <string name="intro_label">Giriş</string>
+  <string name="library">Kitabxana</string>
+  <string name="folders">Qovluqlar</string>
+  <string name="login">Giriş</string>
+  <string name="title">Başlıq</string>
   <!-- App Shortcuts -->
+  <string name="app_shortcut_shuffle_all_short">Qarışdır</string>
 </resources>
