@@ -95,6 +95,7 @@ public class ArtistDetailActivity extends AbsSlidingMusicPanelActivity implement
     private Artist artist;
     @Nullable
     private Spanned biography;
+    private MaterialDialog biographyDialog;
     private HorizontalAlbumAdapter albumAdapter;
     private ArtistSongAdapter songAdapter;
 
@@ -229,14 +230,17 @@ public class ArtistDetailActivity extends AbsSlidingMusicPanelActivity implement
                     String bio = lastFmArtist.getArtist().getBio().getContent();
                     if (bio != null && !bio.trim().equals("")) {
                         biography = Html.fromHtml(bio);
+                        biographyReady();
                         return;
                     }
-                    else if(call.request().url().queryParameter("lang") != null){
-                        //If the "lang" parameter is set and no bio is given, retry with default language
+                    else if(call.request().url().queryParameter("lang") != null) {
+                        //If the "lang" parameter is set and no biography is given, retry with default language
                         lastFMRestClient.getApiService().getArtistInfo(getArtist().getName(), null, null).enqueue(this);
+                        return;
                     }
                 }
                 biography = null;
+                biographyReady();
             }
 
             @Override
@@ -248,12 +252,15 @@ public class ArtistDetailActivity extends AbsSlidingMusicPanelActivity implement
         lastFMRestClient.getApiService().getArtistInfo(getArtist().getName(), Locale.getDefault().getLanguage(), null).enqueue(bioCallback);
     }
 
-    private MaterialDialog getBiographyDialog() {
-        return new MaterialDialog.Builder(ArtistDetailActivity.this)
-                .title(getArtist().getName())
-                .content(biography != null ? biography : "")
-                .positiveText(android.R.string.ok)
-                .build();
+    private void biographyReady() {
+        if(!Util.isAllowedToAutoDownload(ArtistDetailActivity.this)) {
+            if(biography != null) {
+                biographyDialog.setContent(biography);
+            } else {
+                biographyDialog.dismiss();
+                Toast.makeText(ArtistDetailActivity.this, getResources().getString(R.string.biography_unavailable), Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
     private void loadArtistImage(final boolean forceDownload) {
@@ -356,10 +363,17 @@ public class ArtistDetailActivity extends AbsSlidingMusicPanelActivity implement
                 super.onBackPressed();
                 return true;
             case R.id.action_biography:
-                if (biography != null) {
-                    getBiographyDialog().show();
-                } else {
-                    Toast.makeText(ArtistDetailActivity.this, getResources().getString(R.string.biography_unavailable), Toast.LENGTH_SHORT).show();
+                if(Util.isAllowedToAutoDownload(ArtistDetailActivity.this)) {
+                    if (biography != null) {
+                        biographyDialog.setContent(biography);
+                        biographyDialog.show();
+                    } else {
+                        Toast.makeText(ArtistDetailActivity.this, getResources().getString(R.string.biography_unavailable), Toast.LENGTH_SHORT).show();
+                    }
+                }
+                else {
+                    biographyDialog.show();
+                    loadBiography();
                 }
                 return true;
             case R.id.action_re_download_artist_image:
@@ -427,7 +441,13 @@ public class ArtistDetailActivity extends AbsSlidingMusicPanelActivity implement
     private void setArtist(Artist artist) {
         this.artist = artist;
         loadArtistImage(false);
-        loadBiography();
+        if(Util.isAllowedToAutoDownload(ArtistDetailActivity.this))
+            loadBiography();
+        biographyDialog=new MaterialDialog.Builder(ArtistDetailActivity.this)
+                .title(artist.getName())
+                .content("")
+                .positiveText(android.R.string.ok)
+                .build();
         artistName.setText(artist.getName());
         songAdapter.swapDataSet(artist.getSongs());
         albumAdapter.swapDataSet(artist.albums);
