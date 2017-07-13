@@ -120,6 +120,7 @@
   <string name="pref_header_images">Imagens</string>
   <string name="pref_header_lockscreen">Bloqueio de tela</string>
   <string name="pref_title_navigation_bar">Barra de navegação colorida</string>
+  <string name="pref_title_app_shortcuts">Atalhos coloridos da aplicação</string>
   <string name="pref_title_set_default_start_page">Página inicial</string>
   <string name="pref_title_album_art_on_lockscreen">Visualizar capa do álbum</string>
   <string name="pref_title_auto_download_artist_images">Baixar as imagens dos artistas automaticamente</string>
@@ -159,6 +160,7 @@
   <string name="playlist_name_empty">Nome da Playlist</string>
   <string name="song">Música</string>
   <string name="pref_only_lollipop">"Apenas disponível no Lollipop."</string>
+  <string name="pref_only_nougat_mr1">"Apenas disponível no Android 7.1 (Nougat)"</string>
   <string name="pref_summary_album_art_on_lockscreen">A imagem do álbum está sendo mostrada no bloqueio de tela. Você deve reiniciar o Phonograph para as mudanças fazerem efeito.</string>
   <string name="pref_summary_blurred_album_art">Esmaece a capa de álbum no bloqueio de tela. Pode causar problemas com aplicativos de terceiros e widgets.</string>
   <string name="pref_summary_colored_notification">"A notifica\u00e7\u00e3o \u00e9 colorida com a cor mais vibrante do \u00e1lbum."</string>
@@ -172,6 +174,7 @@
   <string name="pref_summary_ignore_media_store_artwork">Pode aumentar a qualidade da capa do álbum, mas faz com tempos de carregamento mais lento imagem. Só habilite esta opção se você tiver problemas com obras de arte de baixa resolução.</string>
   <string name="pref_summary_colored_playback_controls_now_playing">Cores play/pause, aleat\u00f3rio e repetir assim como a barra de progresso na cor vibrante da capa do \u00e1lbum.</string>
   <string name="pref_summary_colored_navigation_bar">Cores da barra de navegação na cor primária.</string>
+  <string name="pref_summary_colored_app_shortcuts">Coloca os atalhos do aplicativo na cor primária.</string>
   <string name="pref_summary_audio_ducking">Notificações, navegação, etc.</string>
   <string name="could_not_download_album_cover">"N\u00e3o foi poss\u00edvel baixar uma capa do \u00e1lbum correspondente."</string>
   <string name="search_hint">Pesquisar na sua biblioteca...</string>
@@ -277,4 +280,11 @@
   <string name="your_account_data_is_only_used_for_authentication">Os dados de sua conta são usados apenas para autenticação.</string>
   <string name="you_will_be_forwarded_to_the_issue_tracker_website">Você será encaminhado ao nosso site de registro de erros.</string>
   <!-- App Shortcuts -->
+  <string name="app_shortcut_shuffle_all_long">@string/action_shuffle_all</string>
+  <string name="app_shortcut_shuffle_all_short">Aleatório</string>
+  <string name="app_shortcut_top_tracks_long">@string/my_top_tracks</string>
+  <string name="app_shortcut_top_tracks_short">Melhores músicas</string>
+  <string name="app_shortcut_last_added_long">@string/last_added</string>
+  <string name="app_shortcut_last_added_short">@string/last_added</string>
+  <string name="playlist_is_empty">A lista de reprodução está vazia</string>
 </resources>
