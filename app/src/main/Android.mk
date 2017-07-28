@@ -102,7 +102,7 @@ LOCAL_PROGUARD_FLAG_FILES := proguard-rules.pro
 LOCAL_JAR_EXCLUDE_FILES := none
 LOCAL_SRC_FILES += $(call all-java-files-under, java)
 LOCAL_PACKAGE_NAME := Phonograph
-LOCAL_CERTIFICATE := platform
+LOCAL_SDK_VERSION := current
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_PACKAGE)
 
