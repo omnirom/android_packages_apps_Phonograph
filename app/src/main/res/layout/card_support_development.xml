@@ -160,8 +160,6 @@
         </LinearLayout>
 
         <LinearLayout
-<<<<<<< HEAD
-=======
             android:id="@+id/rate_on_google_play"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -206,7 +204,6 @@
         </LinearLayout>
 
         <LinearLayout
->>>>>>> 48774825... Minor formatting/refactoring
             android:id="@+id/donate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

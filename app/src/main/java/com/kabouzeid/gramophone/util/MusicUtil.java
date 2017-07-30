@@ -96,8 +96,7 @@ public class MusicUtil {
         return albumCount + " " + albumString + " • " + songCount + " " + songString;
     }
 
-    @NonNull
-    public static String getPlaylistInfoString(@NonNull final Context context, @NonNull List<Song> songs) {
+    public static String getPlaylistInfoString(final Context context, List<Song> songs) {
         final int songCount = songs.size();
         final String songString = songCount == 1 ? context.getResources().getString(R.string.song) : context.getResources().getString(R.string.songs);
 
