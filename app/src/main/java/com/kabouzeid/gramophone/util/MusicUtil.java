@@ -21,6 +21,7 @@ import com.kabouzeid.gramophone.loader.PlaylistLoader;
 import com.kabouzeid.gramophone.loader.SongLoader;
 import com.kabouzeid.gramophone.model.Artist;
 import com.kabouzeid.gramophone.model.Playlist;
+import com.kabouzeid.gramophone.model.PlaylistSong;
 import com.kabouzeid.gramophone.model.Song;
 
 import org.omnirom.gramophone.R;
@@ -95,10 +96,28 @@ public class MusicUtil {
         return albumCount + " " + albumString + " • " + songCount + " " + songString;
     }
 
+    public static String getPlaylistInfoString(final Context context, List<Song> songs) {
+        final int songCount = songs.size();
+        final String songString = songCount == 1 ? context.getResources().getString(R.string.song) : context.getResources().getString(R.string.songs);
+
+        long duration = 0;
+        for (int i = 0; i < songs.size(); i++) {
+            duration += songs.get(i).duration;
+        }
+
+        return songCount + " " + songString + " • " + MusicUtil.getReadableDurationString(duration);
+    }
+
     public static String getReadableDurationString(long songDurationMillis) {
         long minutes = (songDurationMillis / 1000) / 60;
         long seconds = (songDurationMillis / 1000) % 60;
-        return String.format("%01d:%02d", minutes, seconds);
+        if (minutes < 60) {
+            return String.format("%01d:%02d", minutes, seconds);
+        } else {
+            long hours = minutes / 60;
+            minutes = minutes % 60;
+            return String.format("%d:%02d:%02d", hours, minutes, seconds);
+        }
     }
 
     //iTunes uses for example 1002 for track 2 CD1 or 3011 for track 11 CD3.

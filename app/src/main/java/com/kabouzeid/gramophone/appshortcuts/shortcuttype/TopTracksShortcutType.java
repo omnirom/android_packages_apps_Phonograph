@@ -3,6 +3,7 @@ package com.kabouzeid.gramophone.appshortcuts.shortcuttype;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.pm.ShortcutInfo;
+import android.os.Build;
 
 import com.kabouzeid.gramophone.appshortcuts.AppShortcutIconGenerator;
 import com.kabouzeid.gramophone.appshortcuts.AppShortcutLauncherActivity;
@@ -12,11 +13,14 @@ import org.omnirom.gramophone.R;
 /**
  * @author Adrian Campos
  */
-
-@TargetApi(25)
+@TargetApi(Build.VERSION_CODES.N_MR1)
 public final class TopTracksShortcutType extends BaseShortcutType {
     public TopTracksShortcutType(Context context) {
         super(context);
+    }
+
+    public static String getId() {
+        return ID_PREFIX + "top_tracks";
     }
 
     public ShortcutInfo getShortcutInfo() {
@@ -26,9 +30,5 @@ public final class TopTracksShortcutType extends BaseShortcutType {
                 .setIcon(AppShortcutIconGenerator.generateThemedIcon(context, R.drawable.ic_app_shortcut_top_tracks))
                 .setIntent(getPlaySongsIntent(AppShortcutLauncherActivity.SHORTCUT_TYPE_TOP_TRACKS))
                 .build();
-    }
-
-    public static String getId() {
-        return ID_PREFIX + "top_tracks";
     }
 }

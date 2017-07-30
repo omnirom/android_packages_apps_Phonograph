@@ -73,7 +73,7 @@
   <string name="pref_title_app_shortcuts">Rənglənmiş tətbiq qısayolları</string>
   <string name="pref_title_set_default_start_page">Başlanğıc səhifəsi</string>
   <string name="pref_title_album_art_on_lockscreen">Albom qapağını göstər</string>
-  <string name="pref_title_auto_download_artist_images">İfaçı şəkillərini avtomatik yüklə</string>
+  <string name="pref_title_auto_download_metadata">İfaçı şəkillərini avtomatik yüklə</string>
   <string name="pref_title_blurred_album_art">Bulanıq albom qapağı</string>
   <string name="pref_title_colored_notification">Rənglənmiş bildirişlər</string>
   <string name="pref_title_ignore_media_store_artwork">Media Store albom qapaqlarını gözardı et</string>

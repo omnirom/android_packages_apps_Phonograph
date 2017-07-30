@@ -115,7 +115,7 @@ public class AlbumAdapter extends AbsMultiSelectAdapter<AlbumAdapter.ViewHolder,
         loadAlbumCover(album, holder);
     }
 
-    private void setColors(int color, ViewHolder holder) {
+    protected void setColors(int color, ViewHolder holder) {
         if (holder.paletteColorContainer != null) {
             holder.paletteColorContainer.setBackgroundColor(color);
             if (holder.title != null) {
