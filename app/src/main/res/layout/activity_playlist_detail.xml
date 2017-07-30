@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -31,19 +32,16 @@
 
         </FrameLayout>
 
-        <android.support.v7.widget.RecyclerView
+        <com.simplecityapps.recyclerview_fastscroll.views.FastScrollRecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="false"
-            android:divider="@null"
-            android:dividerHeight="0px"
-            android:scrollbars="vertical" />
+            android:scrollbars="none" />
 
     </LinearLayout>
 
     <TextView
-        android:visibility="gone"
         android:id="@android:id/empty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -51,6 +49,7 @@
         android:fontFamily="sans-serif-light"
         android:text="@string/playlist_empty_text"
         android:textColor="?android:textColorSecondary"
-        android:textSize="@dimen/empty_text_size" />
+        android:textSize="@dimen/empty_text_size"
+        android:visibility="gone" />
 
 </FrameLayout>

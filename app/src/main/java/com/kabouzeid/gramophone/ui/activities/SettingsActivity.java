@@ -22,8 +22,10 @@ import android.preference.TwoStatePreference;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.kabouzeid.gramophone.helper.MusicPlayerRemote;
 import com.kabouzeid.gramophone.preferences.NowPlayingScreenPreference;
 import com.kabouzeid.gramophone.preferences.NowPlayingScreenPreferenceDialog;
+import com.kabouzeid.gramophone.service.MusicService;
 import com.kabouzeid.gramophone.ui.fragments.player.NowPlayingScreen;
 import com.kabouzeid.gramophone.util.NavigationUtil;
 import com.kabouzeid.gramophone.util.PreferenceUtil;
@@ -45,6 +47,7 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
         addPreferencesFromResource(R.xml.pref_images);
         addPreferencesFromResource(R.xml.pref_lockscreen);
         addPreferencesFromResource(R.xml.pref_audio);
+        addPreferencesFromResource(R.xml.pref_playlists);
 
         Preference equalizer = findPreference("equalizer");
         if (!hasEqualizer()) {

@@ -144,8 +144,6 @@ Vill du radera <b>%1$d</b> låtar?
   <string name="empty">Tom</string>
   <string name="playlist_name_empty">Spellistenamn</string>
   <string name="song">Låt</string>
-  <string name="pref_only_lollipop">"Enbart tillgänglig för Lollipop."</string>
-  <string name="pref_only_nougat_mr1">"Endast tillgängligt på Nougat 7.1."</string>
   <string name="pref_summary_gapless_playback">"Kan orsaka uppspelningsproblem på vissa enheter."</string>
   <string name="pref_summary_larger_title_box_now_playing">Titelrutan är högre.</string>
   <string name="pref_summary_colored_navigation_bar">I vilken vy navigeringslisten skall vara färgad</string>
@@ -186,7 +184,7 @@ Vill du radera <b>%1$d</b> låtar?
   <string name="application">Applikation</string>
   <string name="add_to_google_plus_circles">Lägg till i Google Plus-cirklar</string>
   <string name="follow_on_twitter">Följ på Twitter</string>
-  <string name="fork_on_git_hub">Forka på GitHub</string>
+  <string name="fork_on_github">Forka på GitHub</string>
   <string name="visit_website">Besök webbplats</string>
   <string name="report_bugs">Rapportera buggar</string>
   <string name="report_bugs_summary">Rapportera buggar eller begär nya funktioner.</string>

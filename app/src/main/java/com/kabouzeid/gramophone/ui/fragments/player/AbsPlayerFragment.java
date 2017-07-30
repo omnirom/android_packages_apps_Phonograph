@@ -6,12 +6,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.kabouzeid.gramophone.dialogs.AddToPlaylistDialog;
+import com.kabouzeid.gramophone.dialogs.CreatePlaylistDialog;
 import com.kabouzeid.gramophone.dialogs.SleepTimerDialog;
 import com.kabouzeid.gramophone.dialogs.SongDetailDialog;
 import com.kabouzeid.gramophone.dialogs.SongShareDialog;
 import com.kabouzeid.gramophone.helper.MusicPlayerRemote;
 import com.kabouzeid.gramophone.interfaces.PaletteColorHolder;
-import com.kabouzeid.gramophone.loader.SongLoader;
 import com.kabouzeid.gramophone.model.Song;
 import com.kabouzeid.gramophone.ui.activities.tageditor.AbsTagEditorActivity;
 import com.kabouzeid.gramophone.ui.activities.tageditor.SongTagEditorActivity;
@@ -58,14 +58,14 @@ public abstract class AbsPlayerFragment extends AbsMusicServiceFragment implemen
             case R.id.action_equalizer:
                 NavigationUtil.openEqualizer(getActivity());
                 return true;
-            case R.id.action_shuffle_all:
-                MusicPlayerRemote.openAndShuffleQueue(SongLoader.getAllSongs(getActivity()), true);
-                return true;
             case R.id.action_add_to_playlist:
                 AddToPlaylistDialog.create(song).show(getFragmentManager(), "ADD_PLAYLIST");
                 return true;
             case R.id.action_clear_playing_queue:
                 MusicPlayerRemote.clearQueue();
+                return true;
+            case R.id.action_save_playing_queue:
+                CreatePlaylistDialog.create(MusicPlayerRemote.getPlayingQueue()).show(getActivity().getSupportFragmentManager(), "ADD_TO_PLAYLIST");
                 return true;
             case R.id.action_tag_editor:
                 Intent intent = new Intent(getActivity(), SongTagEditorActivity.class);
@@ -87,6 +87,10 @@ public abstract class AbsPlayerFragment extends AbsMusicServiceFragment implemen
 
     protected void toggleFavorite(Song song) {
         MusicUtil.toggleFavorite(getActivity(), song);
+    }
+
+    protected String getUpNextAndQueueTime() {
+        return getResources().getString(R.string.up_next) + "  •  " + MusicUtil.getReadableDurationString(MusicPlayerRemote.getQueueDurationMillis(MusicPlayerRemote.getPosition()));
     }
 
     public abstract void onShow();
