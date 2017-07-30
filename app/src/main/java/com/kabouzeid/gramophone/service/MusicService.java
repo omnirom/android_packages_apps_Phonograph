@@ -39,6 +39,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.kabouzeid.gramophone.appwidgets.AppWidgetBig;
+import com.kabouzeid.gramophone.appwidgets.AppWidgetCard;
 import com.kabouzeid.gramophone.appwidgets.AppWidgetClassic;
 import com.kabouzeid.gramophone.appwidgets.AppWidgetSmall;
 import com.kabouzeid.gramophone.glide.BlurTransformation;
@@ -129,6 +130,7 @@ public class MusicService extends Service implements SharedPreferences.OnSharedP
     private AppWidgetBig appWidgetBig = AppWidgetBig.getInstance();
     private AppWidgetClassic appWidgetClassic = AppWidgetClassic.getInstance();
     private AppWidgetSmall appWidgetSmall = AppWidgetSmall.getInstance();
+    private AppWidgetCard appWidgetCard = AppWidgetCard.getInstance();
 
     private Playback playback;
     private ArrayList<Song> playingQueue = new ArrayList<>();
@@ -202,12 +204,7 @@ public class MusicService extends Service implements SharedPreferences.OnSharedP
 
         registerReceiver(widgetIntentReceiver, new IntentFilter(APP_WIDGET_UPDATE));
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            playingNotification = new PlayingNotificationImpl24();
-        } else {
-            playingNotification = new PlayingNotificationImpl();
-        }
-        playingNotification.init(this);
+        initNotification();
 
         mediaStoreObserver = new MediaStoreObserver(playerHandler);
         throttledSeekHandler = new ThrottledSeekHandler(playerHandler);
@@ -558,8 +555,13 @@ public class MusicService extends Service implements SharedPreferences.OnSharedP
         return (getAudioManager().requestAudioFocus(audioFocusListener, AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN) == AudioManager.AUDIOFOCUS_REQUEST_GRANTED);
     }
 
-    private void updateNotification() {
-        if (getCurrentSong().id != -1) {
+    public void initNotification() {
+        playingNotification = new PlayingNotificationImpl24();
+        playingNotification.init(this);
+    }
+
+    public void updateNotification() {
+        if (playingNotification != null && getCurrentSong().id != -1) {
             playingNotification.update();
         }
     }
@@ -943,6 +945,13 @@ public class MusicService extends Service implements SharedPreferences.OnSharedP
         return playback.duration();
     }
 
+    public long getQueueDurationMillis(int position) {
+        long duration = 0;
+        for (int i = position + 1; i < playingQueue.size(); i++)
+            duration += playingQueue.get(i).duration;
+        return duration;
+    }
+
     public int seek(int millis) {
         synchronized (this) {
             try {
@@ -1045,6 +1054,7 @@ public class MusicService extends Service implements SharedPreferences.OnSharedP
         appWidgetBig.notifyChange(this, what);
         appWidgetClassic.notifyChange(this, what);
         appWidgetSmall.notifyChange(this, what);
+        appWidgetCard.notifyChange(this, what);
     }
 
     private static final long MEDIA_SESSION_ACTIONS = PlaybackStateCompat.ACTION_PLAY
@@ -1285,6 +1295,9 @@ public class MusicService extends Service implements SharedPreferences.OnSharedP
             } else if (AppWidgetBig.NAME.equals(command)) {
                 final int[] ids = intent.getIntArrayExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS);
                 appWidgetBig.performUpdate(MusicService.this, ids);
+            } else if (AppWidgetCard.NAME.equals(command)) {
+                final int[] ids = intent.getIntArrayExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS);
+                appWidgetCard.performUpdate(MusicService.this, ids);
             }
         }
     };

@@ -13,6 +13,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.BROADCAST_STICKY" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="com.android.vending.BILLING" />
 
     <application
@@ -96,6 +97,31 @@
         </activity>
         <activity android:name="com.kabouzeid.gramophone.ui.activities.AlbumDetailActivity" />
         <activity android:name="com.kabouzeid.gramophone.ui.activities.ArtistDetailActivity" />
+        <activity android:name="com.kabouzeid.gramophone.ui.activities.PlaylistDetailActivity" />
+        <activity
+            android:name="com.kabouzeid.gramophone.ui.activities.tageditor.SongTagEditorActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.kabouzeid.gramophone.ui.activities.tageditor.AlbumTagEditorActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name="com.kabouzeid.gramophone.ui.activities.SearchActivity" />
+        <activity
+            android:name="com.kabouzeid.gramophone.ui.activities.SettingsActivity"
+            android:label="@string/action_settings" />
+        <activity
+            android:name="com.kabouzeid.gramophone.ui.activities.AboutActivity"
+            android:label="@string/action_about" />
+        <activity
+            android:name="com.kabouzeid.gramophone.ui.activities.intro.AppIntroActivity"
+            android:label="@string/intro_label"
+            android:theme="@style/Theme.Intro" />
+        <activity
+            android:name="com.kabouzeid.gramophone.ui.activities.bugreport.BugReportActivity"
+            android:label="@string/report_an_issue" />
+        <activity
+            android:name="com.kabouzeid.gramophone.appshortcuts.AppShortcutLauncherActivity"
+            android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <service
             android:name="com.kabouzeid.gramophone.service.MusicService"
@@ -124,6 +150,14 @@
             android:name="com.kabouzeid.gramophone.ui.activities.tageditor.AlbumTagEditorActivity"
             android:windowSoftInputMode="adjustResize" />
         <activity android:name="com.kabouzeid.gramophone.ui.activities.SearchActivity" />
+
+
+        <receiver android:name="com.kabouzeid.gramophone.appwidgets.BootReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+            </intent-filter>
+        </receiver>
 
         <receiver
             android:name="com.kabouzeid.gramophone.appwidgets.AppWidgetBig"
@@ -160,6 +194,18 @@
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/app_widget_small_info" />
+        </receiver>
+        <receiver
+            android:name="com.kabouzeid.gramophone.appwidgets.AppWidgetCard"
+            android:exported="false"
+            android:label="@string/app_widget_card_name">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/app_widget_card_info"/>
         </receiver>
 
         <activity
