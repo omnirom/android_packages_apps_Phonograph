@@ -104,7 +104,7 @@
         <activity
             android:name="com.kabouzeid.gramophone.ui.activities.tageditor.AlbumTagEditorActivity"
             android:windowSoftInputMode="adjustResize" />
-        <activity android:name=".ui.activities.SearchActivity" />
+        <activity android:name="com.kabouzeid.gramophone.ui.activities.SearchActivity" />
         <activity
             android:name="com.kabouzeid.gramophone.ui.activities.SettingsActivity"
             android:label="@string/action_settings" />
@@ -152,7 +152,7 @@
         <activity android:name="com.kabouzeid.gramophone.ui.activities.SearchActivity" />
 
 
-        <receiver android:name=".appwidgets.BootReceiver" >
+        <receiver android:name="com.kabouzeid.gramophone.appwidgets.BootReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.QUICKBOOT_POWERON" />
@@ -196,7 +196,7 @@
                 android:resource="@xml/app_widget_small_info" />
         </receiver>
         <receiver
-            android:name=".appwidgets.AppWidgetCard"
+            android:name="com.kabouzeid.gramophone.appwidgets.AppWidgetCard"
             android:exported="false"
             android:label="@string/app_widget_card_name">
             <intent-filter>
