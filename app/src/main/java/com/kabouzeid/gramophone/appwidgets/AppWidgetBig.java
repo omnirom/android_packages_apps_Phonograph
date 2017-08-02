@@ -17,6 +17,7 @@ import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.target.Target;
 import com.kabouzeid.appthemehelper.util.MaterialValueHelper;
+import com.kabouzeid.gramophone.appwidgets.base.BaseAppWidget;
 import com.kabouzeid.gramophone.glide.SongGlideRequest;
 import com.kabouzeid.gramophone.model.Song;
 import com.kabouzeid.gramophone.service.MusicService;
@@ -46,7 +47,7 @@ public class AppWidgetBig extends BaseAppWidget {
         final RemoteViews appWidgetView = new RemoteViews(context.getPackageName(), R.layout.app_widget_big);
 
         appWidgetView.setViewVisibility(R.id.media_titles, View.INVISIBLE);
-        appWidgetView.setViewVisibility(R.id.image, View.INVISIBLE);
+        appWidgetView.setImageViewResource(R.id.image, R.drawable.default_album_art);
         appWidgetView.setImageViewBitmap(R.id.button_next, createBitmap(Util.getTintedVectorDrawable(context, R.drawable.ic_skip_next_white_24dp, MaterialValueHelper.getPrimaryTextColor(context, false)), 1f));
         appWidgetView.setImageViewBitmap(R.id.button_prev, createBitmap(Util.getTintedVectorDrawable(context, R.drawable.ic_skip_previous_white_24dp, MaterialValueHelper.getPrimaryTextColor(context, false)), 1f));
         appWidgetView.setImageViewBitmap(R.id.button_toggle_play_pause, createBitmap(Util.getTintedVectorDrawable(context, R.drawable.ic_play_arrow_white_24dp, MaterialValueHelper.getPrimaryTextColor(context, false)), 1f));
@@ -70,7 +71,7 @@ public class AppWidgetBig extends BaseAppWidget {
         } else {
             appWidgetView.setViewVisibility(R.id.media_titles, View.VISIBLE);
             appWidgetView.setTextViewText(R.id.title, song.title);
-            appWidgetView.setTextViewText(R.id.text, song.artistName);
+            appWidgetView.setTextViewText(R.id.text, getSongArtistAndAlbum(song));
         }
 
         // Set correct drawable for pause state
@@ -110,7 +111,6 @@ public class AppWidgetBig extends BaseAppWidget {
                             }
 
                             private void update(@Nullable Bitmap bitmap) {
-                                appWidgetView.setViewVisibility(R.id.image, View.VISIBLE);
                                 if (bitmap == null) {
                                     appWidgetView.setImageViewResource(R.id.image, R.drawable.default_album_art);
                                 } else {

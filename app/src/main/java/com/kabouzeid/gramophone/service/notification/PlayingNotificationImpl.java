@@ -1,9 +1,5 @@
 package com.kabouzeid.gramophone.service.notification;
 
-/**
- * @author Karim Abou Zeid (kabouzeid)
- */
-
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.ComponentName;
@@ -37,18 +33,9 @@ import com.kabouzeid.gramophone.util.Util;
 
 import org.omnirom.gramophone.R;
 
-public class PlayingNotificationImpl implements PlayingNotification {
-
-    private MusicService service;
+public class PlayingNotificationImpl extends PlayingNotification {
 
     private Target<BitmapPaletteWrapper> target;
-
-    private boolean stopped;
-
-    @Override
-    public synchronized void init(MusicService service) {
-        this.service = service;
-    }
 
     @Override
     public synchronized void update() {
@@ -82,16 +69,19 @@ public class PlayingNotificationImpl implements PlayingNotification {
 
         Intent action = new Intent(service, MainActivity.class);
         action.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        PendingIntent openAppPendingIntent = PendingIntent.getActivity(service, 0, action, 0);
+        final PendingIntent clickIntent = PendingIntent.getActivity(service, 0, action, 0);
+        final PendingIntent deleteIntent = buildPendingIntent(service, MusicService.ACTION_QUIT, null);
 
-        final Notification notification = new NotificationCompat.Builder(service)
+        final Notification notification = new NotificationCompat.Builder(service, NOTIFICATION_CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_notification)
-                .setContentIntent(openAppPendingIntent)
+                .setContentIntent(clickIntent)
+                .setDeleteIntent(deleteIntent)
                 .setCategory(NotificationCompat.CATEGORY_SERVICE)
                 .setPriority(NotificationCompat.PRIORITY_MAX)
                 .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
                 .setContent(notificationLayout)
                 .setCustomBigContentView(notificationLayoutBig)
+                .setOngoing(isPlaying)
                 .build();
 
         final int bigNotificationImageSize = service.getResources().getDimensionPixelSize(R.dimen.notification_big_image_size);
@@ -113,7 +103,7 @@ public class PlayingNotificationImpl implements PlayingNotification {
                             @Override
                             public void onLoadFailed(Exception e, Drawable errorDrawable) {
                                 super.onLoadFailed(e, errorDrawable);
-                                update(null, Color.TRANSPARENT);
+                                update(null, Color.WHITE);
                             }
 
                             private void update(@Nullable Bitmap bitmap, int bgColor) {
@@ -126,14 +116,14 @@ public class PlayingNotificationImpl implements PlayingNotification {
                                 }
 
                                 if (!PreferenceUtil.getInstance(service).coloredNotification()) {
-                                    bgColor = Color.TRANSPARENT;
+                                    bgColor = Color.WHITE;
                                 }
                                 setBackgroundColor(bgColor);
-                                setNotificationContent(bgColor == Color.TRANSPARENT ? Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP : ColorUtil.isColorLight(bgColor));
+                                setNotificationContent(ColorUtil.isColorLight(bgColor));
 
                                 if (stopped)
                                     return; // notification has been stopped before loading was finished
-                                service.startForeground(NOTIFICATION_ID, notification);
+                                updateNotifyModeAndPostNotification(notification);
                             }
 
                             private void setBackgroundColor(int color) {
@@ -148,7 +138,6 @@ public class PlayingNotificationImpl implements PlayingNotification {
                                 Bitmap prev = createBitmap(Util.getTintedVectorDrawable(service, R.drawable.ic_skip_previous_white_24dp, primary), 1.5f);
                                 Bitmap next = createBitmap(Util.getTintedVectorDrawable(service, R.drawable.ic_skip_next_white_24dp, primary), 1.5f);
                                 Bitmap playPause = createBitmap(Util.getTintedVectorDrawable(service, isPlaying ? R.drawable.ic_pause_white_24dp : R.drawable.ic_play_arrow_white_24dp, primary), 1.5f);
-                                Bitmap close = createBitmap(Util.getTintedVectorDrawable(service, R.drawable.ic_close_white_24dp, secondary), 1f);
 
                                 notificationLayout.setTextColor(R.id.title, primary);
                                 notificationLayout.setTextColor(R.id.text, secondary);
@@ -162,17 +151,10 @@ public class PlayingNotificationImpl implements PlayingNotification {
                                 notificationLayoutBig.setImageViewBitmap(R.id.action_prev, prev);
                                 notificationLayoutBig.setImageViewBitmap(R.id.action_next, next);
                                 notificationLayoutBig.setImageViewBitmap(R.id.action_play_pause, playPause);
-                                notificationLayoutBig.setImageViewBitmap(R.id.action_quit, close);
                             }
                         });
             }
         });
-    }
-
-    @Override
-    public synchronized void stop() {
-        stopped = true;
-        service.stopForeground(true);
     }
 
     private void linkButtons(final RemoteViews notificationLayout, final RemoteViews notificationLayoutBig) {
@@ -194,10 +176,6 @@ public class PlayingNotificationImpl implements PlayingNotification {
         pendingIntent = buildPendingIntent(service, MusicService.ACTION_SKIP, serviceName);
         notificationLayout.setOnClickPendingIntent(R.id.action_next, pendingIntent);
         notificationLayoutBig.setOnClickPendingIntent(R.id.action_next, pendingIntent);
-
-        // Quit
-        pendingIntent = buildPendingIntent(service, MusicService.ACTION_QUIT, serviceName);
-        notificationLayoutBig.setOnClickPendingIntent(R.id.action_quit, pendingIntent);
     }
 
     private PendingIntent buildPendingIntent(Context context, final String action, final ComponentName serviceName) {
