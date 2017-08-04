@@ -94,7 +94,9 @@ public final class PreferenceUtil {
     }
 
     public int getGeneralTheme() {
-        return getThemeResFromPrefValue(mPreferences.getString(GENERAL_THEME, ""));
+        // maxwen
+        //return getThemeResFromPrefValue(mPreferences.getString(GENERAL_THEME, ""));
+        return R.style.Theme_Phonograph;
     }
 
     @StyleRes

@@ -1,35 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.Phonograph.Base" parent="Theme.AppCompat.NoActionBar">
-
-        <item name="android:windowActionBarOverlay">true</item>
-        <item name="windowActionBarOverlay">true</item>
-
-        <item name="md_dark_theme">true</item>
-
-        <item name="roundSelector">@drawable/round_selector_dark</item>
-        <item name="rectSelector">@drawable/rect_selector_dark</item>
-        <item name="rectSelectorStrong">@drawable/rect_selector_strong_dark</item>
-
-        <item name="cardBackgroundColor">@color/md_grey_800</item>
-
-        <item name="defaultFooterColor">@color/md_grey_900</item>
-
-        <item name="dividerColor">@color/md_divider_white</item>
-        <item name="iconColor">@color/ate_secondary_text_dark</item>
-
-        <item name="toolbarPopupTheme">@style/ThemeOverlay.AppCompat</item>
-
-        <!-- just in case-->
-        <item name="colorAccent">@android:color/white</item>
-
-        <!-- necessary to find the overflow button later in the layout-->
-        <item name="android:actionOverflowButtonStyle">@style/Widget.ActionButton.Overflow</item>
-
-        <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
-    </style>
-
     <style name="Theme.Phonograph.Base.Light" parent="Theme.AppCompat.Light.NoActionBar">
 
         <item name="android:windowActionBarOverlay">true</item>
@@ -50,21 +21,36 @@
 
         <item name="toolbarPopupTheme">@style/ThemeOverlay.AppCompat.Light</item>
 
-        <!-- just in case-->
-        <item name="colorAccent">@android:color/black</item>
-
         <!-- necessary to find the overflow button later in the layout-->
         <item name="android:actionOverflowButtonStyle">@style/Widget.ActionButton.Overflow</item>
 
         <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
     </style>
 
-    <style name="Theme.Phonograph.Base.Black" parent="@style/Theme.Phonograph.Base">
+    <style name="Theme.Phonograph.Base.Black" parent="Theme.AppCompat.NoActionBar">
         <item name="android:windowBackground">@android:color/black</item>
         <item name="dividerColor">#18FFFFFF</item>
         <item name="defaultFooterColor">@color/md_grey_800</item>
         <item name="cardBackgroundColor">@color/md_grey_900</item>
         <item name="md_background_color">@color/md_grey_900</item>
+
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="windowActionBarOverlay">true</item>
+
+        <item name="md_dark_theme">true</item>
+
+        <item name="roundSelector">@drawable/round_selector_dark</item>
+        <item name="rectSelector">@drawable/rect_selector_dark</item>
+        <item name="rectSelectorStrong">@drawable/rect_selector_strong_dark</item>
+
+        <item name="iconColor">@color/ate_secondary_text_dark</item>
+
+        <item name="toolbarPopupTheme">@style/ThemeOverlay.AppCompat</item>
+
+        <!-- necessary to find the overflow button later in the layout-->
+        <item name="android:actionOverflowButtonStyle">@style/Widget.ActionButton.Overflow</item>
+
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
     </style>
 
     <style name="FabParent">
