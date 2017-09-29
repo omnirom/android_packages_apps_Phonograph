@@ -12,6 +12,7 @@ import android.provider.BaseColumns;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
+import android.support.v4.content.FileProvider;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
@@ -21,7 +22,6 @@ import com.kabouzeid.gramophone.loader.PlaylistLoader;
 import com.kabouzeid.gramophone.loader.SongLoader;
 import com.kabouzeid.gramophone.model.Artist;
 import com.kabouzeid.gramophone.model.Playlist;
-import com.kabouzeid.gramophone.model.PlaylistSong;
 import com.kabouzeid.gramophone.model.Song;
 
 import org.omnirom.gramophone.R;
@@ -47,10 +47,11 @@ public class MusicUtil {
         return ContentUris.withAppendedId(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, songId);
     }
 
-    public static Intent createShareSongFileIntent(final Song song) {
+    public static Intent createShareSongFileIntent(final Song song, Context context) {
         return new Intent()
                 .setAction(Intent.ACTION_SEND)
-                .putExtra(Intent.EXTRA_STREAM, Uri.parse("file://" + song.data))
+                .putExtra(Intent.EXTRA_STREAM, FileProvider.getUriForFile(context, context.getApplicationContext().getPackageName(), new File(song.data)))
+                .addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
                 .setType("audio/*");
     }
 
