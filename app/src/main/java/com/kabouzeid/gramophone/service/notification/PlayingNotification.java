@@ -6,10 +6,11 @@ import android.app.NotificationManager;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 
-import com.kabouzeid.gramophone.R;
 import com.kabouzeid.gramophone.service.MusicService;
 
 import static android.content.Context.NOTIFICATION_SERVICE;
+
+import org.omnirom.gramophone.R;
 
 public abstract class PlayingNotification {
 
