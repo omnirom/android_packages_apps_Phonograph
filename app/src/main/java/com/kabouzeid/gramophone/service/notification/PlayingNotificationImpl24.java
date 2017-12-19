@@ -9,7 +9,7 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.v4.app.NotificationCompat;
-import android.support.v7.app.NotificationCompat.MediaStyle;
+import android.support.v4.media.app.NotificationCompat.MediaStyle;
 import android.support.v7.graphics.Palette;
 import android.text.TextUtils;
 
