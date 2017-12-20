@@ -257,11 +257,7 @@
   <string name="your_account_data_is_only_used_for_authentication">Údaje vášho účtu sú použité iba na overenie totožnosti.</string>
   <string name="you_will_be_forwarded_to_the_issue_tracker_website">Budete presmerovaný na webovú stránku evidencie chýb.</string>
   <!-- App Shortcuts -->
-  <string name="app_shortcut_shuffle_all_long">@string/action_shuffle_all</string>
   <string name="app_shortcut_shuffle_all_short">Zamiešať</string>
-  <string name="app_shortcut_top_tracks_long">@string/my_top_tracks</string>
   <string name="app_shortcut_top_tracks_short">Najobľúbenejšie skladby</string>
-  <string name="app_shortcut_last_added_long">@string/last_added</string>
-  <string name="app_shortcut_last_added_short">@string/last_added</string>
   <string name="playlist_is_empty">Zoznam skladieb je prázdny</string>
 </resources>

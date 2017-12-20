@@ -54,7 +54,7 @@
   <string name="saving_changes">Guardando cambios</string>
   <string name="saving_to_file">Guardando en archivo…</string>
   <string name="label_details">Detalles</string>
-  <string name="label_file_name">Nombre de archivo</string>
+  <string name="label_file_name">Nombre del archivo</string>
   <string name="label_file_path">Ruta del archivo</string>
   <string name="label_file_size">Tamaño</string>
   <string name="label_file_format">Formato</string>
