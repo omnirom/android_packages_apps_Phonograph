@@ -296,4 +296,6 @@
   <string name="app_shortcut_shuffle_all_short">Casuale</string>
   <string name="app_shortcut_top_tracks_short">Migliodi Tracce</string>
   <string name="playlist_is_empty">La playlist è vuota</string>
+  <string name="playing_notification_description">La notifica di riproduzione fornisce azioni per play/pausa ecc.</string>
+  <string name="playing_notification_name">Notifica di riproduzione</string>
 </resources>

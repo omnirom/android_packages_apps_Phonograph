@@ -296,4 +296,6 @@
   <string name="app_shortcut_shuffle_all_short">Náhodně</string>
   <string name="app_shortcut_top_tracks_short">Nejposlouchanější Skladby</string>
   <string name="playlist_is_empty">Playlist je prázdný</string>
+  <string name="playing_notification_description">Oznámení o přehrávání obsahuje akce pro přehrávání/pozastavení atd.</string>
+  <string name="playing_notification_name">Oznámení o přehrávání</string>
 </resources>

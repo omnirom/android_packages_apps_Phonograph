@@ -40,7 +40,9 @@
   <string name="playlists">Zoznamy skladieb</string>
   <string name="unplayable_file">Skladba sa nedá prehrať.</string>
   <string name="biography_unavailable">Nepodarilo sa nájsť biografiu interpreta.</string>
+  <string name="wiki_unavailable">Pre tento album sa nepodarilo nájsť záznam na wikipédii.</string>
   <string name="biography">Biografia</string>
+  <string name="wiki">Wiki</string>
   <string name="album">Album</string>
   <string name="artist">Interpret</string>
   <string name="genre">Žáner</string>
