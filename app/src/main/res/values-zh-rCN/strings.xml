@@ -192,6 +192,14 @@
   <string name="sleep_timer_set">音乐将在 %d 分钟后停止播放。</string>
   <string name="action_new_playlist">新建播放列表…</string>
   <string name="new_playlist_title">新建播放列表</string>
+  <string name="grid_size_1">1</string>
+  <string name="grid_size_2">2</string>
+  <string name="grid_size_3">3</string>
+  <string name="grid_size_4">4</string>
+  <string name="grid_size_5">5</string>
+  <string name="grid_size_6">6</string>
+  <string name="grid_size_7">7</string>
+  <string name="grid_size_8">8</string>
   <string name="colored_footers">着色页脚</string>
   <string name="special_thanks_to">特别鸣谢</string>
   <string name="changelog">更新日志</string>
@@ -272,4 +280,5 @@
   <!-- App Shortcuts -->
   <string name="app_shortcut_shuffle_all_short">随机播放</string>
   <string name="app_shortcut_top_tracks_short">最喜欢的歌曲</string>
+  <string name="playlist_is_empty">播放列表为空</string>
 </resources>

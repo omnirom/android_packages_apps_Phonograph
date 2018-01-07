@@ -296,4 +296,6 @@
   <string name="app_shortcut_shuffle_all_short">Misturar</string>
   <string name="app_shortcut_top_tracks_short">Top de faixas</string>
   <string name="playlist_is_empty">Lista de reprodução está vazia</string>
+  <string name="playing_notification_description">A notificação de reprodução fornece ações para reprodução / pausa, etc.</string>
+  <string name="playing_notification_name">Notificação de reprodução</string>
 </resources>

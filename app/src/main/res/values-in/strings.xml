@@ -21,6 +21,9 @@
   <string name="action_search">Pencarian</string>
   <string name="action_play_next">Mainkan selanjutnya</string>
   <string name="action_play">Putar</string>
+  <string name="action_play_pause">Main/Jeda</string>
+  <string name="action_previous">Sebelumnya</string>
+  <string name="action_next">Berikutnya</string>
   <string name="action_add_to_playing_queue">Tambahkan ke daftar putar</string>
   <string name="action_remove_from_playing_queue">Hapus dari antrian</string>
   <string name="action_add_to_playlist">Tambahkan ke daftar putar...</string>
@@ -37,7 +40,9 @@
   <string name="playlists">Daftar putar</string>
   <string name="unplayable_file">Tidak dapat memutar lagu ini.</string>
   <string name="biography_unavailable">Tidak dapat menemukan biografi artis</string>
+  <string name="wiki_unavailable">Tidak dapat\u2019t Couldn\u2019t menemukan catatan wiki untuk album ini.</string>
   <string name="biography">Biografi</string>
+  <string name="wiki">Wiki</string>
   <string name="audio_focus_denied">Fokus audio ditolak.</string>
   <string name="album">Album</string>
   <string name="artist">Artis</string>
@@ -46,6 +51,7 @@
   <string name="year">Tahun</string>
   <string name="track">Trek</string>
   <string name="track_hint">"Trek (2 untuk trek ke-2 atau 3004 untuk CD3 trek ke-4)"</string>
+  <string name="lyrics">Lirik</string>
   <string name="album_or_artist_empty">Judul atau artis kosong.</string>
   <string name="saving_changes">Menyimpan perubahan</string>
   <string name="saving_to_file">Menyimpan ke berkas...</string>
@@ -98,6 +104,7 @@
   <string name="action_shuffle_artist">Putar artis dengan diacak</string>
   <string name="action_shuffle_playlist">Putar daftar putar dengan diacak</string>
   <string name="action_clear_playing_queue">Kosongkan antrean yang sedang diputar</string>
+  <string name="action_save_playing_queue">Simpan giliran bermain</string>
   <string name="action_go_to_start_directory">Ke direktori awal</string>
   <string name="action_show_lyrics">Tampilkan lirik</string>
   <string name="last_opened">Terakhir dibuka</string>
@@ -107,6 +114,11 @@
   <string name="always">Selalu</string>
   <string name="only_on_wifi">Hanya pada Wi-Fi</string>
   <string name="never">Tidak pernah</string>
+  <string name="today">Hari ini</string>
+  <string name="this_week">Minggu ini</string>
+  <string name="this_month">Bulan ini</string>
+  <string name="past_three_months">3 bulan terakhir</string>
+  <string name="this_year">Tahun ini</string>
   <string name="equalizer">Ekualiser</string>
   <string name="pref_header_colors">Warna</string>
   <string name="pref_header_now_playing_screen">Sedang diputar</string>
@@ -115,12 +127,16 @@
   <string name="pref_header_general">Umum</string>
   <string name="pref_header_images">Gambar</string>
   <string name="pref_header_lockscreen">Layar kunci</string>
+  <string name="pref_header_notification">Pemberitahuan</string>
+  <string name="pref_header_playlists">Daftar putar</string>
   <string name="pref_title_navigation_bar">Warnai alat navigasi di bagian bawah layar</string>
+  <string name="pref_title_app_shortcuts">Pintasan aplikasi berwarna</string>
   <string name="pref_title_set_default_start_page">Halaman awal</string>
   <string name="pref_title_album_art_on_lockscreen">Perlihatkan sampul album pada layar kunci</string>
   <string name="pref_title_auto_download_metadata">Unduh otomatis gambar-gambar artis</string>
   <string name="pref_title_blurred_album_art">Buramkan sampul album</string>
   <string name="pref_title_colored_notification">Notifikasi berwarna</string>
+  <string name="pref_title_classic_notification">Desain notifikasi klasik</string>
   <string name="pref_title_ignore_media_store_artwork">Abaikan sampul-sampul dari \'Media Store\' android.</string>
   <string name="pref_title_gapless_playback">Pemutaran tanpa jeda</string>
   <string name="pref_title_force_square_album_art">Sampul album kotak</string>
@@ -131,6 +147,7 @@
   <string name="pref_title_playback_controller_card_now_playing">Tampilkan kartu di bawah kontrol pemutar</string>
   <string name="pref_title_colored_playback_controls_now_playing">Kontrol pemutar berwarna</string>
   <string name="pref_title_audio_ducking">Kurangi suara saat ada pemberitahuan</string>
+  <string name="pref_title_last_added_interval">Interval daftar putar terakhir yang ditambahkan</string>
   <string name="no_equalizer">Tidak ada pengatur suara yang ditemukan.</string>
   <string name="no_audio_ID">"Silahkan mainkan sebuah lagu dan coba lagi. "</string>
   <string name="delete_action">Hapus</string>
@@ -156,6 +173,7 @@
   <string name="song">Lagu</string>
   <string name="pref_summary_album_art_on_lockscreen">Gunakan sambul album lagu yang sedang diputar sebagai wallpaper layar kunci</string>
   <string name="pref_summary_blurred_album_art">Buramkan sampul album di layar kunci. Dapat menyebabkan masalah dengan aplikasi pihak ke tiga dan widget</string>
+  <string name="pref_summary_classic_notification">Gunakan desain notifikasi klasik.</string>
   <string name="pref_summary_colored_notification">"Mewarnai notifikasi putar dengan warna yang cerah dari album."</string>
   <string name="pref_summary_gapless_playback">"Dapat menyebabkan masalah pemutaran pada beberapa perangkat."</string>
   <string name="pref_summary_force_square_album_art">Sampul album pada tampilan \'sedang diputar\' selalu kotak.</string>
@@ -167,6 +185,7 @@
   <string name="pref_summary_ignore_media_store_artwork">Dapat meningkatkan kualitas sampul album, namun menyebabkan waktu pemuatan lebih lambat. Aktifkan jika Anda bermasalah dengan resolusi gambar album yang rendah. </string>
   <string name="pref_summary_colored_playback_controls_now_playing">Mewarnai tombol kontrol pemutar dengan warna yang sama pada penggeser progres dengan menggunakan warna carah pada sampul album. </string>
   <string name="pref_summary_colored_navigation_bar">Mewarnai bilah navigasi dengan warna primer. </string>
+  <string name="pref_summary_colored_app_shortcuts">Warna jalan pintas aplikasi dalam warna utama.</string>
   <string name="pref_summary_audio_ducking">Pemberitahuan, navigasi dll.</string>
   <string name="could_not_download_album_cover">"Tidak dapat mengunduh sampul album yang cocok."</string>
   <string name="search_hint">Mencari pustaka Anda...</string>
@@ -186,6 +205,14 @@
   <string name="sleep_timer_set">Pewaktu tidur diatur selama %d menit dari sekarang. </string>
   <string name="action_new_playlist">Daftar putar baru...</string>
   <string name="new_playlist_title">Daftar putar baru</string>
+  <string name="grid_size_1">1</string>
+  <string name="grid_size_2">2</string>
+  <string name="grid_size_3">3</string>
+  <string name="grid_size_4">4</string>
+  <string name="grid_size_5">5</string>
+  <string name="grid_size_6">6</string>
+  <string name="grid_size_7">7</string>
+  <string name="grid_size_8">8</string>
   <string name="colored_footers">Bawahan berwarna</string>
   <string name="special_thanks_to">Terima kasih khusus kepada</string>
   <string name="changelog">Log perubahan</string>
@@ -200,6 +227,7 @@
   <string name="version">Versi</string>
   <string name="application">Aplikasi</string>
   <string name="author">Pengelola</string>
+  <string name="write_an_email">Menulis email</string>
   <string name="add_to_google_plus_circles">Tambahkan ke lingkaran Google Plus</string>
   <string name="follow_on_twitter">Ikuti di Twitter</string>
   <string name="fork_on_github">Salin di GitHub</string>
@@ -240,6 +268,7 @@
   <string name="app_widget_big_name">Phonograph - Besar</string>
   <string name="app_widget_classic_name">Phonograph - Klasik</string>
   <string name="app_widget_small_name">Phonograph - Kecil</string>
+  <string name="app_widget_card_name">Potograf - Kartu</string>
   <string name="report_an_issue">Laporkan masalah</string>
   <string name="bug_report_issue">Masalah</string>
   <string name="login">Masuk</string>
@@ -264,4 +293,9 @@
   <string name="your_account_data_is_only_used_for_authentication">Data akun Anda hanya digunakan untuk otentikasi.</string>
   <string name="you_will_be_forwarded_to_the_issue_tracker_website">Anda akan ditersukan ke situs web pelacak masalah.</string>
   <!-- App Shortcuts -->
+  <string name="app_shortcut_shuffle_all_short">Acak</string>
+  <string name="app_shortcut_top_tracks_short">Trek Teratas</string>
+  <string name="playlist_is_empty">Daftar putar kosong</string>
+  <string name="playing_notification_description">Notifikasi bermain memberi tindakan untuk bermain/jeda dll.</string>
+  <string name="playing_notification_name">Pemberitahuan bermain</string>
 </resources>

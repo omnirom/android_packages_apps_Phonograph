@@ -41,6 +41,7 @@
   <string name="unplayable_file">Der Song konnte nicht abgespielt werden.</string>
   <string name="biography_unavailable">Die Biografie dieses Interpreten wurde nicht gefunden.</string>
   <string name="biography">Biografie</string>
+  <string name="wiki">Wiki</string>
   <string name="audio_focus_denied">Kein Audiofokus.</string>
   <string name="album">Album</string>
   <string name="artist">Interpret</string>
@@ -102,6 +103,7 @@
   <string name="action_shuffle_artist">Interpret zufällig wiedergeben</string>
   <string name="action_shuffle_playlist">Wiedergabeliste zufällig wiedergeben</string>
   <string name="action_clear_playing_queue">Warteschlange leeren</string>
+  <string name="action_save_playing_queue">Warteschlange speichern</string>
   <string name="action_go_to_start_directory">Zum Start-Verzeichnis gehen</string>
   <string name="action_show_lyrics">Songtext anzeigen</string>
   <string name="last_opened">Zuletzt geöffnet</string>
@@ -111,6 +113,11 @@
   <string name="always">Immer</string>
   <string name="only_on_wifi">Nur über WLAN</string>
   <string name="never">Niemals</string>
+  <string name="today">Heute</string>
+  <string name="this_week">Diese Woche</string>
+  <string name="this_month">Diesen Monat</string>
+  <string name="past_three_months">Letzten 3 Monate</string>
+  <string name="this_year">Dieses Jahr</string>
   <string name="equalizer">Equalizer</string>
   <string name="pref_header_colors">Farben</string>
   <string name="pref_header_now_playing_screen">Aktuelle Wiedergabe</string>
@@ -119,6 +126,8 @@
   <string name="pref_header_general">Generell</string>
   <string name="pref_header_images">Bilder</string>
   <string name="pref_header_lockscreen">Sperrbildschirm</string>
+  <string name="pref_header_notification">Benachrichtigung</string>
+  <string name="pref_header_playlists">Wiedergabelisten</string>
   <string name="pref_title_navigation_bar">Farbige Navigationsleiste</string>
   <string name="pref_title_app_shortcuts">Gefärbte App-Shortcuts</string>
   <string name="pref_title_set_default_start_page">Startseite</string>
@@ -126,6 +135,7 @@
   <string name="pref_title_auto_download_metadata">Interpreten Bilder automatisch herunterladen</string>
   <string name="pref_title_blurred_album_art">Album Cover weichzeichnen</string>
   <string name="pref_title_colored_notification">Gefärbte Benachrichtigung</string>
+  <string name="pref_title_classic_notification">Klassisches Benachrichtigungs-Design</string>
   <string name="pref_title_ignore_media_store_artwork">Media Store Cover ignorieren</string>
   <string name="pref_title_gapless_playback">Lückenlose Wiedergabe</string>
   <string name="pref_title_force_square_album_art">Quadratisches Album Cover erzwingen</string>
@@ -161,6 +171,7 @@
   <string name="song">Titel</string>
   <string name="pref_summary_album_art_on_lockscreen">Das Album Cover des aktuellen Titels wird als Hintergrund im Sperrbildschirm verwendet.</string>
   <string name="pref_summary_blurred_album_art">Lässt das Album Cover auf dem Sperrbildschirm verschwommen aussehen. Kann Probleme mit Apps und Widgets von Dritten verursachen.</string>
+  <string name="pref_summary_classic_notification">Verwenden Sie das klassische Benachrichtigungs-Design.</string>
   <string name="pref_summary_colored_notification">"Die Benachrichtigung ist in der Farbe des Album Covers gef\u00e4rbt."</string>
   <string name="pref_summary_gapless_playback">"Kann bei einigen Geräten Wiedergabeprobleme verursachen."</string>
   <string name="pref_summary_force_square_album_art">Es wird erzwungen, dass das Cover in der aktuellen Wiedergabe immer quadratisch ist.</string>
@@ -192,6 +203,14 @@
   <string name="sleep_timer_set">Der Schlaf Timer geht ab jetzt %d Minuten lang.</string>
   <string name="action_new_playlist">Neue Wiedergabeliste…</string>
   <string name="new_playlist_title">Neue Wiedergabeliste</string>
+  <string name="grid_size_1">1</string>
+  <string name="grid_size_2">2</string>
+  <string name="grid_size_3">3</string>
+  <string name="grid_size_4">4</string>
+  <string name="grid_size_5">5</string>
+  <string name="grid_size_6">6</string>
+  <string name="grid_size_7">7</string>
+  <string name="grid_size_8">8</string>
   <string name="colored_footers">Farbige Balken</string>
   <string name="special_thanks_to">Besonderes Dankeschön an</string>
   <string name="changelog">Änderungen</string>
@@ -206,6 +225,7 @@
   <string name="version">Version</string>
   <string name="application">Anwendung</string>
   <string name="author">Autor</string>
+  <string name="write_an_email">E-Mail schreiben</string>
   <string name="add_to_google_plus_circles">Zu Google Plus Kreisen hinzufügen</string>
   <string name="follow_on_twitter">Auf Twitter folgen</string>
   <string name="fork_on_github">Auf GitHub forken</string>
@@ -272,4 +292,5 @@
   <!-- App Shortcuts -->
   <string name="app_shortcut_shuffle_all_short">Zufällig</string>
   <string name="app_shortcut_top_tracks_short">Lieblingstitel</string>
+  <string name="playlist_is_empty">Wiedergabeliste ist leer</string>
 </resources>
