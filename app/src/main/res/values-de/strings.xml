@@ -40,6 +40,7 @@
   <string name="playlists">Wiedergabelisten</string>
   <string name="unplayable_file">Der Song konnte nicht abgespielt werden.</string>
   <string name="biography_unavailable">Die Biografie dieses Interpreten wurde nicht gefunden.</string>
+  <string name="wiki_unavailable">Es konnte kein Wiki-Eintrag für dieses Album gefunden werden.</string>
   <string name="biography">Biografie</string>
   <string name="wiki">Wiki</string>
   <string name="audio_focus_denied">Kein Audiofokus.</string>
@@ -146,6 +147,7 @@
   <string name="pref_title_playback_controller_card_now_playing">Karte hinter Wiedergabesteuerung</string>
   <string name="pref_title_colored_playback_controls_now_playing">Farbige Wiedergabesteuerung</string>
   <string name="pref_title_audio_ducking">Lautstärke bei Fokusverlust verringern</string>
+  <string name="pref_title_last_added_interval">Letztes Intervall für das Hinzufügen zu Wiedergabelisten</string>
   <string name="no_equalizer">Kein Equalizer gefunden.</string>
   <string name="no_audio_ID">"Keine Audio ID, spiele etwas ab und versuche es erneut."</string>
   <string name="delete_action">Löschen</string>
@@ -266,6 +268,7 @@
   <string name="app_widget_big_name">Phonograph - Groß</string>
   <string name="app_widget_classic_name">Phonograph - Klassisch</string>
   <string name="app_widget_small_name">Phonograph - Klein</string>
+  <string name="app_widget_card_name">Phonograph - Karte</string>
   <string name="report_an_issue">Einen Fehler melden</string>
   <string name="bug_report_issue">Fehler</string>
   <string name="login">Login</string>
@@ -293,4 +296,6 @@
   <string name="app_shortcut_shuffle_all_short">Zufällig</string>
   <string name="app_shortcut_top_tracks_short">Lieblingstitel</string>
   <string name="playlist_is_empty">Wiedergabeliste ist leer</string>
+  <string name="playing_notification_description">Die Abspiel-Benachrichtigung enthält Aktionen für Play/Pause etc.</string>
+  <string name="playing_notification_name">Abspiel-Benachrichtigung</string>
 </resources>
