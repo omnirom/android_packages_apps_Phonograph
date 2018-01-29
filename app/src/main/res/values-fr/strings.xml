@@ -40,7 +40,9 @@
   <string name="playlists">Playlists</string>
   <string name="unplayable_file">Impossible de lire ce titre.</string>
   <string name="biography_unavailable">Impossible de trouver la biographie de l\'artiste.</string>
+  <string name="wiki_unavailable">Impossible\u2019 de trouver la biographie de l\'artiste.</string>
   <string name="biography">Biographie</string>
+  <string name="wiki">Wiki</string>
   <string name="audio_focus_denied">Accès à l\'Audio Focus refusé.</string>
   <string name="album">Album</string>
   <string name="artist">Artiste</string>
@@ -102,6 +104,7 @@
   <string name="action_shuffle_artist">Artiste aléatoire</string>
   <string name="action_shuffle_playlist">Lecture aléatoire</string>
   <string name="action_clear_playing_queue">Effacer la file de lecture</string>
+  <string name="action_save_playing_queue">Sauvegarder la file de lecture</string>
   <string name="action_go_to_start_directory">Aller au répertoire de départ</string>
   <string name="action_show_lyrics">Afficher les paroles</string>
   <string name="last_opened">Récemment ouverts</string>
@@ -111,6 +114,11 @@
   <string name="always">Toujours</string>
   <string name="only_on_wifi">Wi-Fi uniquement</string>
   <string name="never">Jamais</string>
+  <string name="today">Aujourd\'hui</string>
+  <string name="this_week">Cette semaine</string>
+  <string name="this_month">Ce mois-ci</string>
+  <string name="past_three_months">3 derniers mois</string>
+  <string name="this_year">Cette année</string>
   <string name="equalizer">Égaliseur</string>
   <string name="pref_header_colors">Couleurs</string>
   <string name="pref_header_now_playing_screen">Lecture en cours</string>
@@ -119,6 +127,8 @@
   <string name="pref_header_general">Général</string>
   <string name="pref_header_images">Images</string>
   <string name="pref_header_lockscreen">Écran de verrouillage</string>
+  <string name="pref_header_notification">Notification</string>
+  <string name="pref_header_playlists">Playlists</string>
   <string name="pref_title_navigation_bar">Barre de navigation colorée</string>
   <string name="pref_title_app_shortcuts">Raccourcis de l\'application colorés</string>
   <string name="pref_title_set_default_start_page">Page d\'accueil</string>
@@ -126,6 +136,7 @@
   <string name="pref_title_auto_download_metadata">Télécharger automatiquement les images</string>
   <string name="pref_title_blurred_album_art">Pochette d\'album floue</string>
   <string name="pref_title_colored_notification">Notification colorée</string>
+  <string name="pref_title_classic_notification">Design de notification classique</string>
   <string name="pref_title_ignore_media_store_artwork">Ignorer le stockage des pochettes</string>
   <string name="pref_title_gapless_playback">Lecture sans coupure</string>
   <string name="pref_title_force_square_album_art">Pochette d\'album carrée</string>
@@ -136,6 +147,7 @@
   <string name="pref_title_playback_controller_card_now_playing">Afficher la carte sous les boutons de lecture</string>
   <string name="pref_title_colored_playback_controls_now_playing">Contrôles de lecture colorés</string>
   <string name="pref_title_audio_ducking">Réduire volume sur perte de mise au point</string>
+  <string name="pref_title_last_added_interval">Playlist sur l\'intervalle d\'ajouts récents</string>
   <string name="no_equalizer">Aucun égaliseur trouvé</string>
   <string name="no_audio_ID">"Jouez un morceau d'abord puis réessayez."</string>
   <string name="delete_action">Supprimer</string>
@@ -161,6 +173,7 @@
   <string name="song">Titre</string>
   <string name="pref_summary_album_art_on_lockscreen">La pochette d\'album du titre actuel est utilisée comme fond d\'écran de verrouillage.</string>
   <string name="pref_summary_blurred_album_art">Floute la pochette d\'album sur l\'écran de verrouillage. Peut causer des problèmes avec des applications et des widgets tiers.</string>
+  <string name="pref_summary_classic_notification">Utiliser le design de notification classique.</string>
   <string name="pref_summary_colored_notification">"Colore la notification en fonction de la pochette de l'album."</string>
   <string name="pref_summary_gapless_playback">"Peut causer des problèmes de lecture sur certains appareils."</string>
   <string name="pref_summary_force_square_album_art">La pochette de l\'album dans l\'écran de lecture en cours est forcée à rester carrée.</string>
@@ -192,6 +205,14 @@
   <string name="sleep_timer_set">Arrêt de la musique dans %d minutes.</string>
   <string name="action_new_playlist">Nouvelle liste de lecture…</string>
   <string name="new_playlist_title">Nouvelle playlist</string>
+  <string name="grid_size_1">1</string>
+  <string name="grid_size_2">2</string>
+  <string name="grid_size_3">3</string>
+  <string name="grid_size_4">4</string>
+  <string name="grid_size_5">5</string>
+  <string name="grid_size_6">6</string>
+  <string name="grid_size_7">7</string>
+  <string name="grid_size_8">8</string>
   <string name="colored_footers">Bas des albums colorés</string>
   <string name="special_thanks_to">Un grand merci à</string>
   <string name="changelog">Changelog</string>
@@ -206,6 +227,7 @@
   <string name="version">Version</string>
   <string name="application">Application</string>
   <string name="author">Auteur</string>
+  <string name="write_an_email">Écrire un e-mail</string>
   <string name="add_to_google_plus_circles">Ajouter aux cercles Google+</string>
   <string name="follow_on_twitter">Suivre sur Twitter</string>
   <string name="fork_on_github">Aller sur GitHub</string>
@@ -246,6 +268,7 @@
   <string name="app_widget_big_name">Phonograph - Grand</string>
   <string name="app_widget_classic_name">Phonograph - Classique</string>
   <string name="app_widget_small_name">Phonograph - Petit</string>
+  <string name="app_widget_card_name">Phonograph - Carte</string>
   <string name="report_an_issue">Signaler un problème</string>
   <string name="bug_report_issue">Problème</string>
   <string name="login">Connexion</string>
@@ -272,4 +295,7 @@
   <!-- App Shortcuts -->
   <string name="app_shortcut_shuffle_all_short">Lecture aléatoire</string>
   <string name="app_shortcut_top_tracks_short">Meilleurs titres</string>
+  <string name="playlist_is_empty">Playlist vide</string>
+  <string name="playing_notification_description">La notification de lecture fournis des actions de pause/lecture etc.</string>
+  <string name="playing_notification_name">Notification de lecture</string>
 </resources>
