@@ -159,9 +159,9 @@
   <string name="select">Seç</string>
   <string name="default_str">Varsayılan</string>
   <string name="primary_color">Esas renk</string>
-  <string name="accent_color">Vurgu rengi</string>
+  <string name="accent_color">Ara renk</string>
   <string name="primary_color_desc">Varsayılan esas tema rengi mavi.</string>
-  <string name="accent_color_desc">Varsayılan tema vurgu rengi pembe.</string>
+  <string name="accent_color_desc">Varsayılan ara tema rengi pembe.</string>
   <string name="update_image">Resmi güncelle</string>
   <string name="playlist_empty_text">Boş oynatma listesi</string>
   <string name="no_playlists">Oynatma listesi yok</string>
@@ -214,7 +214,7 @@
   <string name="grid_size_7">7</string>
   <string name="grid_size_8">8</string>
   <string name="colored_footers">Renkli alt bilgiler</string>
-  <string name="special_thanks_to">Hususî teşekkürler</string>
+  <string name="special_thanks_to">Husûsî teşekkürler</string>
   <string name="changelog">Değişiklikler</string>
   <string name="licenses">Ruhsatlar</string>
   <string name="permissions_denied">İzinler reddedildi.</string>
@@ -233,7 +233,7 @@
   <string name="fork_on_github">GitHub\'da çatalla</string>
   <string name="visit_website">Web sitesini ziyaret edin</string>
   <string name="report_bugs">Hatâ bildirin</string>
-  <string name="report_bugs_summary">Hatâ bildirin veyâ yeni husûsiyetler talep edin.</string>
+  <string name="report_bugs_summary">Hatâ bildirin veyâ yeni husûsîyetler talep edin.</string>
   <string name="join_community">Google Plus topluluğuna katılın</string>
   <string name="join_community_summary">Yardıma ihtiyâcınız veyâ sorunuz varsa, Google Plus adresindeki Phonograph topluluğu en doğru yer.</string>
   <string name="translate">Tercüme et</string>
@@ -287,7 +287,7 @@
   <string name="bug_report_failed">Rapor gönderilemiyor</string>
   <string name="bug_report_failed_wrong_credentials">Kullanıcı adı veyâ parola yanlış</string>
   <string name="bug_report_failed_invalid_token">Geçersiz erişim belirtisi. Uygulamanın geliştiricisi ile irtibata geçiniz.</string>
-  <string name="bug_report_failed_issues_not_available">Sorunlar seçilen depo için etkin değil. Uygulamanın geliştiricisi ile irtibata geçiniz.</string>
+  <string name="bug_report_failed_issues_not_available">Meseleler seçilen depo için etkin değil. Uygulamanın geliştiricisi ile irtibat kurun.</string>
   <string name="bug_report_failed_unknown">Beklenmedik bir hatâ oluştu. Uygulamanın geliştiricisi ile irtibata geçiniz.</string>
   <string name="copied_device_info_to_clipboard">Cihaz bilgisi panoya kopyalandı.</string>
   <string name="your_account_data_is_only_used_for_authentication">Hesabınız ile alâkalı veriler sadece kimlik doğrulaması için kullanılır.</string>
