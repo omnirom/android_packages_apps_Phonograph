@@ -88,10 +88,20 @@
   <string name="up_next">Järgmisena</string>
   <string name="library">Teek</string>
   <string name="folders">Kaustad</string>
+  <string name="app_widget_big_name">Phonograph - suur</string>
+  <string name="app_widget_classic_name">Phonograph - klassikaline</string>
+  <string name="app_widget_small_name">Phonograph - väike</string>
+  <string name="app_widget_card_name">Phonograph - kaart</string>
+  <string name="report_an_issue">Teavita probleemist</string>
   <string name="bug_report_issue">Probleem</string>
   <string name="login">Logi sisse</string>
   <string name="title">Pealkiri</string>
+  <string name="description">Kirjeldus</string>
   <string name="device_info">Seadme teave</string>
+  <string name="bug_report_use_account">Saada GitHub kontoga</string>
+  <string name="bug_report_manual">Saada käsitsi</string>
+  <string name="username">Kasutajanimi</string>
+  <string name="password">Parool</string>
   <string name="copied_device_info_to_clipboard">Seadme teave kopeeritud lõikelauale.</string>
   <!-- App Shortcuts -->
   <string name="app_shortcut_shuffle_all_short">Juhuesitus</string>
