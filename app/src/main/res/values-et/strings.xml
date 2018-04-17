@@ -63,12 +63,14 @@
   <string name="update_image">Uuenda pilti</string>
   <string name="empty">Tühi</string>
   <string name="song">Laul</string>
+  <string name="pref_summary_audio_ducking">Teated, navigatsioon jne</string>
   <string name="favorites">Lemmikud</string>
   <string name="last_added">Viimati lisatud</string>
   <string name="history">Ajalugu</string>
   <string name="web_search">Veebiotsing</string>
   <string name="action_sleep_timer">Unetaimer</string>
   <string name="action_set">Määra</string>
+  <string name="sleep_timer_canceled">Unetaimer tühistatud.</string>
   <string name="action_new_playlist">Uus esitusloend…</string>
   <string name="new_playlist_title">Uus esitusloend</string>
   <string name="grid_size_1">1</string>
@@ -95,6 +97,7 @@
   <string name="fork_on_github">Fork\'i GitHubis</string>
   <string name="visit_website">Külasta veebisaiti</string>
   <string name="report_bugs">Teata vigadest</string>
+  <string name="join_community">Liitu Google Plus kogukonnaga</string>
   <string name="translate">Tõlgi</string>
   <string name="rate_on_google_play">Hinda</string>
   <string name="donate">Anneta</string>
@@ -121,4 +124,7 @@
   <string name="copied_device_info_to_clipboard">Seadme teave kopeeritud lõikelauale.</string>
   <!-- App Shortcuts -->
   <string name="app_shortcut_shuffle_all_short">Juhuesitus</string>
+  <string name="playlist_is_empty">Esitlusloend on tühi</string>
+  <string name="playing_notification_description">Esitamise teade pakub tegevusi esituse käivitamiseks, peatamiseks jne</string>
+  <string name="playing_notification_name">Esitamise teade</string>
 </resources>
