@@ -67,6 +67,7 @@
   <string name="favorites">Lemmikud</string>
   <string name="last_added">Viimati lisatud</string>
   <string name="history">Ajalugu</string>
+  <string name="my_top_tracks">Minu top lood</string>
   <string name="web_search">Veebiotsing</string>
   <string name="action_sleep_timer">Unetaimer</string>
   <string name="action_set">Määra</string>
@@ -124,6 +125,7 @@
   <string name="copied_device_info_to_clipboard">Seadme teave kopeeritud lõikelauale.</string>
   <!-- App Shortcuts -->
   <string name="app_shortcut_shuffle_all_short">Juhuesitus</string>
+  <string name="app_shortcut_top_tracks_short">Top lood</string>
   <string name="playlist_is_empty">Esitlusloend on tühi</string>
   <string name="playing_notification_description">Esitamise teade pakub tegevusi esituse käivitamiseks, peatamiseks jne</string>
   <string name="playing_notification_name">Esitamise teade</string>
