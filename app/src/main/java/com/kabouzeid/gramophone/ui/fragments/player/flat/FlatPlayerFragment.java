@@ -375,6 +375,9 @@ public class FlatPlayerFragment extends AbsPlayerFragment implements PlayerAlbum
             Animator statusBarAnimator = ViewUtil.createBackgroundColorTransition(fragment.playerStatusBar, fragment.lastColor, newColor);
 
             AnimatorSet animatorSet = new AnimatorSet();
+            backgroundAnimator.setDuration(ViewUtil.PHONOGRAPH_ANIM_TIME);
+            statusBarAnimator.setDuration(ViewUtil.PHONOGRAPH_ANIM_TIME);
+
             animatorSet.playTogether(backgroundAnimator, statusBarAnimator);
 
             if (!ATHUtil.isWindowBackgroundDark(fragment.getActivity())) {
@@ -384,7 +387,6 @@ public class FlatPlayerFragment extends AbsPlayerFragment implements PlayerAlbum
                 animatorSet.play(subHeaderAnimator);
             }
 
-            animatorSet.setDuration(ViewUtil.PHONOGRAPH_ANIM_TIME);
             return animatorSet;
         }
 
