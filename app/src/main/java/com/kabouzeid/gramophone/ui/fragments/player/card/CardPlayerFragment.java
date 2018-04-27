@@ -399,6 +399,7 @@ public class CardPlayerFragment extends AbsPlayerFragment implements PlayerAlbum
             }
 
             AnimatorSet animatorSet = new AnimatorSet();
+            backgroundAnimator.setDuration(ViewUtil.PHONOGRAPH_ANIM_TIME);
 
             animatorSet.play(backgroundAnimator);
 
@@ -409,7 +410,6 @@ public class CardPlayerFragment extends AbsPlayerFragment implements PlayerAlbum
                 animatorSet.play(subHeaderAnimator);
             }
 
-            animatorSet.setDuration(ViewUtil.PHONOGRAPH_ANIM_TIME);
             return animatorSet;
         }
 
