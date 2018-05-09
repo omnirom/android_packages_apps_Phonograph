@@ -158,9 +158,9 @@
   <string name="pref_summary_opaque_toolbar_now_playing">Colores de la barra de herramientas.</string>
   <string name="pref_summary_opaque_statusbar_now_playing">Colores de la barra de estado.</string>
   <string name="pref_summary_larger_title_box_now_playing">El cuadro del título es más alto.</string>
-  <string name="pref_summary_alternative_progress_slider_now_playing">Usar una barra de progreso que no cubra la portada del albúm en lugar del deslizador de progreso predeterminado.</string>
+  <string name="pref_summary_alternative_progress_slider_now_playing">Usar una barra de progreso que no cubra la portada del álbum en lugar del deslizador de progreso predeterminado.</string>
   <string name="pref_summary_playback_controller_card_now_playing">Muestra una tarjeta debajo de reproducir/pausar, saltar, rebobinar, mezclar y repetir.</string>
-  <string name="pref_summary_ignore_media_store_artwork">Puede aumentar la calidad de la portada del albúm pero provoca tiempos de carga de imágenes más lentos. Solo habilítelo si tiene problemas con ilustraciones de baja resolución.</string>
+  <string name="pref_summary_ignore_media_store_artwork">Puede aumentar la calidad de la portada del álbum pero provoca tiempos de carga de imágenes más lentos. Solo habilítelo si tiene problemas con ilustraciones de baja resolución.</string>
   <string name="pref_summary_colored_navigation_bar">Colorea la barra de navegación en el color primario.</string>
   <string name="pref_summary_colored_app_shortcuts">Colorea los accesos directos de las aplicaciones en el color primario.</string>
   <string name="pref_summary_audio_ducking">Notificaciones, navegación, etc.</string>
@@ -193,6 +193,8 @@
   <string name="write_an_email">Escribe un correo electrónico</string>
   <string name="add_to_google_plus_circles">Añadir a círculos de Google Plus</string>
   <string name="follow_on_twitter">Seguir en Twitter</string>
+  <string name="translate">Traducir</string>
+  <string name="rate_on_google_play">Valorar</string>
   <string name="aleksandar_tesic_summary">Para ayudarme con el diseño.</string>
   <string name="website">Sitio web</string>
   <string name="loading_products">Cargando productos…</string>
