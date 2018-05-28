@@ -21,6 +21,9 @@
   <string name="action_search">Αναζήτηση</string>
   <string name="action_play_next">Επόμενο</string>
   <string name="action_play">Αναπαραγωγή</string>
+  <string name="action_play_pause">Αναπαραγωγή/Παύση</string>
+  <string name="action_previous">Προηγούμενο</string>
+  <string name="action_next">Επόμενο</string>
   <string name="action_add_to_playing_queue">Προσθήκη στη σειρά τραγουδιών</string>
   <string name="action_remove_from_playing_queue">Διαγραφή από την σειρά τραγουδιών</string>
   <string name="action_add_to_playlist">Προσθήκη στην λίστα αναπαραγωγής</string>
@@ -38,6 +41,7 @@
   <string name="unplayable_file">\u03a3\u03c5\u03b3\u03b3\u03bd\u03ce\u03bc\u03b7 - \u03a5\u03c0\u03ae\u03c1\u03be\u03b5 \u03c3\u03c6\u03ac\u03bb\u03bc\u03b1 \u03c3\u03c4\u03b7\u03bd \u03c0\u03c1\u03bf\u03c3\u03c0\u03ac\u03b8\u03b5\u03b9\u03b1 \u03b1\u03bd\u03b1\u03c0\u03b1\u03c1\u03b1\u03b3\u03c9\u03b3\u03ae\u03c2</string>
   <string name="biography_unavailable">\u03a3\u03c5\u03b3\u03b3\u03bd\u03ce\u03bc\u03b7, \u03b4\u03b5\u03bd \u03bc\u03c0\u03bf\u03c1\u03bf\u03cd\u03bc\u03b5 \u03c4\u03b7 \u03b2\u03b9\u03bf\u03b3\u03c1\u03b1\u03c6\u03af\u03b1 \u03b1\u03c5\u03c4\u03bf\u03cd \u03c4\u03bf\u03c5 \u03ba\u03b1\u03bb\u03bb\u03b9\u03c4\u03ad\u03c7\u03bd\u03b7</string>
   <string name="biography">Βιογραφία</string>
+  <string name="wiki">Wiki</string>
   <string name="audio_focus_denied">Έγινε άρνηση εστίασης ήχου</string>
   <string name="album">Άλμπουμ</string>
   <string name="artist">Καλλιτέχνης</string>
@@ -46,6 +50,7 @@
   <string name="year">Έτος</string>
   <string name="track">Κομμάτι</string>
   <string name="track_hint">"Κομμάτι (2 για κομμάτι 2 ή 3004 από CD3 κομμάτι 4)"</string>
+  <string name="lyrics">Στίχοι</string>
   <string name="album_or_artist_empty">Το πεδίο \"Τίτλος\" ή \"Καλλιτέχνης\" είναι άδειο</string>
   <string name="saving_changes">Γίνεται αποθήκευση αλλαγών... </string>
   <string name="saving_to_file">Αποθήκευση στο αρχείο...</string>
@@ -99,6 +104,7 @@
   <string name="action_shuffle_artist">Τυχαίος καλλιτέχνης</string>
   <string name="action_shuffle_playlist">Τυχαία λίστα αναπαραγωγής</string>
   <string name="action_clear_playing_queue">Εκκαθάριση της ουράς αναπαραγωγής</string>
+  <string name="action_save_playing_queue">Αποθήκευση ουράς αναπαραγωγής</string>
   <string name="action_go_to_start_directory">Πηγαίνετε στον κατάλογο έναρξης</string>
   <string name="action_show_lyrics">Εμφάνιση στίχων</string>
   <string name="last_opened">Τελευταίο</string>
@@ -108,6 +114,11 @@
   <string name="always">Πάντα</string>
   <string name="only_on_wifi">Μόνο σε Wi-Fi</string>
   <string name="never">Ποτέ</string>
+  <string name="today">Σήμερα</string>
+  <string name="this_week">Αυτή η εβδομάδα</string>
+  <string name="this_month">Αυτόν τον μήνα</string>
+  <string name="past_three_months">Τελευταίοι 3 μήνες</string>
+  <string name="this_year">Φέτος</string>
   <string name="equalizer">Ισοσταθμιστής</string>
   <string name="pref_header_colors">Χρώματα</string>
   <string name="pref_header_now_playing_screen">Γίνεται αναπαραγωγή</string>
@@ -116,12 +127,16 @@
   <string name="pref_header_general">Γενικά</string>
   <string name="pref_header_images">Εικόνες</string>
   <string name="pref_header_lockscreen">Οθόνη κλειδώματος</string>
+  <string name="pref_header_notification">Ειδοποίηση</string>
+  <string name="pref_header_playlists">Λίστες αναπαραγωγής</string>
   <string name="pref_title_navigation_bar">Έγχρωμη μπάρα πλοήγησης</string>
+  <string name="pref_title_app_shortcuts">Χρωματιστές συντομεύσεις εφαρμογών</string>
   <string name="pref_title_set_default_start_page">Αρχική σελίδα</string>
   <string name="pref_title_album_art_on_lockscreen">Εμφάνιση album art</string>
   <string name="pref_title_auto_download_metadata">Αυτόματο κατέβασμα πορτρέτων καλλιτεχνών</string>
   <string name="pref_title_blurred_album_art">Θάμπωμα πορτρέτων καλλιτεχνών</string>
   <string name="pref_title_colored_notification">Χρωματιστή πλοήγηση</string>
+  <string name="pref_title_classic_notification">Κλασικός σχεδιασμός ειδοποιήσεων</string>
   <string name="pref_title_ignore_media_store_artwork">Παράληψη των album art στην SD</string>
   <string name="pref_title_gapless_playback">Εναλλαγή χωρίς παύση</string>
   <string name="pref_title_force_square_album_art">Τετράγωνο album art</string>
@@ -132,6 +147,7 @@
   <string name="pref_title_playback_controller_card_now_playing">Εμφάνηση καρτέλας πίσω από τα κουμπιά αναπαραγωγής</string>
   <string name="pref_title_colored_playback_controls_now_playing">Χρωματιστά κουμπιά αναπαραγωγής</string>
   <string name="pref_title_audio_ducking">Μειώστε την ένταση στην απώλεια εστίασης</string>
+  <string name="pref_title_last_added_interval">Τελευταία προσθήκη λίστας αναπαραγωγής αυτό το διάστημα</string>
   <string name="no_equalizer">Δε βρέθηκε ισοσταθμιστής</string>
   <string name="no_audio_ID">"Αναπαράγετε ένα τραγούδι πρώτα και δοκιμάστε ξανά."</string>
   <string name="delete_action">Διαγραφή</string>
@@ -157,6 +173,7 @@
   <string name="song">Τραγούδι</string>
   <string name="pref_summary_album_art_on_lockscreen">Εμφάνιση του album art στην οθόνη κλειδώματος.</string>
   <string name="pref_summary_blurred_album_art">Εμφανίζει,θωριασμένα, το album art στην οθόνη κλειδώματος.Μπορεί να δημιουργίσει πρόβλημα με εφαρμογές Τρίτων.</string>
+  <string name="pref_summary_classic_notification">Χρήση της κλασικού σχεδιασμού ειδοποιήσεων.</string>
   <string name="pref_summary_colored_notification">"\u03a7\u03c1\u03c9\u03bc\u03b1\u03c4\u03af\u03b6\u03b5\u03b9 \u03c4\u03b7\u03bd \u03bc\u03c0\u03ac\u03c1\u03b1 \u03b5\u03b9\u03b4\u03bf\u03c0\u03bf\u03b9\u03ae\u03c3\u03b5\u03c9\u03bd \u03c3\u03c4\u03bf \u03c7\u03c1\u03ce\u03bc\u03b1 \u03c4\u03bf\u03c5 album art \u03c4\u03bf\u03c5 \u03c4\u03c1\u03b1\u03b3\u03bf\u03c5\u03b4\u03b9\u03bf\u03cd"</string>
   <string name="pref_summary_gapless_playback">"Μπορεί να δημιουργίσει θέματα αναπαραγωγής σε μερικές συσκευές."</string>
   <string name="pref_summary_force_square_album_art">Τα εξώφυλλα των άλμπουμ στην κατηγορία \"παίζει τώρα\" είναι πάντα τετραγωνισμένα.</string>
@@ -187,6 +204,14 @@
   <string name="sleep_timer_set">Ο χρονοδιακόπτης ύπνου έχει οριστεί σε %d λεπτά από τώρα.</string>
   <string name="action_new_playlist">Νέα λίστα αναπαραγωγής...</string>
   <string name="new_playlist_title">Νέα λίστα αναπαραγωγής</string>
+  <string name="grid_size_1">1</string>
+  <string name="grid_size_2">2</string>
+  <string name="grid_size_3">3</string>
+  <string name="grid_size_4">4</string>
+  <string name="grid_size_5">5</string>
+  <string name="grid_size_6">6</string>
+  <string name="grid_size_7">7</string>
+  <string name="grid_size_8">8</string>
   <string name="colored_footers">Χρωματιστά υποσέλιδα</string>
   <string name="special_thanks_to">Ιδιαίτερες ευχαριστίες προς</string>
   <string name="changelog">Κατάλογος αλλαγών</string>
@@ -201,6 +226,7 @@
   <string name="version">Έκδοση</string>
   <string name="application">Εφαρμογή</string>
   <string name="author">Εκδότης</string>
+  <string name="write_an_email">Σύνταξη email</string>
   <string name="add_to_google_plus_circles">Προσθήκη στους κύκλους σας στο Google Plus</string>
   <string name="follow_on_twitter">Ακολουθήστε στο Twitter</string>
   <string name="fork_on_github">Παρακολουθήστε στο GitHub</string>
@@ -265,4 +291,7 @@
   <string name="your_account_data_is_only_used_for_authentication">Τα στοιχεία του λογαριασμού σας χρησιμοποιούνται μόνο για τον έλεγχο της ταυτότητάς σας.</string>
   <string name="you_will_be_forwarded_to_the_issue_tracker_website">Θα μεταφερθείτε στην ιστοσελίδα του εντοπιστή ζητημάτων.</string>
   <!-- App Shortcuts -->
+  <string name="app_shortcut_shuffle_all_short">Τυχαία αναπαραγωγή</string>
+  <string name="app_shortcut_top_tracks_short">Κορυφαία κομμάτια</string>
+  <string name="playlist_is_empty">Η λίστα αναπαραγωγής είναι άδεια</string>
 </resources>

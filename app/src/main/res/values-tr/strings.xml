@@ -143,7 +143,7 @@
   <string name="pref_title_opaque_toolbar_now_playing">Şeffaf araç çubuğu</string>
   <string name="pref_title_opaque_statusbar_now_playing">Şeffaf durum çubuğu</string>
   <string name="pref_title_larger_title_box_now_playing">Daha büyük başlık kutusu</string>
-  <string name="pref_title_alternative_progress_slider_now_playing">Farklı ilerleme kaydırıcısı</string>
+  <string name="pref_title_alternative_progress_slider_now_playing">Farklı ilerleme kaydırağı</string>
   <string name="pref_title_playback_controller_card_now_playing">Oynatma denetimleri altında kart göster</string>
   <string name="pref_title_colored_playback_controls_now_playing">Renkli oynatma denetimleri</string>
   <string name="pref_title_audio_ducking">Odak kaybında ses seviyesini azalt</string>
@@ -180,10 +180,10 @@
   <string name="pref_summary_opaque_toolbar_now_playing">Araç çubuğunu renklendirir.</string>
   <string name="pref_summary_opaque_statusbar_now_playing">Durum çubuğunu renklendirir.</string>
   <string name="pref_summary_larger_title_box_now_playing">Daha yüksek başlık kutusu.</string>
-  <string name="pref_summary_alternative_progress_slider_now_playing">Varsayılan ilerleme çubuğu yerine albüm resmini kaplamayan bir ilerleme çubuğu kullanılır.</string>
+  <string name="pref_summary_alternative_progress_slider_now_playing">Standart ilerleme kaydırağı yerine albüm kapağını örtmeyen bir ilerleme çubuğu kullanılır.</string>
   <string name="pref_summary_playback_controller_card_now_playing">Oynat, duraklat, atla, geri sar, karıştır ve tekrarla düğmelerinin altında bir kart gösterilir.</string>
   <string name="pref_summary_ignore_media_store_artwork">Albüm kapağı kalitesini artırabilir fakat daha yavaş resim yükleme sürelerine de sebep olabilir. Düşük çözünürlükte olan albüm kapakları ile alâkalı sorunlar varsa bunu etkinleştirin.</string>
-  <string name="pref_summary_colored_playback_controls_now_playing">İlerleme kaydırıcısının yanı sıra oynat, durdur, karıştır ve tekrarla düğmelerinin renklerini de albüm kapağında bulunan canlı renkler ile renklendirir.</string>
+  <string name="pref_summary_colored_playback_controls_now_playing">İlerleme kaydırağının yanı sıra çal, durdur, karıştır ve tekrarla düğmelerinin renklerini de albüm kapağında bulunan canlı renkler ile renklendirir.</string>
   <string name="pref_summary_colored_navigation_bar">Gezinti çubuğunu esas renkle renklendirir.</string>
   <string name="pref_summary_colored_app_shortcuts">Uygulama kısayollarını esas renk ile renklendirir.</string>
   <string name="pref_summary_audio_ducking">Bildirimler, gezinti vesaire</string>
