@@ -296,4 +296,6 @@
   <string name="app_shortcut_shuffle_all_short">Losowo</string>
   <string name="app_shortcut_top_tracks_short">Najlepsze utwory</string>
   <string name="playlist_is_empty">Lista odtwarzania jest pusta</string>
+  <string name="playing_notification_description">Powiadomienia o odtwarzaniu muzyki zawierają przyciski sterowania dźwiękiem.</string>
+  <string name="playing_notification_name">Powiadomienia o odtwarzaniu muzyki</string>
 </resources>
