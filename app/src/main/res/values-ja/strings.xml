@@ -130,6 +130,7 @@
   <string name="pref_header_notification">通知</string>
   <string name="pref_header_playlists">プレイリスト</string>
   <string name="pref_title_navigation_bar">ナビゲーションバーの彩色設定</string>
+  <string name="pref_title_app_shortcuts">色つきのアプリショートカット</string>
   <string name="pref_title_set_default_start_page">起動時の画面</string>
   <string name="pref_title_album_art_on_lockscreen">アルバムアートをロック画面に表示する</string>
   <string name="pref_title_auto_download_metadata">アーティスト画像の自動ダウンロード</string>
@@ -144,6 +145,9 @@
   <string name="pref_title_larger_title_box_now_playing">タイトルの表示を拡大</string>
   <string name="pref_title_alternative_progress_slider_now_playing">シークバーの変更</string>
   <string name="pref_title_playback_controller_card_now_playing">コントロールキーをカード上に表示する</string>
+  <string name="pref_title_colored_playback_controls_now_playing">色つきの再生コントロール</string>
+  <string name="pref_title_audio_ducking">優先順位の高い音声が流れたら音量を下げる</string>
+  <string name="pref_title_last_added_interval">最近追加された曲に表示する期間</string>
   <string name="no_equalizer">イコライザーがインストールされていません</string>
   <string name="no_audio_ID">"オーディオIDが存在しません。何か再生してもう一度お試し下さい"</string>
   <string name="delete_action">削除</string>
@@ -169,6 +173,7 @@
   <string name="song">タイトル</string>
   <string name="pref_summary_album_art_on_lockscreen">アルバムアートをロック画面に表示します(適用するにはアプリの再起動が必要です)</string>
   <string name="pref_summary_blurred_album_art">ロック画面上に表示するアルバムアートにぼかし効果かけます。サードパーティ製のアプリやウィジェットが問題を引き起こす可能性があります。</string>
+  <string name="pref_summary_classic_notification">クラシックの通知デザインを使用する</string>
   <string name="pref_summary_colored_notification">"\u901a\u77e5\u30d0\u30fc\u306e\u518d\u751f\u30b3\u30f3\u30c8\u30ed\u30fc\u30eb\u306e\u8272\u3092\u30a2\u30eb\u30d0\u30e0\u30a2\u30fc\u30c8\u304b\u3089\u62bd\u51fa\u3057\u3066\u4f7f\u7528\u3057\u307e\u3059"</string>
   <string name="pref_summary_gapless_playback">"曲と曲の間の無音部分をスキップします(再生時に問題が生じる場合は無効にして下さい)"</string>
   <string name="pref_summary_force_square_album_art">NowPlaying画面で正方形でないアルバムアートを画面の中に収めます</string>
@@ -178,7 +183,9 @@
   <string name="pref_summary_alternative_progress_slider_now_playing">アルバムアートに被らないシークバーに変更します</string>
   <string name="pref_summary_playback_controller_card_now_playing">再生コントロールキー(l◀, ▶/ll, ▶l など)をカードの上に表示します</string>
   <string name="pref_summary_ignore_media_store_artwork">キャッシュを使用せずアルバムアートの画質を上げることが出来ますが、画像の読み込みは遅くなる可能性があります(アルバムアートの表示に問題がある場合に使用して下さい)</string>
+  <string name="pref_summary_colored_playback_controls_now_playing">再生/一時停止・シャッフル・リピート・アルバムカバーの進行スライダーを鮮やかな色に色付けます</string>
   <string name="pref_summary_colored_navigation_bar">選択した画面で下部のナビゲーションバーをメインカラーに変更します</string>
+  <string name="pref_summary_colored_app_shortcuts">アプリのショートカットを主要な色に色付けます</string>
   <string name="pref_summary_audio_ducking">通知やナビゲーションなど</string>
   <string name="could_not_download_album_cover">"\u6700\u9069\u306a\u30a2\u30eb\u30d0\u30e0\u30a2\u30fc\u30c8\u304c\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f"</string>
   <string name="search_hint">ライブラリ内を検索…</string>
@@ -206,6 +213,7 @@
   <string name="grid_size_6">6</string>
   <string name="grid_size_7">7</string>
   <string name="grid_size_8">8</string>
+  <string name="colored_footers">色つきのフッター</string>
   <string name="special_thanks_to">スペシャルサンクス</string>
   <string name="changelog">更新履歴</string>
   <string name="licenses">ライセンス</string>
@@ -215,11 +223,14 @@
   <string name="support_development">開発を支援</string>
   <string name="thank_you">ありがとう！</string>
   <string name="restored_previous_purchases">以前の購入を復元する</string>
+  <string name="play_store_illustration_by">Play Store イラスト作成者</string>
   <string name="version">バージョン</string>
   <string name="application">アプリケーション</string>
   <string name="author">製作者</string>
   <string name="write_an_email">Eメールを書く</string>
+  <string name="add_to_google_plus_circles">Google+サークルに追加</string>
   <string name="follow_on_twitter">Twitterをフォロー</string>
+  <string name="fork_on_github">Githubでフォーク</string>
   <string name="visit_website">ウェブサイトを開く</string>
   <string name="report_bugs">バグを報告</string>
   <string name="report_bugs_summary">パグの報告または新機能のリクエスト</string>
@@ -232,12 +243,29 @@
 </string>
   <string name="donate">寄付</string>
   <string name="donate_summary">私の仕事を気に入ったら、私を寄付することもできます。</string>
+  <string name="aidan_follestad_summary">テーマエンジンと他の素晴らしいものへの貢献</string>
+  <string name="michael_cook_summary">かわいいマテリアルアプリアイコンの貢献</string>
+  <string name="maarten_corpel_summary">Playストアと空のアルバムカバーのイラストの作成の貢献</string>
+  <string name="aleksandar_tesic_summary">デザイン補助の貢献</string>
   <string name="website">ウェブサイト</string>
+  <string name="loading_products">プロダクトを読み込んでいます</string>
+  <string name="up_next">次の順番</string>
   <string name="pref_title_now_playing_screen_appearance">外観</string>
+  <string name="intro_label">イントロダクション</string>
+  <string name="press_back_again_to_exit_intro">イントロをスキップするにはもう一度戻るを押す</string>
+  <string name="welcome_to_phonograph">"Androidの美しく軽量な音楽プレーヤー、Phonographへようこそ。"</string>
+  <string name="open_playing_queue_instruction">現在再生中の画面でカードをスワイプして再生キュー全体を表示します</string>
+  <string name="rearrange_playing_queue_instruction">トラック番号から曲をドラッグして再生キューを並べ替えます</string>
   <string name="library">ライブラリ</string>
   <string name="folders">フォルダ</string>
+  <string name="saved_playlist_to">%sにプレイリストうぃ保存しました</string>
+  <string name="failed_to_save_playlist">プレイリストの保存に失敗しました（%s）</string>
+  <string name="not_listed_in_media_store"><![CDATA[<b>%s</b>はメディアストアには表示されていません]]></string>
   <string name="nothing_to_scan">スキャン対象がありません</string>
+  <string name="scanned_files">%1$d の内 %2$d ファイルスキャン済み</string>
+  <string name="could_not_scan_files">%dファイルをスキャンできませんでした</string>
   <string name="listing_files">ファイルの一覧</string>
+  <string name="new_start_directory">%sが新しい開始ディレクトリです</string>
   <string name="app_widget_big_name">Phonograph - Big</string>
   <string name="app_widget_classic_name">Phonograph - Classic</string>
   <string name="app_widget_small_name">Phonograph - Small</string>
@@ -262,8 +290,12 @@
   <string name="bug_report_failed_invalid_token">アクセストークンが無効です。 アプリの開発者にお問い合わせください。</string>
   <string name="bug_report_failed_issues_not_available">選択したリポジトリで問題が有効になっていません。 アプリの開発者にお問い合わせください。</string>
   <string name="bug_report_failed_unknown">予期しないエラーが発生しました。 アプリの開発者にお問い合わせください。</string>
+  <string name="copied_device_info_to_clipboard">クリップボードに端末情報をコピーしました</string>
+  <string name="your_account_data_is_only_used_for_authentication">アカウントデータは認証にのみ使用されます</string>
+  <string name="you_will_be_forwarded_to_the_issue_tracker_website">問題トラッカーWebサイトに転送されます</string>
   <!-- App Shortcuts -->
   <string name="app_shortcut_shuffle_all_short">シャッフル</string>
+  <string name="app_shortcut_top_tracks_short">トップトラック</string>
   <string name="playlist_is_empty">プレイリストが空です</string>
   <string name="playing_notification_description">再生通知は再生/一時停止などのアクションを提供します</string>
   <string name="playing_notification_name">再生の通知</string>

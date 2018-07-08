@@ -144,8 +144,8 @@
   <string name="pref_title_opaque_statusbar_now_playing">Şeffaf durum çubuğu</string>
   <string name="pref_title_larger_title_box_now_playing">Daha büyük başlık kutusu</string>
   <string name="pref_title_alternative_progress_slider_now_playing">Farklı ilerleme kaydırağı</string>
-  <string name="pref_title_playback_controller_card_now_playing">Çalma idarelerinin altında kart göster</string>
-  <string name="pref_title_colored_playback_controls_now_playing">Renkli çalma idareleri</string>
+  <string name="pref_title_playback_controller_card_now_playing">Çalma talimatlarının altında kart göster</string>
+  <string name="pref_title_colored_playback_controls_now_playing">Renkli çalma talimatları</string>
   <string name="pref_title_audio_ducking">Odak kaybında ses seviyesini azalt</string>
   <string name="pref_title_last_added_interval">Son ilâve edilen çalma listesi aralığı</string>
   <string name="no_equalizer">Dengeleyici bulunmadı.</string>
