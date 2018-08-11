@@ -18,13 +18,9 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
-ifeq ($(TARGET_BUILD_APPS),)
-support_library_root_dir := frameworks/support
-else
-support_library_root_dir := prebuilts/sdk/current/support
-endif
-
-LOCAL_STATIC_JAVA_LIBRARIES += android-support-v7-preference \
+LOCAL_STATIC_ANDROID_LIBRARIES := \
+    $(ANDROID_SUPPORT_DESIGN_TARGETS) \
+    android-support-v7-preference \
     android-support-compat \
     android-support-core-utils \
     android-support-core-ui \
@@ -36,57 +32,42 @@ LOCAL_STATIC_JAVA_LIBRARIES += android-support-v7-preference \
     android-support-v7-gridlayout \
     android-support-v7-cardview \
     android-support-v7-recyclerview \
+    android-support-v13 \
     android-support-annotations \
     android-support-vectordrawable \
     android-support-animatedvectordrawable \
-    android-support-design \
     android-support-percent \
-    android-support-transition \
-    android-observablescrollview \
-    retrofit \
-    converter-gson \
-    anjlab-library \
-    glide-local \
-    okhttp3 \
-    okhttp3-integration \
-    okio-sink \
-    advrecycler-view \
-    jaudiotagger \
-    gson-local
+    android-support-transition
 
+LOCAL_STATIC_JAVA_LIBRARIES := \
+    android-observablescrollview-target \
+    retrofit-target \
+    converter-gson-target \
+    anjlab-library-target \
+    glide-local-target \
+    okhttp3-target \
+    okhttp3-integration-target \
+    okio-sink-target \
+    advrecycler-view-target \
+    jaudiotagger-target \
+    gson-local-target
 
-LOCAL_STATIC_JAVA_AAR_LIBRARIES += app-theme-helper \
-    material-dialogs-core \
-    material-dialogs-commons \
-    material-cab \
-    SeekArc \
-    AndroidSlidingUpPanel \
-    licensesdialog \
-    RecyclerView-FastScroll \
-    material-intro \
-    material-progressbar-library
+LOCAL_STATIC_JAVA_AAR_LIBRARIES := app-theme-helper-target \
+    material-dialogs-core-target \
+    material-dialogs-commons-target \
+    material-cab-target \
+    SeekArc-target \
+    AndroidSlidingUpPanel-target \
+    licensesdialog-target \
+    RecyclerView-FastScroll-target \
+    material-intro-target \
+    material-progressbar-library-target
 
-LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res \
-                      $(support_library_root_dir)/v14/preference/res \
-                      $(support_library_root_dir)/v7/preference/res \
-                      $(support_library_root_dir)/v7/appcompat/res \
-                      $(support_library_root_dir)/v7/recyclerview/res \
-                      $(support_library_root_dir)/v7/gridlayout/res \
-                      $(support_library_root_dir)/v7/cardview/res \
-                      $(support_library_root_dir)/transition/res \
-                      $(support_library_root_dir)/percent/res \
-                      $(support_library_root_dir)/design/res
+LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res
+LOCAL_RESOURCE_DIR += $(foreach lib, $(LOCAL_STATIC_JAVA_AAR_LIBRARIES),\
+  $(call intermediates-dir-for,JAVA_LIBRARIES,$(lib),,COMMON)/aar/res)
 
 LOCAL_AAPT_FLAGS := --auto-add-overlay \
-    --extra-packages android.support.v14.preference \
-    --extra-packages android.support.v7.preference \
-    --extra-packages android.support.v7.appcompat \
-    --extra-packages android.support.v7.recyclerview \
-    --extra-packages android.support.v7.gridlayout \
-    --extra-packages android.support.v7.cardview \
-    --extra-packages android.support.transition \
-    --extra-packages android.support.percent \
-    --extra-packages android.support.design \
     --extra-packages com.afollestad.materialdialogs \
     --extra-packages com.afollestad.materialdialogs.commons \
     --extra-packages com.afollestad.materialcab \
@@ -98,6 +79,7 @@ LOCAL_AAPT_FLAGS := --auto-add-overlay \
     --extra-packages com.triggertrap.seekarc \
     --extra-packages com.kabouzeid.appthemehelper
 
+LOCAL_USE_AAPT2 := true
 LOCAL_PROGUARD_FLAG_FILES := proguard-rules.pro
 LOCAL_JAR_EXCLUDE_FILES := none
 LOCAL_SRC_FILES += $(call all-java-files-under, java)
@@ -129,6 +111,217 @@ LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES := \
     okio-sink:libs/okio-1.8.0.jar \
     advrecycler-view:libs/advrecyclerview-0.10.0.jar \
     jaudiotagger:libs/jaudiotagger-android-2.2.3.jar \
-    gson-local:libs/gson-2.7.jar \
+    gson-local:libs/gson-2.7.jar
 
 include $(BUILD_MULTI_PREBUILT)
+
+# Enumerate target prebuilts to avoid linker warnings
+include $(CLEAR_VARS)
+
+LOCAL_MODULE_CLASS := JAVA_LIBRARIES
+LOCAL_MODULE := app-theme-helper-target
+LOCAL_SRC_FILES := libs/aar/app-theme-helper-1.3.4.aar
+LOCAL_UNINSTALLABLE_MODULE := true
+LOCAL_SDK_VERSION := current
+
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE_CLASS := JAVA_LIBRARIES
+LOCAL_MODULE := material-dialogs-core-target
+LOCAL_SRC_FILES := libs/aar/material-dialogs-core-0.9.4.2.aar
+LOCAL_UNINSTALLABLE_MODULE := true
+LOCAL_SDK_VERSION := current
+
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE_CLASS := JAVA_LIBRARIES
+LOCAL_MODULE := material-dialogs-commons-target
+LOCAL_SRC_FILES := libs/aar/material-dialogs-commons-0.9.4.2.aar
+LOCAL_UNINSTALLABLE_MODULE := true
+LOCAL_SDK_VERSION := current
+
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE_CLASS := JAVA_LIBRARIES
+LOCAL_MODULE := material-cab-target
+LOCAL_SRC_FILES := libs/aar/material-cab-0.1.12.aar
+LOCAL_UNINSTALLABLE_MODULE := true
+LOCAL_SDK_VERSION := current
+
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE_CLASS := JAVA_LIBRARIES
+LOCAL_MODULE := SeekArc-target
+LOCAL_SRC_FILES := libs/aar/SeekArc-1.2-kmod.aar
+LOCAL_UNINSTALLABLE_MODULE := true
+LOCAL_SDK_VERSION := current
+
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE_CLASS := JAVA_LIBRARIES
+LOCAL_MODULE := AndroidSlidingUpPanel-target
+LOCAL_SRC_FILES := libs/aar/AndroidSlidingUpPanel-3.3.0-kmod3.aar
+LOCAL_UNINSTALLABLE_MODULE := true
+LOCAL_SDK_VERSION := current
+
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE_CLASS := JAVA_LIBRARIES
+LOCAL_MODULE := licensesdialog-target
+LOCAL_SRC_FILES := libs/aar/licensesdialog-1.8.1.aar
+LOCAL_UNINSTALLABLE_MODULE := true
+LOCAL_SDK_VERSION := current
+
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE_CLASS := JAVA_LIBRARIES
+LOCAL_MODULE := RecyclerView-FastScroll-target
+LOCAL_SRC_FILES := libs/aar/RecyclerView-FastScroll-1.9-kmod.aar
+LOCAL_UNINSTALLABLE_MODULE := true
+LOCAL_SDK_VERSION := current
+
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE_CLASS := JAVA_LIBRARIES
+LOCAL_MODULE := material-intro-target
+LOCAL_SRC_FILES := libs/aar/material-intro-1.6.aar
+LOCAL_UNINSTALLABLE_MODULE := true
+LOCAL_SDK_VERSION := current
+
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE_CLASS := JAVA_LIBRARIES
+LOCAL_MODULE := material-progressbar-library-target
+LOCAL_SRC_FILES := libs/aar/material-progressbar-library-1.3.0.aar
+LOCAL_UNINSTALLABLE_MODULE := true
+LOCAL_SDK_VERSION := current
+
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE_CLASS := JAVA_LIBRARIES
+LOCAL_MODULE := android-observablescrollview-target
+LOCAL_SRC_FILES := libs/android-observablescrollview-1.6.0.jar
+LOCAL_UNINSTALLABLE_MODULE := true
+LOCAL_SDK_VERSION := current
+
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE_CLASS := JAVA_LIBRARIES
+LOCAL_MODULE := retrofit-target
+LOCAL_SRC_FILES := libs/retrofit-2.2.0.jar
+LOCAL_UNINSTALLABLE_MODULE := true
+LOCAL_SDK_VERSION := current
+
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE_CLASS := JAVA_LIBRARIES
+LOCAL_MODULE := converter-gson-target
+LOCAL_SRC_FILES := libs/converter-gson-2.2.0.jar
+LOCAL_UNINSTALLABLE_MODULE := true
+LOCAL_SDK_VERSION := current
+
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE_CLASS := JAVA_LIBRARIES
+LOCAL_MODULE := anjlab-library-target
+LOCAL_SRC_FILES := libs/anjlab-library-2.4.0.jar
+LOCAL_UNINSTALLABLE_MODULE := true
+LOCAL_SDK_VERSION := current
+
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE_CLASS := JAVA_LIBRARIES
+LOCAL_MODULE := glide-local-target
+LOCAL_SRC_FILES := libs/glide-3.7.0.jar
+LOCAL_UNINSTALLABLE_MODULE := true
+LOCAL_SDK_VERSION := current
+
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE_CLASS := JAVA_LIBRARIES
+LOCAL_MODULE := okhttp3-target
+LOCAL_SRC_FILES := libs/okhttp-3.3.0.jar
+LOCAL_UNINSTALLABLE_MODULE := true
+LOCAL_SDK_VERSION := current
+
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE_CLASS := JAVA_LIBRARIES
+LOCAL_MODULE := okhttp3-integration-target
+LOCAL_SRC_FILES := libs/okhttp3-integration-1.4.0.jar
+LOCAL_UNINSTALLABLE_MODULE := true
+LOCAL_SDK_VERSION := current
+
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE_CLASS := JAVA_LIBRARIES
+LOCAL_MODULE := okio-sink-target
+LOCAL_SRC_FILES := libs/okio-1.8.0.jar
+LOCAL_UNINSTALLABLE_MODULE := true
+LOCAL_SDK_VERSION := current
+
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE_CLASS := JAVA_LIBRARIES
+LOCAL_MODULE := advrecycler-view-target
+LOCAL_SRC_FILES := libs/advrecyclerview-0.10.0.jar
+LOCAL_UNINSTALLABLE_MODULE := true
+LOCAL_SDK_VERSION := current
+
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE_CLASS := JAVA_LIBRARIES
+LOCAL_MODULE := jaudiotagger-target
+LOCAL_SRC_FILES := libs/jaudiotagger-android-2.2.3.jar
+LOCAL_UNINSTALLABLE_MODULE := true
+LOCAL_SDK_VERSION := current
+
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE_CLASS := JAVA_LIBRARIES
+LOCAL_MODULE := gson-local-target
+LOCAL_SRC_FILES := libs/gson-2.7.jar
+LOCAL_UNINSTALLABLE_MODULE := true
+LOCAL_SDK_VERSION := current
+
+include $(BUILD_PREBUILT)

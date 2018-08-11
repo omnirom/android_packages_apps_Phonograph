@@ -19,10 +19,6 @@
         <item name="android:windowSharedElementsUseOverlay">false</item>
     </style>
 
-    <style name="Theme.Phonograph.Notification" parent="@android:style/TextAppearance.Material.Notification" />
-
-    <style name="Theme.Phonograph.Notification.Title" parent="@android:style/TextAppearance.Material.Notification.Title" />
-
     <style name="Fab" parent="FabParent">
         <item name="android:transitionName">@string/transition_fab</item>
     </style>
@@ -59,16 +55,6 @@
         <item name="android:layout_height">36dp</item>
         <item name="android:padding">8dp</item>
         <item name="android:layout_gravity">center</item>
-    </style>
-
-    <style name="Fab" parent="FabParent" />
-
-    <style name="MusicProgressSlider" parent="MusicProgressSliderParent">
-        <item name="android:thumbOffset">0dp</item>
-    </style>
-
-    <style name="TraditionalMusicProgressSlider" parent="TraditionalMusicProgressSliderParent">
-        <item name="android:thumbOffset">0dp</item>
     </style>
 
     <style name="Toolbar">
