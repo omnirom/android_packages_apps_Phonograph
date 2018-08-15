@@ -200,8 +200,7 @@
             android:label="@string/action_about" />
         <activity
             android:name="com.kabouzeid.gramophone.ui.activities.intro.AppIntroActivity"
-            android:label="@string/intro_label"
-            android:theme="@style/Theme.Intro" />
+            android:label="@string/intro_label" />
         <activity
             android:name="com.kabouzeid.gramophone.appshortcuts.AppShortcutLauncherActivity"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
