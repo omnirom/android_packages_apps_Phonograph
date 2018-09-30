@@ -51,4 +51,5 @@
     <color name="md_grey_300">#E0E0E0</color>
     <color name="md_white_1000">#ffffff</color>
 
+    <color name="md_divider_white">#10FFFFFF</color>
 </resources>

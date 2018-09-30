@@ -80,7 +80,7 @@ LOCAL_AAPT_FLAGS := --auto-add-overlay \
     --extra-packages com.kabouzeid.appthemehelper
 
 LOCAL_USE_AAPT2 := true
-LOCAL_PROGUARD_FLAG_FILES := proguard-rules.pro
+LOCAL_PROGUARD_ENABLED := disabled
 LOCAL_JAR_EXCLUDE_FILES := none
 LOCAL_SRC_FILES += $(call all-java-files-under, java)
 LOCAL_PACKAGE_NAME := Phonograph
