@@ -52,7 +52,8 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
     jaudiotagger-target \
     gson-local-target
 
-LOCAL_STATIC_JAVA_AAR_LIBRARIES := app-theme-helper-target \
+# AAR libraries
+LOCAL_STATIC_ANDROID_LIBRARIES += app-theme-helper-target \
     material-dialogs-core-target \
     material-dialogs-commons-target \
     material-cab-target \
@@ -64,23 +65,11 @@ LOCAL_STATIC_JAVA_AAR_LIBRARIES := app-theme-helper-target \
     material-progressbar-library-target
 
 LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res
-LOCAL_RESOURCE_DIR += $(foreach lib, $(LOCAL_STATIC_JAVA_AAR_LIBRARIES),\
-  $(call intermediates-dir-for,JAVA_LIBRARIES,$(lib),,COMMON)/aar/res)
-
-LOCAL_AAPT_FLAGS := --auto-add-overlay \
-    --extra-packages com.afollestad.materialdialogs \
-    --extra-packages com.afollestad.materialdialogs.commons \
-    --extra-packages com.afollestad.materialcab \
-    --extra-packages com.heinrichreimersoftware.materialintro \
-    --extra-packages com.simplecityapps.recyclerview_fastscroll \
-    --extra-packages com.sothree.slidinguppanel.library \
-    --extra-packages me.zhanghai.android.materialprogressbar \
-    --extra-packages de.psdev.licensesdialog \
-    --extra-packages com.triggertrap.seekarc \
-    --extra-packages com.kabouzeid.appthemehelper
+# LOCAL_RESOURCE_DIR += $(foreach lib, $(LOCAL_STATIC_JAVA_AAR_LIBRARIES),\
+#  $(call intermediates-dir-for,JAVA_LIBRARIES,$(lib),,COMMON)/aar/res)
 
 LOCAL_USE_AAPT2 := true
-LOCAL_PROGUARD_ENABLED := disabled
+LOCAL_PROGUARD_FLAG_FILES := proguard-rules.pro
 LOCAL_JAR_EXCLUDE_FILES := none
 LOCAL_SRC_FILES += $(call all-java-files-under, java)
 LOCAL_PACKAGE_NAME := Phonograph
@@ -88,133 +77,7 @@ LOCAL_SDK_VERSION := current
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_PACKAGE)
 
-include $(CLEAR_VARS)
-LOCAL_MODULE_TAGS := optional
-LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES := \
-    app-theme-helper:libs/aar/app-theme-helper-1.3.4.aar \
-    material-dialogs-core:libs/aar/material-dialogs-core-0.9.4.2.aar \
-    material-dialogs-commons:libs/aar/material-dialogs-commons-0.9.4.2.aar \
-    material-cab:libs/aar/material-cab-0.1.12.aar \
-    SeekArc:libs/aar/SeekArc-1.2-kmod.aar \
-    AndroidSlidingUpPanel:libs/aar/AndroidSlidingUpPanel-3.3.0-kmod3.aar \
-    licensesdialog:libs/aar/licensesdialog-1.8.1.aar \
-    RecyclerView-FastScroll:libs/aar/RecyclerView-FastScroll-1.9-kmod.aar \
-    material-intro:libs/aar/material-intro-1.6.aar \
-    material-progressbar-library:libs/aar/material-progressbar-library-1.3.0.aar \
-    android-observablescrollview:libs/android-observablescrollview-1.6.0.jar \
-    retrofit:libs/retrofit-2.2.0.jar \
-    converter-gson:libs/converter-gson-2.2.0.jar \
-    anjlab-library:libs/anjlab-library-2.4.0.jar \
-    glide-local:libs/glide-3.7.0.jar \
-    okhttp3:libs/okhttp-3.3.0.jar \
-    okhttp3-integration:libs/okhttp3-integration-1.4.0.jar \
-    okio-sink:libs/okio-1.8.0.jar \
-    advrecycler-view:libs/advrecyclerview-0.10.0.jar \
-    jaudiotagger:libs/jaudiotagger-android-2.2.3.jar \
-    gson-local:libs/gson-2.7.jar
-
-include $(BUILD_MULTI_PREBUILT)
-
 # Enumerate target prebuilts to avoid linker warnings
-include $(CLEAR_VARS)
-
-LOCAL_MODULE_CLASS := JAVA_LIBRARIES
-LOCAL_MODULE := app-theme-helper-target
-LOCAL_SRC_FILES := libs/aar/app-theme-helper-1.3.4.aar
-LOCAL_UNINSTALLABLE_MODULE := true
-LOCAL_SDK_VERSION := current
-
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-
-LOCAL_MODULE_CLASS := JAVA_LIBRARIES
-LOCAL_MODULE := material-dialogs-core-target
-LOCAL_SRC_FILES := libs/aar/material-dialogs-core-0.9.4.2.aar
-LOCAL_UNINSTALLABLE_MODULE := true
-LOCAL_SDK_VERSION := current
-
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-
-LOCAL_MODULE_CLASS := JAVA_LIBRARIES
-LOCAL_MODULE := material-dialogs-commons-target
-LOCAL_SRC_FILES := libs/aar/material-dialogs-commons-0.9.4.2.aar
-LOCAL_UNINSTALLABLE_MODULE := true
-LOCAL_SDK_VERSION := current
-
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-
-LOCAL_MODULE_CLASS := JAVA_LIBRARIES
-LOCAL_MODULE := material-cab-target
-LOCAL_SRC_FILES := libs/aar/material-cab-0.1.12.aar
-LOCAL_UNINSTALLABLE_MODULE := true
-LOCAL_SDK_VERSION := current
-
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-
-LOCAL_MODULE_CLASS := JAVA_LIBRARIES
-LOCAL_MODULE := SeekArc-target
-LOCAL_SRC_FILES := libs/aar/SeekArc-1.2-kmod.aar
-LOCAL_UNINSTALLABLE_MODULE := true
-LOCAL_SDK_VERSION := current
-
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-
-LOCAL_MODULE_CLASS := JAVA_LIBRARIES
-LOCAL_MODULE := AndroidSlidingUpPanel-target
-LOCAL_SRC_FILES := libs/aar/AndroidSlidingUpPanel-3.3.0-kmod3.aar
-LOCAL_UNINSTALLABLE_MODULE := true
-LOCAL_SDK_VERSION := current
-
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-
-LOCAL_MODULE_CLASS := JAVA_LIBRARIES
-LOCAL_MODULE := licensesdialog-target
-LOCAL_SRC_FILES := libs/aar/licensesdialog-1.8.1.aar
-LOCAL_UNINSTALLABLE_MODULE := true
-LOCAL_SDK_VERSION := current
-
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-
-LOCAL_MODULE_CLASS := JAVA_LIBRARIES
-LOCAL_MODULE := RecyclerView-FastScroll-target
-LOCAL_SRC_FILES := libs/aar/RecyclerView-FastScroll-1.9-kmod.aar
-LOCAL_UNINSTALLABLE_MODULE := true
-LOCAL_SDK_VERSION := current
-
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-
-LOCAL_MODULE_CLASS := JAVA_LIBRARIES
-LOCAL_MODULE := material-intro-target
-LOCAL_SRC_FILES := libs/aar/material-intro-1.6.aar
-LOCAL_UNINSTALLABLE_MODULE := true
-LOCAL_SDK_VERSION := current
-
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-
-LOCAL_MODULE_CLASS := JAVA_LIBRARIES
-LOCAL_MODULE := material-progressbar-library-target
-LOCAL_SRC_FILES := libs/aar/material-progressbar-library-1.3.0.aar
-LOCAL_UNINSTALLABLE_MODULE := true
-LOCAL_SDK_VERSION := current
-
-include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 
