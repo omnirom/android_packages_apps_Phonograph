@@ -1,0 +1,109 @@
+android_library_import {
+    name: "material-dialogs-core-target",
+    aars: ["libs/aar/material-dialogs-core-0.9.4.2.aar"],
+    sdk_version: "current",
+    static_libs: [
+	"android-support-v7-appcompat",
+	"android-support-annotations",
+	"android-support-v7-recyclerview"
+    ],
+}
+
+android_library_import {
+    name: "app-theme-helper-target",
+    aars: ["libs/aar/app-theme-helper-1.3.4.aar"],
+
+    sdk_version: "current",
+
+    static_libs: [
+	"android-support-v7-appcompat",
+	"material-cab-target"
+    ],
+}
+
+android_library_import {
+    name: "material-dialogs-commons-target",
+    aars: ["libs/aar/material-dialogs-commons-0.9.4.2.aar"],
+
+    sdk_version: "current",
+
+    static_libs: [
+	"android-support-v7-appcompat",
+	"android-support-annotations",
+	"android-support-v7-recyclerview",
+	"material-dialogs-core-target"
+    ],
+}
+
+android_library_import {
+    name: "material-cab-target",
+    aars: ["libs/aar/material-cab-0.1.12.aar"],
+
+    sdk_version: "current",
+
+    static_libs: [
+	"android-support-v7-appcompat",
+	"material-intro-target",
+    ],
+}
+
+android_library_import {
+    name: "SeekArc-target",
+    aars: ["libs/aar/SeekArc-1.2-kmod.aar"],
+
+    sdk_version: "current",
+
+    static_libs: [
+    ],
+}
+
+android_library_import {
+    name: "AndroidSlidingUpPanel-target",
+    aars: ["libs/aar/AndroidSlidingUpPanel-3.3.0-kmod3.aar"],
+
+    sdk_version: "current",
+
+    static_libs: [
+    ],
+}
+
+android_library_import {
+    name: "licensesdialog-target",
+    aars: ["libs/aar/licensesdialog-1.8.1.aar"],
+
+    sdk_version: "current",
+
+    static_libs: [
+    ],
+}
+
+android_library_import {
+    name: "RecyclerView-FastScroll-target",
+    aars: ["libs/aar/RecyclerView-FastScroll-1.9-kmod.aar"],
+
+    sdk_version: "current",
+
+    static_libs: [
+    ],
+}
+
+android_library_import {
+    name: "material-intro-target",
+    aars: ["libs/aar/material-intro-1.6.aar"],
+
+    sdk_version: "current",
+
+    static_libs: [
+	"android-support-v7-appcompat",
+    ],
+}
+
+android_library_import {
+    name: "material-progressbar-library-target",
+    aars: ["libs/aar/material-progressbar-library-1.3.0.aar"],
+
+    sdk_version: "current",
+
+    static_libs: [
+    ],
+}
