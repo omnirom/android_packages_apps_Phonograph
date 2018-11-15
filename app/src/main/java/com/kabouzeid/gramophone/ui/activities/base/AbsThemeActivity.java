@@ -97,4 +97,9 @@ public abstract class AbsThemeActivity extends ATHToolbarActivity {
     public void setLightStatusbarAuto(int bgColor) {
         setLightStatusbar(ColorUtil.isColorLight(bgColor));
     }
+
+    @Override
+    public void onThemeChanged() {
+        //postRecreate();
+    }
 }
