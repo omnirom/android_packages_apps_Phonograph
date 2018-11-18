@@ -53,6 +53,9 @@ public class DeleteSongsDialog extends DialogFragment {
         return new MaterialDialog.Builder(getActivity())
                 .title(title)
                 .content(content)
+                .backgroundColorRes(R.color.windowBackground)
+                .titleColorRes(R.color.textColorPrimary)
+                .contentColorRes(R.color.textColorPrimary)
                 .positiveText(R.string.delete_action)
                 .negativeText(android.R.string.cancel)
                 .onPositive(new MaterialDialog.SingleButtonCallback() {

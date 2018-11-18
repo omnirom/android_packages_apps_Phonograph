@@ -7,4 +7,11 @@
 
     <color name="app_shortcut_default_foreground">#607d8b</color>
     <color name="app_shortcut_default_background">#f5f5f5</color>
+
+    <color name="windowBackground">#ffffffff</color>
+    <color name="popupBackground">#ffffffff</color>
+
+    <color name="textColorPrimary">#ff252525</color>
+    <color name="textColorSecondary">#b3252525</color>
+    <color name="textColorTertiary">#a0252525</color>
 </resources>
