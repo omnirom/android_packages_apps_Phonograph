@@ -62,6 +62,8 @@ public class SongDetailDialog extends DialogFragment {
                 .customView(R.layout.dialog_file_details, true)
                 .title(context.getResources().getString(R.string.label_details))
                 .positiveText(android.R.string.ok)
+                .backgroundColorRes(R.color.windowBackground)
+                .titleColorRes(R.color.textColorPrimary)
                 .build();
 
         View dialogView = dialog.getCustomView();

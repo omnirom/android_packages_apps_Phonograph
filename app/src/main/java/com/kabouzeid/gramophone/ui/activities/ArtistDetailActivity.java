@@ -368,6 +368,9 @@ public class ArtistDetailActivity extends AbsSlidingMusicPanelActivity implement
                 if (biographyDialog == null) {
                     biographyDialog = new MaterialDialog.Builder(this)
                             .title(artist.getName())
+                            .backgroundColorRes(R.color.windowBackground)
+                            .titleColorRes(R.color.textColorPrimary)
+                            .contentColorRes(R.color.textColorPrimary)
                             .positiveText(android.R.string.ok)
                             .build();
                 }

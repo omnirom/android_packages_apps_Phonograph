@@ -47,6 +47,9 @@ public class CreatePlaylistDialog extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         return new MaterialDialog.Builder(getActivity())
                 .title(R.string.new_playlist_title)
+                .backgroundColorRes(R.color.windowBackground)
+                .titleColorRes(R.color.textColorPrimary)
+                .contentColorRes(R.color.textColorPrimary)
                 .positiveText(R.string.create_action)
                 .negativeText(android.R.string.cancel)
                 .inputType(InputType.TYPE_CLASS_TEXT |

@@ -339,6 +339,9 @@ public class AlbumDetailActivity extends AbsSlidingMusicPanelActivity implements
                 if (wikiDialog == null) {
                     wikiDialog = new MaterialDialog.Builder(this)
                             .title(album.getTitle())
+                            .backgroundColorRes(R.color.windowBackground)
+                            .titleColorRes(R.color.textColorPrimary)
+                            .contentColorRes(R.color.textColorPrimary)
                             .positiveText(android.R.string.ok)
                             .build();
                 }

@@ -212,11 +212,12 @@ public class AboutActivity extends AbsBaseActivity implements View.OnClickListen
                 .setNotices(R.raw.notices)
                 .setTitle(R.string.licenses)
                 .setNoticesCssStyle(getString(R.string.license_dialog_style)
-                        .replace("{bg-color}", ThemeSingleton.get().darkTheme ? "424242" : "ffffff")
-                        .replace("{text-color}", ThemeSingleton.get().darkTheme ? "ffffff" : "000000")
-                        .replace("{license-bg-color}", ThemeSingleton.get().darkTheme ? "535353" : "eeeeee")
+                        .replace("{bg-color}", String.format("%06x", this.getResources().getColor(R.color.popupBackground) & 0x00ffffff))
+                        .replace("{text-color}", String.format("%06x", this.getResources().getColor(R.color.textColorPrimary) & 0x00ffffff))
+                        .replace("{license-bg-color}", String.format("%06x", this.getResources().getColor(R.color.popupBackground) & 0x00ffffff))
                 )
                 .setIncludeOwnLicense(true)
+                .setThemeResourceId(R.style.LicenseDialogTheme)
                 .build()
                 .showAppCompat();
     }

@@ -47,6 +47,9 @@ public class ChangelogDialog extends DialogFragment {
             e.printStackTrace();
             return new MaterialDialog.Builder(getActivity())
                     .title(android.R.string.dialog_alert_title)
+                    .backgroundColorRes(R.color.windowBackground)
+                    .titleColorRes(R.color.textColorPrimary)
+                    .contentColorRes(R.color.textColorPrimary)
                     .content("This device doesn't support web view, which is necessary to view the change log. It is missing a system component.")
                     .positiveText(android.R.string.ok)
                     .build();
@@ -54,6 +57,9 @@ public class ChangelogDialog extends DialogFragment {
         MaterialDialog dialog = new MaterialDialog.Builder(getActivity())
                 .title(R.string.changelog)
                 .customView(customView, false)
+                .backgroundColorRes(R.color.windowBackground)
+                .titleColorRes(R.color.textColorPrimary)
+                .contentColorRes(R.color.textColorPrimary)
                 .positiveText(android.R.string.ok)
                 .showListener(new DialogInterface.OnShowListener() {
                     @Override

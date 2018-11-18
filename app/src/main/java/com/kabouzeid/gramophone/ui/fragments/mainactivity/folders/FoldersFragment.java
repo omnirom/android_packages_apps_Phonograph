@@ -718,6 +718,9 @@ public class FoldersFragment extends AbsMainActivityFragment implements MainActi
         protected Dialog createDialog(@NonNull Context context) {
             return new MaterialDialog.Builder(context)
                     .title(R.string.listing_files)
+                    .backgroundColorRes(R.color.windowBackground)
+                    .titleColorRes(R.color.textColorPrimary)
+                    .contentColorRes(R.color.textColorPrimary)
                     .progress(true, 0)
                     .progressIndeterminateStyle(true)
                     .cancelListener(new DialogInterface.OnCancelListener() {
