@@ -48,6 +48,8 @@ public class SleepTimerDialog extends DialogFragment {
         timerUpdater = new TimerUpdater();
         materialDialog = new MaterialDialog.Builder(getActivity())
                 .title(getActivity().getResources().getString(R.string.action_sleep_timer))
+                .backgroundColorRes(R.color.windowBackground)
+                .titleColorRes(R.color.textColorPrimary)
                 .positiveText(R.string.action_set)
                 .onPositive(new MaterialDialog.SingleButtonCallback() {
                     @Override

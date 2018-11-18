@@ -49,6 +49,9 @@ public class AddToPlaylistDialog extends DialogFragment {
         }
         return new MaterialDialog.Builder(getActivity())
                 .title(R.string.add_playlist_title)
+                .backgroundColorRes(R.color.windowBackground)
+                .titleColorRes(R.color.textColorPrimary)
+                .contentColorRes(R.color.textColorPrimary)
                 .items(playlistNames)
                 .itemsCallback(new MaterialDialog.ListCallback() {
                     @Override

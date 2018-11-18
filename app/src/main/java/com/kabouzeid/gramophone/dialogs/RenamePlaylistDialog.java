@@ -31,6 +31,9 @@ public class RenamePlaylistDialog extends DialogFragment {
         long playlistId = getArguments().getLong("playlist_id");
         return new MaterialDialog.Builder(getActivity())
                 .title(R.string.rename_playlist_title)
+                .backgroundColorRes(R.color.windowBackground)
+                .titleColorRes(R.color.textColorPrimary)
+                .contentColorRes(R.color.textColorPrimary)
                 .positiveText(R.string.rename_action)
                 .negativeText(android.R.string.cancel)
                 .inputType(InputType.TYPE_CLASS_TEXT |

@@ -33,6 +33,9 @@ public class SongShareDialog extends DialogFragment {
         final String currentlyListening = getString(R.string.currently_listening_to_x_by_x, song.title, song.artistName);
         return new MaterialDialog.Builder(getActivity())
                 .title(R.string.what_do_you_want_to_share)
+                .backgroundColorRes(R.color.windowBackground)
+                .titleColorRes(R.color.textColorPrimary)
+                .contentColorRes(R.color.textColorPrimary)
                 .items(getString(R.string.the_audio_file), "\u201C" + currentlyListening + "\u201D")
                 .itemsCallback(new MaterialDialog.ListCallback() {
                     @Override

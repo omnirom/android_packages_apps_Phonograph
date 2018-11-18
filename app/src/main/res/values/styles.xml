@@ -62,7 +62,8 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">?actionBarSize</item>
         <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
-        <item name="popupTheme">?toolbarPopupTheme</item>
+        <item name="popupTheme">@style/ActionBarPopupTheme</item>
+        <item name="android:popupTheme">@style/ActionBarPopupTheme</item>
         <item name="android:elevation" tools:ignore="NewApi">@dimen/toolbar_elevation</item>
         <item name="android:transitionName" tools:ignore="NewApi">toolbar</item>
     </style>

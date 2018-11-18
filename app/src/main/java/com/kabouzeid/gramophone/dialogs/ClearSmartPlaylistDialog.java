@@ -38,6 +38,9 @@ public class ClearSmartPlaylistDialog extends DialogFragment {
         return new MaterialDialog.Builder(getActivity())
                 .title(title)
                 .content(content)
+                .backgroundColorRes(R.color.windowBackground)
+                .titleColorRes(R.color.textColorPrimary)
+                .contentColorRes(R.color.textColorPrimary)
                 .positiveText(R.string.clear_action)
                 .negativeText(android.R.string.cancel)
                 .onPositive(new MaterialDialog.SingleButtonCallback() {

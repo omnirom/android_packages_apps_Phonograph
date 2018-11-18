@@ -139,6 +139,9 @@ public abstract class AbsTagEditorActivity extends AbsBaseActivity {
             public void onClick(View v) {
                 new MaterialDialog.Builder(AbsTagEditorActivity.this)
                         .title(R.string.update_image)
+                        .backgroundColorRes(R.color.windowBackground)
+                        .titleColorRes(R.color.textColorPrimary)
+                        .contentColorRes(R.color.textColorPrimary)
                         .items(items)
                         .itemsCallback(new MaterialDialog.ListCallback() {
                             @Override
