@@ -60,8 +60,7 @@
                         android:gravity="center_vertical"
                         android:hint="@string/album"
                         android:inputType="text|textCapWords"
-                        android:singleLine="true"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+                        android:singleLine="true" />
 
                 </android.support.design.widget.TextInputLayout>
 
@@ -90,8 +89,7 @@
                         android:gravity="center_vertical"
                         android:hint="@string/album_artist"
                         android:inputType="text|textCapWords"
-                        android:singleLine="true"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+                        android:singleLine="true" />
 
                 </android.support.design.widget.TextInputLayout>
 
@@ -109,8 +107,7 @@
                         android:gravity="center_vertical"
                         android:hint="@string/genre"
                         android:inputType="text|textCapWords"
-                        android:singleLine="true"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+                        android:singleLine="true" />
 
                 </android.support.design.widget.TextInputLayout>
 
@@ -128,8 +125,7 @@
                         android:gravity="center_vertical"
                         android:hint="@string/year"
                         android:inputType="text|number"
-                        android:singleLine="true"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+                        android:singleLine="true" />
 
                 </android.support.design.widget.TextInputLayout>
 

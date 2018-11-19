@@ -51,8 +51,7 @@
                         android:gravity="center_vertical"
                         android:hint="@string/song"
                         android:inputType="text|textCapWords"
-                        android:singleLine="true"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+                        android:singleLine="true" />
 
                 </android.support.design.widget.TextInputLayout>
 
@@ -69,8 +68,7 @@
                         android:gravity="center_vertical"
                         android:hint="@string/album"
                         android:inputType="text|textCapWords"
-                        android:singleLine="true"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+                        android:singleLine="true" />
                 </android.support.design.widget.TextInputLayout>
 
             </LinearLayout>
@@ -98,8 +96,7 @@
                         android:gravity="center_vertical"
                         android:hint="@string/artist"
                         android:inputType="text|textCapWords"
-                        android:singleLine="true"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+                        android:singleLine="true" />
 
                 </android.support.design.widget.TextInputLayout>
 
@@ -116,8 +113,7 @@
                         android:fontFamily="sans-serif"
                         android:gravity="center_vertical"
                         android:hint="@string/genre"
-                        android:singleLine="true"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+                        android:singleLine="true" />
 
                 </android.support.design.widget.TextInputLayout>
 
@@ -135,8 +131,7 @@
                         android:gravity="center_vertical"
                         android:hint="@string/year"
                         android:inputType="text|number"
-                        android:singleLine="true"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+                        android:singleLine="true" />
 
                 </android.support.design.widget.TextInputLayout>
 
@@ -154,8 +149,7 @@
                         android:gravity="center_vertical"
                         android:hint="@string/track_hint"
                         android:inputType="text|number"
-                        android:singleLine="true"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+                        android:singleLine="true" />
 
                 </android.support.design.widget.TextInputLayout>
 
@@ -172,8 +166,7 @@
                         android:fontFamily="sans-serif"
                         android:gravity="center_vertical"
                         android:hint="@string/lyrics"
-                        android:inputType="textMultiLine"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+                        android:inputType="textMultiLine" />
 
                 </android.support.design.widget.TextInputLayout>
 

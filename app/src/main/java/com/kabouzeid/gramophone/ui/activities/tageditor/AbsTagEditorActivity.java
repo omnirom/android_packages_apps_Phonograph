@@ -367,8 +367,9 @@ public abstract class AbsTagEditorActivity extends AbsBaseActivity {
             super.onPostExecute(toBeScanned);
             if (writeError) {
                 Toast.makeText(getContext(), R.string.write_tag_error_toast, Toast.LENGTH_LONG).show();
+            } else {
+                scan(toBeScanned);
             }
-            scan(toBeScanned);
         }
 
         @Override
