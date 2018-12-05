@@ -14,4 +14,11 @@
     <color name="textColorPrimary">#ff252525</color>
     <color name="textColorSecondary">#b3252525</color>
     <color name="textColorTertiary">#a0252525</color>
+
+    <color name="ripple_color">#b3252525</color>
+
+    <color name="ate_primary_text_light">@color/textColorPrimary</color>
+    <color name="ate_primary_text_dark">@android:color/white</color>
+    <color name="ate_secondary_text_light">@color/textColorSecondary</color>
+    <color name="md_divider_black">#18000000</color>
 </resources>
