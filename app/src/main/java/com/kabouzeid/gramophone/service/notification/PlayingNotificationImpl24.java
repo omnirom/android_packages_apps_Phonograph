@@ -93,7 +93,6 @@ public class PlayingNotificationImpl24 extends PlayingNotification {
                                         .setDeleteIntent(deleteIntent)
                                         .setContentTitle(song.title)
                                         .setContentText(text)
-                                        .setOngoing(isPlaying)
                                         .setShowWhen(false)
                                         .addAction(previousAction)
                                         .addAction(playPauseAction)

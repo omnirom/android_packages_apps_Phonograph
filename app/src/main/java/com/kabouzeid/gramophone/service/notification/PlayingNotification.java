@@ -19,11 +19,6 @@ public abstract class PlayingNotification {
     private static final int NOTIFICATION_ID = 1;
     static final String NOTIFICATION_CHANNEL_ID = "playing_notification";
 
-    private static final int NOTIFY_MODE_FOREGROUND = 1;
-    private static final int NOTIFY_MODE_BACKGROUND = 0;
-
-    private int notifyMode = NOTIFY_MODE_BACKGROUND;
-
     private NotificationManager notificationManager;
     protected MusicService service;
     boolean stopped;
@@ -45,24 +40,7 @@ public abstract class PlayingNotification {
     }
 
     void updateNotifyModeAndPostNotification(Notification notification) {
-        int newNotifyMode;
-        if (service.isPlaying()) {
-            newNotifyMode = NOTIFY_MODE_FOREGROUND;
-        } else {
-            newNotifyMode = NOTIFY_MODE_BACKGROUND;
-        }
-
-        if (notifyMode != newNotifyMode && newNotifyMode == NOTIFY_MODE_BACKGROUND) {
-            service.stopForeground(false);
-        }
-
-        if (newNotifyMode == NOTIFY_MODE_FOREGROUND) {
-            service.startForeground(NOTIFICATION_ID, notification);
-        } else if (newNotifyMode == NOTIFY_MODE_BACKGROUND) {
-            notificationManager.notify(NOTIFICATION_ID, notification);
-        }
-
-        notifyMode = newNotifyMode;
+        notificationManager.notify(NOTIFICATION_ID, notification);
     }
 
     @RequiresApi(26)
