@@ -44,7 +44,7 @@ public class PlayingNotificationImpl24 extends PlayingNotification {
                 ? artistName : artistName + " - " + albumName;
 
         final int playButtonResId = isPlaying
-                ? R.drawable.ic_pause_white_24dp : R.drawable.ic_play_arrow_white_24dp;
+                ? R.drawable.ic_pause_white_notification : R.drawable.ic_play_arrow_white_notification;
 
         Intent action = new Intent(service, MainActivity.class);
         action.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -80,10 +80,10 @@ public class PlayingNotificationImpl24 extends PlayingNotification {
                                 NotificationCompat.Action playPauseAction = new NotificationCompat.Action(playButtonResId,
                                         service.getString(R.string.action_play_pause),
                                         retrievePlaybackAction(ACTION_TOGGLE_PAUSE));
-                                NotificationCompat.Action previousAction = new NotificationCompat.Action(R.drawable.ic_skip_previous_white_24dp,
+                                NotificationCompat.Action previousAction = new NotificationCompat.Action(R.drawable.ic_skip_previous_white_notification,
                                         service.getString(R.string.action_previous),
                                         retrievePlaybackAction(ACTION_REWIND));
-                                NotificationCompat.Action nextAction = new NotificationCompat.Action(R.drawable.ic_skip_next_white_24dp,
+                                NotificationCompat.Action nextAction = new NotificationCompat.Action(R.drawable.ic_skip_next_white_notification,
                                         service.getString(R.string.action_next),
                                         retrievePlaybackAction(ACTION_SKIP));
                                 NotificationCompat.Builder builder = new NotificationCompat.Builder(service, NOTIFICATION_CHANNEL_ID)
@@ -93,7 +93,6 @@ public class PlayingNotificationImpl24 extends PlayingNotification {
                                         .setDeleteIntent(deleteIntent)
                                         .setContentTitle(song.title)
                                         .setContentText(text)
-                                        .setOngoing(isPlaying)
                                         .setShowWhen(false)
                                         .addAction(previousAction)
                                         .addAction(playPauseAction)
