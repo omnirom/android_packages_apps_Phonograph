@@ -38,7 +38,7 @@ public class PlayingNotificationImpl extends PlayingNotification {
     private Target<BitmapPaletteWrapper> target;
 
     @Override
-    public synchronized void update() {
+    public synchronized void update(final boolean updateState) {
         stopped = false;
 
         final Song song = service.getCurrentSong();
@@ -123,7 +123,11 @@ public class PlayingNotificationImpl extends PlayingNotification {
 
                                 if (stopped)
                                     return; // notification has been stopped before loading was finished
-                                updateNotifyModeAndPostNotification(notification);
+                                if (updateState) {
+                                    updateState(notification);
+                                } else {
+                                    updateContent(notification);
+                                }
                             }
 
                             private void setBackgroundColor(int color) {

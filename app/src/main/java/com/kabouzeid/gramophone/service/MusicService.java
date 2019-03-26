@@ -542,7 +542,13 @@ public class MusicService extends Service implements SharedPreferences.OnSharedP
 
     public void updateNotification() {
         if (playingNotification != null && getCurrentSong().id != -1) {
-            playingNotification.update();
+            playingNotification.update(false);
+        }
+    }
+
+    public void updateNotificationState() {
+        if (playingNotification != null) {
+            playingNotification.update(true);
         }
     }
 
@@ -1048,7 +1054,7 @@ public class MusicService extends Service implements SharedPreferences.OnSharedP
     private void handleChangeInternal(@NonNull final String what) {
         switch (what) {
             case PLAY_STATE_CHANGED:
-                updateNotification();
+                updateNotificationState();
                 updateMediaSessionPlaybackState();
                 final boolean isPlaying = isPlaying();
                 if (!isPlaying && getSongProgressMillis() > 0) {

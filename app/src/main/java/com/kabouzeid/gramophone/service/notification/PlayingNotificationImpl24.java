@@ -32,7 +32,7 @@ import org.omnirom.gramophone.R;
 public class PlayingNotificationImpl24 extends PlayingNotification {
 
     @Override
-    public synchronized void update() {
+    public synchronized void update(final boolean updateState) {
         stopped = false;
 
         final Song song = service.getCurrentSong();
@@ -93,6 +93,7 @@ public class PlayingNotificationImpl24 extends PlayingNotification {
                                         .setDeleteIntent(deleteIntent)
                                         .setContentTitle(song.title)
                                         .setContentText(text)
+                                        .setOngoing(isPlaying)
                                         .setShowWhen(false)
                                         .addAction(previousAction)
                                         .addAction(playPauseAction)
@@ -107,7 +108,11 @@ public class PlayingNotificationImpl24 extends PlayingNotification {
 
                                 if (stopped)
                                     return; // notification has been stopped before loading was finished
-                                updateNotifyModeAndPostNotification(builder.build());
+                                if (updateState) {
+                                    updateState(builder.build());
+                                } else {
+                                    updateContent(builder.build());
+                                }
                             }
                         });
             }

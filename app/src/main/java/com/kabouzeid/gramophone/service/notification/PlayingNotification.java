@@ -31,16 +31,24 @@ public abstract class PlayingNotification {
         }
     }
 
-    public abstract void update();
+    public abstract void update(final boolean updateState);
+
+    protected void updateContent(Notification notification) {
+        notificationManager.notify(NOTIFICATION_ID, notification);
+    }
+
+    protected void updateState(Notification notification) {
+        if (!service.isPlaying()) {
+            service.stopForeground(false);
+        } else {
+            service.startForeground(NOTIFICATION_ID, notification);
+        }
+        notificationManager.notify(NOTIFICATION_ID, notification);
+    }
 
     public synchronized void stop() {
         stopped = true;
         service.stopForeground(true);
-        notificationManager.cancel(NOTIFICATION_ID);
-    }
-
-    void updateNotifyModeAndPostNotification(Notification notification) {
-        notificationManager.notify(NOTIFICATION_ID, notification);
     }
 
     @RequiresApi(26)
