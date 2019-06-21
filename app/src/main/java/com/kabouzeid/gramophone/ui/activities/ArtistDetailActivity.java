@@ -20,6 +20,13 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 
 import com.afollestad.materialcab.MaterialCab;
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -35,8 +42,8 @@ import com.kabouzeid.gramophone.adapter.album.HorizontalAlbumAdapter;
 import com.kabouzeid.gramophone.adapter.song.ArtistSongAdapter;
 import com.kabouzeid.gramophone.dialogs.AddToPlaylistDialog;
 import com.kabouzeid.gramophone.dialogs.SleepTimerDialog;
+import com.kabouzeid.gramophone.glide.ArtistGlideRequest;
 import com.kabouzeid.gramophone.glide.PhonographColoredTarget;
-import com.kabouzeid.gramophone.glide.artistimage.ArtistImage;
 import com.kabouzeid.gramophone.glide.palette.BitmapPaletteTranscoder;
 import com.kabouzeid.gramophone.glide.palette.BitmapPaletteWrapper;
 import com.kabouzeid.gramophone.helper.MusicPlayerRemote;
@@ -52,18 +59,12 @@ import com.kabouzeid.gramophone.model.Artist;
 import com.kabouzeid.gramophone.model.Song;
 import com.kabouzeid.gramophone.ui.activities.base.AbsSlidingMusicPanelActivity;
 import com.kabouzeid.gramophone.util.ArtistSignatureUtil;
+import com.kabouzeid.gramophone.util.CustomArtistImageUtil;
 import com.kabouzeid.gramophone.util.NavigationUtil;
 import com.kabouzeid.gramophone.util.PhonographColorUtil;
 import com.kabouzeid.gramophone.util.PreferenceUtil;
 import com.kabouzeid.gramophone.util.Util;
 import org.omnirom.gramophone.R;
-
-import java.util.ArrayList;
-import java.util.Locale;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 /**
  * Be careful when changing things in this Activity!
@@ -72,6 +73,7 @@ public class ArtistDetailActivity extends AbsSlidingMusicPanelActivity implement
 
     public static final String TAG = ArtistDetailActivity.class.getSimpleName();
     private static final int LOADER_ID = LoaderIds.ARTIST_DETAIL_ACTIVITY;
+    private static final int REQUEST_CODE_SELECT_IMAGE = 1000;
 
     public static final String EXTRA_ARTIST_ID = "extra_artist_id";
 
@@ -265,36 +267,10 @@ public class ArtistDetailActivity extends AbsSlidingMusicPanelActivity implement
                 });
     }
 
-    private void loadArtistImage(final boolean forceDownload) {
-        if (forceDownload) {
-            ArtistSignatureUtil.getInstance(this).updateArtistSignature(getArtist().getName());
-        }
-        Glide.with(this)
-                .load(new ArtistImage(getArtist().getName(), forceDownload))
-                .asBitmap()
-                .transcode(new BitmapPaletteTranscoder(this), BitmapPaletteWrapper.class)
-                .diskCacheStrategy(DiskCacheStrategy.SOURCE)
-                .placeholder(R.drawable.default_artist_image)
-                .signature(ArtistSignatureUtil.getInstance(this).getArtistSignature(getArtist().getName()))
+    private void loadArtistImage() {
+        ArtistGlideRequest.Builder.from(Glide.with(this), artist)
+                .generatePalette(this).build()
                 .dontAnimate()
-                .override(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL)
-                .listener(new RequestListener<ArtistImage, BitmapPaletteWrapper>() {
-                    @Override
-                    public boolean onException(@Nullable Exception e, ArtistImage model, Target<BitmapPaletteWrapper> target, boolean isFirstResource) {
-                        if (forceDownload) {
-                            Toast.makeText(ArtistDetailActivity.this, e != null ? e.getClass().getSimpleName() : "Error", Toast.LENGTH_SHORT).show();
-                        }
-                        return false;
-                    }
-
-                    @Override
-                    public boolean onResourceReady(BitmapPaletteWrapper resource, ArtistImage model, Target<BitmapPaletteWrapper> target, boolean isFromMemoryCache, boolean isFirstResource) {
-                        if (forceDownload) {
-                            Toast.makeText(ArtistDetailActivity.this, getString(R.string.updated_artist_image), Toast.LENGTH_SHORT).show();
-                        }
-                        return false;
-                    }
-                })
                 .into(new PhonographColoredTarget(artistImage) {
                     @Override
                     public void onColorReady(int color) {
@@ -306,8 +282,17 @@ public class ArtistDetailActivity extends AbsSlidingMusicPanelActivity implement
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK) {
-            reload();
+        switch (requestCode) {
+            case REQUEST_CODE_SELECT_IMAGE:
+                if (resultCode == RESULT_OK) {
+                    CustomArtistImageUtil.getInstance(this).setCustomArtistImage(artist, data.getData());
+                }
+                break;
+            default:
+                if (resultCode == RESULT_OK) {
+                    reload();
+                }
+                break;
         }
     }
 
@@ -386,10 +371,14 @@ public class ArtistDetailActivity extends AbsSlidingMusicPanelActivity implement
                     loadBiography();
                 }
                 return true;*/
-            /*case R.id.action_re_download_artist_image:
-                Toast.makeText(ArtistDetailActivity.this, getResources().getString(R.string.updating), Toast.LENGTH_SHORT).show();
-                loadArtistImage(true);
-                return true;*/
+            case R.id.action_set_artist_image:
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                intent.setType("image/*");
+                startActivityForResult(Intent.createChooser(intent, getString(R.string.pick_from_local_storage)), REQUEST_CODE_SELECT_IMAGE);
+                return true;
+            case R.id.action_re_download_artist_image:
+                CustomArtistImageUtil.getInstance(ArtistDetailActivity.this).resetCustomArtistImage(artist);
+                return true;
             case R.id.action_colored_footers:
                 item.setChecked(!item.isChecked());
                 setUsePalette(item.isChecked());
@@ -450,7 +439,7 @@ public class ArtistDetailActivity extends AbsSlidingMusicPanelActivity implement
 
     private void setArtist(Artist artist) {
         this.artist = artist;
-        //loadArtistImage(false);
+        loadArtistImage();
 
         /*if (Util.isAllowedToDownloadMetadata(this)) {
             loadBiography();

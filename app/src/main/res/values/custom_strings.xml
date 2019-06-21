@@ -3,4 +3,5 @@
     <string name="original_author">Original author</string>
     <string name="omnirom_name">OmniROM</string>
     <string name="write_tag_error_toast">Failed to write some tags</string>
+    <string name="set_artist_image">Set artist image</string>
 </resources>

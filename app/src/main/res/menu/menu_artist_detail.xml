@@ -29,10 +29,15 @@
         android:title="@string/action_add_to_playlist"
         app:showAsAction="never" />
 
-    <!--<item
+    <item
+        android:id="@+id/action_set_artist_image"
+        android:title="@string/set_artist_image"
+        app:showAsAction="never" />
+
+    <item
         android:id="@+id/action_re_download_artist_image"
         android:title="@string/action_re_download_artist_image"
-    app:showAsAction="never" />-->
+        app:showAsAction="never" />
 
     <item
         android:id="@+id/action_colored_footers"
