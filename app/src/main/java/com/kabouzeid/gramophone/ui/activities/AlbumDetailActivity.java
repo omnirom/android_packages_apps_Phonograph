@@ -335,7 +335,7 @@ public class AlbumDetailActivity extends AbsSlidingMusicPanelActivity implements
             case R.id.action_go_to_artist:
                 NavigationUtil.goToArtist(this, getAlbum().getArtistId());
                 return true;
-            case R.id.action_wiki:
+            /*case R.id.action_wiki:
                 if (wikiDialog == null) {
                     wikiDialog = new MaterialDialog.Builder(this)
                             .title(album.getTitle())
@@ -356,7 +356,7 @@ public class AlbumDetailActivity extends AbsSlidingMusicPanelActivity implements
                     wikiDialog.show();
                     loadWiki();
                 }
-                return true;
+                return true;*/
         }
         return super.onOptionsItemSelected(item);
     }
@@ -424,9 +424,9 @@ public class AlbumDetailActivity extends AbsSlidingMusicPanelActivity implements
         this.album = album;
         loadAlbumCover();
 
-        if (Util.isAllowedToDownloadMetadata(this)) {
+        /*if (Util.isAllowedToDownloadMetadata(this)) {
             loadWiki();
-        }
+        }*/
 
         albumTitleView.setText(album.getTitle());
         adapter.swapDataSet(album.songs);

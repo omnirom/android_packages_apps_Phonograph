@@ -75,6 +75,7 @@ LOCAL_SRC_FILES += $(call all-java-files-under, java)
 LOCAL_PACKAGE_NAME := Phonograph
 LOCAL_SDK_VERSION := current
 LOCAL_MODULE_TAGS := optional
+LOCAL_MIN_SDK_VERSION := 24
 #LOCAL_DEX_PREOPT := false
 include $(BUILD_PACKAGE)
 
