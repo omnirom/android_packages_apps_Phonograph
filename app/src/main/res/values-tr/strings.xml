@@ -172,7 +172,7 @@
     <string name="playlist_name_empty">Çalma listesi adı</string>
     <string name="song">Şarkı</string>
     <string name="pref_summary_album_art_on_lockscreen">Mevcûd şarkıların albüm kapağını kilit ekranı duvar kâğıdı olarak kullanır.</string>
-    <string name="pref_summary_blurred_album_art">Kilit ekranındaki albüm kapağını bulanıklaştırır. Üçüncü şahıs uygulamalar ve araçlarda sorunlara sebep olabilir.</string>
+    <string name="pref_summary_blurred_album_art">Kilit ekranındaki albüm kapağını bulanıklaştırır. Üçüncü tarafa ait uygulama ve widgetlarda sorunlara sebep olabilir.</string>
     <string name="pref_summary_classic_notification">Klasik bildirim tasarımını kullan.</string>
     <string name="pref_summary_colored_notification">"Bildirimler alb\u00fcm kapa\u011f\u0131n\u0131n canl\u0131 renkleriyle renklendirilir."</string>
     <string name="pref_summary_gapless_playback">"Bazı cihazlarda çalma sorunlarına sebep olabilir."</string>
@@ -239,7 +239,7 @@
     <string name="translate">Tercüme et</string>
     <string name="translate_summary">Yerel dilinize tercüme edilmesi için yardım edin.</string>
     <string name="rate_on_google_play">Derecelendir</string>
-    <string name="rate_on_google_play_summary">Phonograph\'ı beğendiyseniz Google Play\'de olumlu bir derecelendirme bırakın.</string>
+    <string name="rate_on_google_play_summary">Phonograph\'ı beğendiyseniz, Google Play\'de olumlu bir derecelendirmede bulunun.</string>
     <string name="donate">Bağış yap</string>
     <string name="donate_summary">Çalışmamın bir ödeme almayı hak ettiğini düşünüyorsanız, bana buradan birkaç dolar bırakabilirsiniz.</string>
     <string name="aidan_follestad_summary">Tema motoru ve diğer muhteşem şeyler için.</string>
@@ -269,8 +269,8 @@
     <string name="app_widget_classic_name">Phonograph - Klasik</string>
     <string name="app_widget_small_name">Phonograph - Küçük</string>
     <string name="app_widget_card_name">Phonograph - Kart</string>
-    <string name="report_an_issue">Bir mesele raporlayın</string>
-    <string name="bug_report_issue">Mesele</string>
+    <string name="report_an_issue">Bir sorun bildirin</string>
+    <string name="bug_report_issue">Sorun</string>
     <string name="login">Giriş</string>
     <string name="title">Başlık</string>
     <string name="description">İzah</string>
@@ -279,19 +279,19 @@
     <string name="bug_report_manual">Bizzat gönderin</string>
     <string name="username">Kullanıcı adı</string>
     <string name="password">Parola</string>
-    <string name="bug_report_no_title">Lütfen bir mesele başlığı girin</string>
-    <string name="bug_report_no_description">Lütfen bir mesele izahı yazın</string>
+    <string name="bug_report_no_title">Lütfen bir sorun başlığı girin</string>
+    <string name="bug_report_no_description">Lütfen bir sorun açıklaması yazın</string>
     <string name="bug_report_no_username">Lütfen geçerli GitHub kullanıcı adınızı girin</string>
     <string name="bug_report_no_password">Lütfen geçerli GitHub parolanızı girin</string>
     <string name="bug_report_uploading">Rapor GitHub\'a yükleniyor…</string>
     <string name="bug_report_failed">Rapor gönderilemiyor</string>
     <string name="bug_report_failed_wrong_credentials">Kullanıcı adı veyâ parola hatâlı</string>
     <string name="bug_report_failed_invalid_token">Geçersiz erişim jetonu. Uygulamanın geliştiricisi ile irtibât kurun.</string>
-    <string name="bug_report_failed_issues_not_available">Meseleler seçilen depo için devrede değil. Uygulamanın geliştiricisi ile irtibât kurun.</string>
+    <string name="bug_report_failed_issues_not_available">Sorunlar seçilen depo için devrede değil. Uygulamanın geliştiricisi ile irtibat kurun.</string>
     <string name="bug_report_failed_unknown">Beklenmedik bir hatâ oluştu. Uygulamanın geliştiricisi ile irtibât kurun.</string>
     <string name="copied_device_info_to_clipboard">Cihaz bilgisi panoya kopyalandı.</string>
     <string name="your_account_data_is_only_used_for_authentication">Hesabınız ile alâkalı veriler sadece kimlik doğrulaması için kullanılır.</string>
-    <string name="you_will_be_forwarded_to_the_issue_tracker_website">Mesele takip etme web sitesine yönlendirileceksiniz.</string>
+    <string name="you_will_be_forwarded_to_the_issue_tracker_website">Sorun takip etme web sitesine yönlendirileceksiniz.</string>
     <!-- App Shortcuts -->
     <string name="app_shortcut_shuffle_all_short">Karıştır</string>
     <string name="app_shortcut_top_tracks_short">En İyi Şarkılar</string>
