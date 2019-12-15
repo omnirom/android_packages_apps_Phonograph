@@ -74,7 +74,7 @@ public class LastFMRestClient {
                 Log.d("LastFMRestClient", message);
             }
         });
-        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+        logging.setLevel(HttpLoggingInterceptor.Level.NONE);
         return new OkHttpClient.Builder()
                 .addInterceptor(logging)
                 .cache(createDefaultCache(context))
