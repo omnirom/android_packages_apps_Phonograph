@@ -50,7 +50,8 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
     okio-sink-target \
     advrecycler-view-target \
     jaudiotagger-target \
-    gson-local-target
+    gson-local-target \
+    logging-interceptor-target
 
 # AAR libraries
 LOCAL_STATIC_ANDROID_LIBRARIES += app-theme-helper-target \
@@ -69,14 +70,14 @@ LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res
 #  $(call intermediates-dir-for,JAVA_LIBRARIES,$(lib),,COMMON)/aar/res)
 
 LOCAL_USE_AAPT2 := true
-LOCAL_PROGUARD_FLAG_FILES := proguard-rules.pro
+LOCAL_PROGUARD_ENABLED := disabled
 LOCAL_JAR_EXCLUDE_FILES := none
 LOCAL_SRC_FILES += $(call all-java-files-under, java)
 LOCAL_PACKAGE_NAME := Phonograph
 LOCAL_SDK_VERSION := current
 LOCAL_MODULE_TAGS := optional
 LOCAL_MIN_SDK_VERSION := 24
-#LOCAL_DEX_PREOPT := false
+LOCAL_DEX_PREOPT := false
 include $(BUILD_PACKAGE)
 
 # Enumerate target prebuilts to avoid linker warnings
@@ -136,6 +137,16 @@ include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := JAVA_LIBRARIES
 LOCAL_MODULE := okhttp3-target
 LOCAL_SRC_FILES := libs/okhttp-3.3.0.jar
+LOCAL_UNINSTALLABLE_MODULE := true
+LOCAL_SDK_VERSION := current
+
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE_CLASS := JAVA_LIBRARIES
+LOCAL_MODULE := logging-interceptor-target
+LOCAL_SRC_FILES := libs/logging-interceptor-3.3.0.jar
 LOCAL_UNINSTALLABLE_MODULE := true
 LOCAL_SDK_VERSION := current
 
