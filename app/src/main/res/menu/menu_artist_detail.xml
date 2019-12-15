@@ -9,10 +9,10 @@
         android:title="@string/action_shuffle_artist"
         app:showAsAction="ifRoom" />
 
-    <item
+    <!--<item
         android:id="@+id/action_biography"
         android:title="@string/biography"
-        app:showAsAction="never" />
+    app:showAsAction="never" />-->
 
     <item
         android:id="@+id/action_play_next"
@@ -29,10 +29,10 @@
         android:title="@string/action_add_to_playlist"
         app:showAsAction="never" />
 
-    <item
+    <!--<item
         android:id="@+id/action_re_download_artist_image"
         android:title="@string/action_re_download_artist_image"
-        app:showAsAction="never" />
+    app:showAsAction="never" />-->
 
     <item
         android:id="@+id/action_colored_footers"

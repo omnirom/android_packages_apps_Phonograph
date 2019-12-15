@@ -364,7 +364,7 @@ public class ArtistDetailActivity extends AbsSlidingMusicPanelActivity implement
             case android.R.id.home:
                 super.onBackPressed();
                 return true;
-            case R.id.action_biography:
+            /*case R.id.action_biography:
                 if (biographyDialog == null) {
                     biographyDialog = new MaterialDialog.Builder(this)
                             .title(artist.getName())
@@ -385,11 +385,11 @@ public class ArtistDetailActivity extends AbsSlidingMusicPanelActivity implement
                     biographyDialog.show();
                     loadBiography();
                 }
-                return true;
-            case R.id.action_re_download_artist_image:
+                return true;*/
+            /*case R.id.action_re_download_artist_image:
                 Toast.makeText(ArtistDetailActivity.this, getResources().getString(R.string.updating), Toast.LENGTH_SHORT).show();
                 loadArtistImage(true);
-                return true;
+                return true;*/
             case R.id.action_colored_footers:
                 item.setChecked(!item.isChecked());
                 setUsePalette(item.isChecked());
@@ -450,11 +450,11 @@ public class ArtistDetailActivity extends AbsSlidingMusicPanelActivity implement
 
     private void setArtist(Artist artist) {
         this.artist = artist;
-        loadArtistImage(false);
+        //loadArtistImage(false);
 
-        if (Util.isAllowedToDownloadMetadata(this)) {
+        /*if (Util.isAllowedToDownloadMetadata(this)) {
             loadBiography();
-        }
+        }*/
 
         artistName.setText(artist.getName());
         songAdapter.swapDataSet(artist.getSongs());

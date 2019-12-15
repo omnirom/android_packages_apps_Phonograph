@@ -111,8 +111,8 @@ public class ArtistAdapter extends AbsMultiSelectAdapter<ArtistAdapter.ViewHolde
             holder.text.setText(MusicUtil.getArtistInfoString(activity, artist));
         }
         holder.itemView.setActivated(isChecked(artist));
-
-        loadArtistImage(artist, holder);
+        holder.image.setImageResource(R.drawable.default_artist_image);
+        //loadArtistImage(artist, holder);
     }
 
     private void setColors(int color, ViewHolder holder) {

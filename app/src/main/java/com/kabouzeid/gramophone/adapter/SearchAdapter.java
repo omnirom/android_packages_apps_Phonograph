@@ -86,7 +86,8 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
                 final Artist artist = (Artist) dataSet.get(position);
                 holder.title.setText(artist.getName());
                 holder.text.setText(MusicUtil.getArtistInfoString(activity, artist));
-                Glide.with(activity)
+                holder.image.setImageResource(R.drawable.default_artist_image);
+                /*Glide.with(activity)
                         .load(new ArtistImage(artist.getName(), false))
                         .diskCacheStrategy(DiskCacheStrategy.SOURCE)
                         .placeholder(R.drawable.default_artist_image)
@@ -94,7 +95,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
                         .priority(Priority.LOW)
                         .signature(ArtistSignatureUtil.getInstance(activity).getArtistSignature(artist.getName()))
                         .override(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL)
-                        .into(holder.image);
+                        .into(holder.image);*/
                 break;
             case SONG:
                 final Song song = (Song) dataSet.get(position);
