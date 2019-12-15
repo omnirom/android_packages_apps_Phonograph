@@ -155,7 +155,7 @@ public class MusicUtil {
     }
 
     public static File createAlbumArtFile() {
-        return new File(createAlbumArtDir(), String.valueOf(System.currentTimeMillis()));
+        return new File(createAlbumArtDir(), String.valueOf(System.currentTimeMillis()) + ".png");
     }
 
     @SuppressWarnings("ResultOfMethodCallIgnored")

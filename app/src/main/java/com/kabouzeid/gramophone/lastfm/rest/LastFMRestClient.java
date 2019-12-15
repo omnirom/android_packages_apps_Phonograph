@@ -3,6 +3,7 @@ package com.kabouzeid.gramophone.lastfm.rest;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.util.Log;
 
 import com.kabouzeid.gramophone.lastfm.rest.service.LastFMService;
 
@@ -13,6 +14,7 @@ import okhttp3.Cache;
 import okhttp3.Call;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
 import okhttp3.Request;
 import okhttp3.Response;
 import retrofit2.Retrofit;
@@ -66,7 +68,15 @@ public class LastFMRestClient {
     }
 
     public static OkHttpClient.Builder createDefaultOkHttpClientBuilder(Context context) {
+        HttpLoggingInterceptor logging = new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
+            @Override
+            public void log(String message) {
+                Log.d("LastFMRestClient", message);
+            }
+        });
+        logging.setLevel(HttpLoggingInterceptor.Level.NONE);
         return new OkHttpClient.Builder()
+                .addInterceptor(logging)
                 .cache(createDefaultCache(context))
                 .addInterceptor(createCacheControlInterceptor());
     }

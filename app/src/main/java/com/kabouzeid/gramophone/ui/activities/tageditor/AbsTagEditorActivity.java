@@ -277,7 +277,7 @@ public abstract class AbsTagEditorActivity extends AbsBaseActivity {
     protected void writeValuesToFiles(final Map<FieldKey, String> fieldKeyValueMap, @Nullable final ArtworkInfo artworkInfo) {
         Util.hideSoftKeyboard(this);
 
-        new WriteTagsAsyncTask(this).execute(new WriteTagsAsyncTask.LoadingInfo(getSongPaths(), fieldKeyValueMap, artworkInfo));
+        new WriteTagsAsyncTask(this).execute(new WriteTagsAsyncTask.LoadingInfo(songPaths, fieldKeyValueMap, artworkInfo));
     }
 
     private static class WriteTagsAsyncTask extends DialogAsyncTask<WriteTagsAsyncTask.LoadingInfo, Integer, String[]> {
@@ -297,13 +297,17 @@ public abstract class AbsTagEditorActivity extends AbsBaseActivity {
 
                 Artwork artwork = null;
                 File albumArtFile = null;
+                FileOutputStream fos = null;
                 if (info.artworkInfo != null && info.artworkInfo.artwork != null) {
                     try {
                         albumArtFile = MusicUtil.createAlbumArtFile().getCanonicalFile();
+                        fos = new FileOutputStream(albumArtFile);
                         info.artworkInfo.artwork.compress(Bitmap.CompressFormat.PNG, 0, new FileOutputStream(albumArtFile));
                         artwork = ArtworkFactory.createArtworkFromFile(albumArtFile);
                     } catch (IOException e) {
                         e.printStackTrace();
+                    } finally {
+                        fos.close();
                     }
                 }
 
@@ -322,7 +326,7 @@ public abstract class AbsTagEditorActivity extends AbsBaseActivity {
                                 try {
                                     tag.setField(entry.getKey(), entry.getValue());
                                 } catch (Exception e) {
-                                    e.printStackTrace();
+                                    //e.printStackTrace();
                                 }
                             }
                         }

@@ -98,7 +98,7 @@ public class AlbumTagEditorActivity extends AbsTagEditorActivity implements Text
             Toast.makeText(this, getResources().getString(R.string.album_or_artist_empty), Toast.LENGTH_SHORT).show();
             return;
         }
-        lastFMRestClient.getApiService().getAlbumInfo(albumTitleStr, albumArtistNameStr, null).enqueue(new Callback<LastFmAlbum>() {
+        lastFMRestClient.getApiService().getAlbumInfo(albumTitleStr.trim(), albumArtistNameStr.trim(), null).enqueue(new Callback<LastFmAlbum>() {
             @Override
             public void onResponse(Call<LastFmAlbum> call, Response<LastFmAlbum> response) {
                 LastFmAlbum lastFmAlbum = response.body();
@@ -161,12 +161,12 @@ public class AlbumTagEditorActivity extends AbsTagEditorActivity implements Text
     @Override
     protected void save() {
         Map<FieldKey, String> fieldKeyValueMap = new EnumMap<>(FieldKey.class);
-        fieldKeyValueMap.put(FieldKey.ALBUM, albumTitle.getText().toString());
+        fieldKeyValueMap.put(FieldKey.ALBUM, albumTitle.getText().toString().trim());
         //android seems not to recognize album_artist field so we additionally write the normal artist field
-        fieldKeyValueMap.put(FieldKey.ARTIST, albumArtist.getText().toString());
-        fieldKeyValueMap.put(FieldKey.ALBUM_ARTIST, albumArtist.getText().toString());
-        fieldKeyValueMap.put(FieldKey.GENRE, genre.getText().toString());
-        fieldKeyValueMap.put(FieldKey.YEAR, year.getText().toString());
+        fieldKeyValueMap.put(FieldKey.ARTIST, albumArtist.getText().toString().trim());
+        fieldKeyValueMap.put(FieldKey.ALBUM_ARTIST, albumArtist.getText().toString().trim());
+        fieldKeyValueMap.put(FieldKey.GENRE, genre.getText().toString().trim());
+        fieldKeyValueMap.put(FieldKey.YEAR, year.getText().toString().trim());
 
         writeValuesToFiles(fieldKeyValueMap, deleteAlbumArt ? new ArtworkInfo(getId(), null) : albumArtBitmap == null ? null : new ArtworkInfo(getId(), albumArtBitmap));
     }

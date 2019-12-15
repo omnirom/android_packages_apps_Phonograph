@@ -263,7 +263,7 @@ public class AlbumDetailActivity extends AbsSlidingMusicPanelActivity implements
         wiki = null;
 
         lastFMRestClient.getApiService()
-                .getAlbumInfo(getAlbum().getTitle(), getAlbum().getArtistName(), lang)
+                .getAlbumInfo(getAlbum().getTitle().trim(), getAlbum().getArtistName().trim(), lang)
                 .enqueue(new Callback<LastFmAlbum>() {
                     @Override
                     public void onResponse(@NonNull Call<LastFmAlbum> call, @NonNull Response<LastFmAlbum> response) {
