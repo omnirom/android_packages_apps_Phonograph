@@ -374,22 +374,13 @@ public class ArtistDetailActivity extends AbsSlidingMusicPanelActivity implement
                             .positiveText(android.R.string.ok)
                             .build();
                 }
-                if (Util.isAllowedToDownloadMetadata(ArtistDetailActivity.this)) {
-                    if (biography != null) {
-                        biographyDialog.setContent(biography);
-                        biographyDialog.show();
-                    } else {
-                        Toast.makeText(ArtistDetailActivity.this, getResources().getString(R.string.biography_unavailable), Toast.LENGTH_SHORT).show();
-                    }
-                } else {
-                    biographyDialog.show();
-                    loadBiography();
-                }
+                biographyDialog.show();
+                loadBiography();
                 return true;
-            case R.id.action_re_download_artist_image:
+            /*case R.id.action_re_download_artist_image:
                 Toast.makeText(ArtistDetailActivity.this, getResources().getString(R.string.updating), Toast.LENGTH_SHORT).show();
                 loadArtistImage(true);
-                return true;
+                return true;*/
             case R.id.action_colored_footers:
                 item.setChecked(!item.isChecked());
                 setUsePalette(item.isChecked());
@@ -450,11 +441,11 @@ public class ArtistDetailActivity extends AbsSlidingMusicPanelActivity implement
 
     private void setArtist(Artist artist) {
         this.artist = artist;
-        loadArtistImage(false);
+        //loadArtistImage(false);
 
-        if (Util.isAllowedToDownloadMetadata(this)) {
+        /*if (Util.isAllowedToDownloadMetadata(this)) {
             loadBiography();
-        }
+        }*/
 
         artistName.setText(artist.getName());
         songAdapter.swapDataSet(artist.getSongs());
