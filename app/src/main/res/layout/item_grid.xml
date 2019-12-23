@@ -30,11 +30,11 @@
         <LinearLayout
             android:id="@+id/palette_color_container"
             android:layout_width="match_parent"
-            android:layout_height="68dp"
+            android:layout_height="56dp"
             android:gravity="center_vertical"
             android:orientation="vertical"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp">
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp">
 
             <TextView
                 android:id="@+id/title"
