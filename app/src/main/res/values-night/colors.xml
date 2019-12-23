@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2013 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources>
+    <color name="omni_color5">@*android:color/accent_device_default_light</color>
+    <color name="omni_color4">@*android:color/accent_device_default_dark</color>
+    <color name="omni_color3">#80eeeeee</color>
+    <color name="omni_color2">@*android:color/primary_dark_device_default_settings</color>
+    <color name="omni_color1">@*android:color/primary_device_default_settings</color>
+    <color name="omni_color7">@*android:color/background_floating_device_default_dark</color>
+    <color name="omni_text1">#ffffffff</color>
+    <color name="omni_text2">#ffeeeeee</color>
+    <color name="omni_text3">#eeeeeeee</color>
+    <color name="colorPrimaryDark">@@color/omni_color2</color>
+    <color name="colorPrimary">@@color/omni_color1</color>
+    <color name="colorAccent">@@color/omni_color5</color>
+    <color name="md_grey_300">@@color/omni_color1</color>
+    <color name="md_white_1000">@@color/omni_color2</color>
+    <color name="ate_primary_text_light">@@color/omni_text1</color>
+    <color name="ate_secondary_text_light">@@color/omni_text2</color>
+    <color name="windowBackground">@@color/omni_color2</color>
+    <color name="md_divider_black">@@color/omni_color2</color>
+    <color name="textColorPrimary">@@color/omni_text1</color>
+    <color name="textColorSecondary">@@color/omni_text2</color>
+    <color name="textColorTertiary">@@color/omni_text3</color>
+    <color name="popupBackground">@@color/omni_color7</color>
+    <color name="md_background_color">@@color/omni_color7</color>
+</resources>
