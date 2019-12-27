@@ -94,22 +94,7 @@ public final class PreferenceUtil {
     }
 
     public int getGeneralTheme() {
-        // maxwen
-        //return getThemeResFromPrefValue(mPreferences.getString(GENERAL_THEME, ""));
         return R.style.Theme_Phonograph;
-    }
-
-    @StyleRes
-    public static int getThemeResFromPrefValue(String themePrefValue) {
-        switch (themePrefValue) {
-            case "dark":
-                return R.style.Theme_Phonograph;
-            case "black":
-                return R.style.Theme_Phonograph_Black;
-            case "light":
-            default:
-                return R.style.Theme_Phonograph_Light;
-        }
     }
 
     public final int getDefaultStartPage() {
