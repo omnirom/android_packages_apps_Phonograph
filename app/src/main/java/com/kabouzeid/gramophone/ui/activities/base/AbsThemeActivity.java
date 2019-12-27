@@ -49,19 +49,10 @@ public abstract class AbsThemeActivity extends ATHToolbarActivity {
      * @param color the new statusbar color (will be shifted down on Lollipop and above)
      */
     public void setStatusbarColor(int color) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            final View statusBar = getWindow().getDecorView().getRootView().findViewById(R.id.status_bar);
-            if (statusBar != null) {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    statusBar.setBackgroundColor(ColorUtil.darkenColor(color));
-                    setLightStatusbarAuto(color);
-                } else {
-                    statusBar.setBackgroundColor(color);
-                }
-            } else if (Build.VERSION.SDK_INT >= 21) {
-                getWindow().setStatusBarColor(ColorUtil.darkenColor(color));
-                setLightStatusbarAuto(color);
-            }
+        final View statusBar = getWindow().getDecorView().getRootView().findViewById(R.id.status_bar);
+        if (statusBar != null) {
+            statusBar.setBackgroundColor(color);
+            setLightStatusbarAuto(color);
         }
     }
 
@@ -82,7 +73,7 @@ public abstract class AbsThemeActivity extends ATHToolbarActivity {
         if (ThemeStore.coloredNavigationBar(this)) {
             ATH.setNavigationbarColor(this, color);
         } else {
-            ATH.setNavigationbarColor(this, Color.BLACK);
+            ATH.setNavigationbarColor(this, getResources().getColor(R.color.navigationBarColor));
         }
     }
 

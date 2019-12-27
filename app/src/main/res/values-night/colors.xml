@@ -28,7 +28,7 @@
     <color name="colorPrimary">@color/omni_color1</color>
     <color name="colorAccent">@color/omni_color5</color>
     <color name="md_grey_300">@color/omni_color1</color>
-    <color name="md_white_1000">@color/omni_color2</color>
+    <color name="md_white_1000">@color/omni_color1</color>
     <color name="ate_primary_text_light">@color/omni_text1</color>
     <color name="ate_secondary_text_light">@color/omni_text2</color>
     <color name="windowBackground">@color/omni_color2</color>
@@ -38,4 +38,6 @@
     <color name="textColorTertiary">@color/omni_text3</color>
     <color name="popupBackground">@color/omni_color7</color>
     <color name="md_background_color">@color/omni_color7</color>
+    <color name="navigationBarColor">@color/omni_color1</color>
+    <color name="widget_card_bg_color">@color/omni_color1</color>
 </resources>
