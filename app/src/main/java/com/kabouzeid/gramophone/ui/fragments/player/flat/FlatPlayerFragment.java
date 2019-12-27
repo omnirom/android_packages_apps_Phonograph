@@ -54,7 +54,6 @@ import java.io.File;
 public class FlatPlayerFragment extends AbsPlayerFragment implements PlayerAlbumCoverFragment.Callbacks, SlidingUpPanelLayout.PanelSlideListener {
     public static final String TAG = FlatPlayerFragment.class.getSimpleName();
 
-    View playerStatusBar;
     Toolbar toolbar;
     @Nullable
     SlidingUpPanelLayout slidingUpPanelLayout;
@@ -86,7 +85,6 @@ public class FlatPlayerFragment extends AbsPlayerFragment implements PlayerAlbum
         }
 
         View view = inflater.inflate(R.layout.fragment_flat_player, container, false);
-        playerStatusBar = view.findViewById(R.id.player_status_bar);
         toolbar = (Toolbar) view.findViewById(R.id.player_toolbar);
         slidingUpPanelLayout = (SlidingUpPanelLayout) view.findViewById(R.id.player_sliding_layout);
         recyclerView = (RecyclerView) view.findViewById(R.id.player_recycler_view);
@@ -372,13 +370,10 @@ public class FlatPlayerFragment extends AbsPlayerFragment implements PlayerAlbum
 
         public AnimatorSet createDefaultColorChangeAnimatorSet(int newColor) {
             Animator backgroundAnimator = ViewUtil.createBackgroundColorTransition(fragment.playbackControlsFragment.getView(), fragment.lastColor, newColor);
-            Animator statusBarAnimator = ViewUtil.createBackgroundColorTransition(fragment.playerStatusBar, fragment.lastColor, newColor);
 
             AnimatorSet animatorSet = new AnimatorSet();
             backgroundAnimator.setDuration(ViewUtil.PHONOGRAPH_ANIM_TIME);
-            statusBarAnimator.setDuration(ViewUtil.PHONOGRAPH_ANIM_TIME);
-
-            animatorSet.playTogether(backgroundAnimator, statusBarAnimator);
+            animatorSet.play(backgroundAnimator);
 
             if (!ATHUtil.isWindowBackgroundDark(fragment.getActivity())) {
                 int adjustedLastColor = ColorUtil.isColorLight(fragment.lastColor) ? ColorUtil.darkenColor(fragment.lastColor) : fragment.lastColor;
@@ -507,7 +502,8 @@ public class FlatPlayerFragment extends AbsPlayerFragment implements PlayerAlbum
             super.animateColorChange(newColor);
 
             AnimatorSet animatorSet = createDefaultColorChangeAnimatorSet(newColor);
-            animatorSet.play(ViewUtil.createBackgroundColorTransition(fragment.toolbar, fragment.lastColor, newColor));
+            animatorSet.play(ViewUtil.createBackgroundColorTransition(fragment.toolbar, fragment.lastColor, newColor))
+                    .with(ViewUtil.createBackgroundColorTransition(fragment.getView().findViewById(R.id.status_bar), ColorUtil.darkenColor(fragment.lastColor), ColorUtil.darkenColor(newColor)));                    
             animatorSet.start();
         }
     }

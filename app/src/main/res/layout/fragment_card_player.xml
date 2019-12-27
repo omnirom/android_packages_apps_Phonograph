@@ -58,7 +58,7 @@
 
             </RelativeLayout>
 
-            <include layout="@layout/shadow_statusbar_toolbar" />
+            <include layout="@layout/shadow_toolbar" />
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/player_toolbar"

@@ -80,4 +80,5 @@ http://developer.android.com/guide/topics/appwidgets/index.html#CreatingLayout
     <dimen name="notification_large_icon_width">64dp</dimen>
     <dimen name="notification_large_icon_height">64dp</dimen>
 
+    <dimen name="cover_image_shadow_height">180dp</dimen>
 </resources>
