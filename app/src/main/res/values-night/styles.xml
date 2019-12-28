@@ -24,6 +24,8 @@
         <item name="android:windowLightStatusBar">false</item>
         <item name="android:windowLightNavigationBar">false</item>
         <item name="android:windowBackground">@color/omni_color1</item>
+        <item name="android:dialogTheme">@style/Theme.Phonograph.Dialog</item>
+        <item name="android:alertDialogTheme">@style/Theme.Phonograph.AlertDialog</item>
     </style>
 
     <style name="Theme.Phonograph.Light" parent="Theme.Phonograph.Base.Light">
@@ -31,5 +33,21 @@
         <item name="android:navigationBarColor">@color/navigationBarColor</item>
         <item name="android:windowSharedElementsUseOverlay">false</item>
         <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:dialogTheme">@style/Theme.Phonograph.Dialog</item>
+        <item name="android:alertDialogTheme">@style/Theme.Phonograph.AlertDialog</item>
+    </style>
+
+    <style name="Theme.Phonograph.Dialog" parent="@android:style/Theme.Material.Dialog">
+        <item name="android:colorBackground">@color/omni_color1</item>
+        <item name="android:colorAccent">@color/colorAccent</item>
+        <item name="android:colorPrimary">@color/colorPrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="Theme.Phonograph.AlertDialog" parent="@android:style/Theme.Material.Dialog.Alert">
+        <item name="android:colorBackground">@color/omni_color1</item>
+        <item name="android:colorAccent">@color/colorAccent</item>
+        <item name="android:colorPrimary">@color/colorPrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
     </style>
 </resources>

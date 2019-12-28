@@ -119,13 +119,12 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
             itemView.setOnLongClickListener(null);
 
             if (itemViewType != HEADER) {
-                itemView.setBackgroundColor(ATHUtil.resolveColor(activity, R.attr.cardBackgroundColor));
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    itemView.setElevation(activity.getResources().getDimensionPixelSize(R.dimen.card_elevation));
-                }
                 if (shortSeparator != null) {
                     shortSeparator.setVisibility(View.GONE);
                 }
+            } else {
+                itemView.setElevation(activity.getResources().getDimensionPixelSize(R.dimen.card_elevation));
+                itemView.setBackgroundColor(ATHUtil.resolveColor(activity, R.attr.cardBackgroundColor));
             }
 
             if (menu != null) {
