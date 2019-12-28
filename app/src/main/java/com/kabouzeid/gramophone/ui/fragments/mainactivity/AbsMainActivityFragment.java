@@ -25,24 +25,4 @@ public abstract class AbsMainActivityFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         setHasOptionsMenu(true);
     }
-
-    // WORKAROUND
-    public void setStatusbarColor(View view, int color) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            final View statusBar = view.findViewById(R.id.status_bar);
-            if (statusBar != null) {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    statusBar.setBackgroundColor(ColorUtil.darkenColor(color));
-                    getMainActivity().setLightStatusbarAuto(color);
-                } else {
-                    statusBar.setBackgroundColor(color);
-                }
-            }
-        }
-    }
-
-    public void setStatusbarColorAuto(View view) {
-        // we don't want to use statusbar color because we are doing the color darkening on our own to support KitKat
-        setStatusbarColor(view, ThemeStore.primaryColor(getContext()));
-    }
 }

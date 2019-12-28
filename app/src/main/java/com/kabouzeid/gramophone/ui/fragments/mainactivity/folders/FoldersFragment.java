@@ -154,7 +154,7 @@ public class FoldersFragment extends AbsMainActivityFragment implements MainActi
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        setStatusbarColorAuto(view);
+        getMainActivity().setStatusbarColorAuto();
         getMainActivity().setNavigationbarColorAuto();
         getMainActivity().setTaskDescriptionColorAuto();
 
