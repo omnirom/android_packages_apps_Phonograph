@@ -12,15 +12,15 @@
 
     <color name="twenty_percent_black_overlay">#34000000</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#3F51B5</color>
+    <color name="colorPrimary">@color/material_grey_50</color>
+    <color name="colorPrimaryDark">@color/material_grey_50</color>
     <color name="navigationBarColor">@color/material_grey_50</color>
 
     <color name="app_shortcut_default_foreground">#607d8b</color>
     <color name="app_shortcut_default_background">#f5f5f5</color>
 
-    <color name="windowBackground">@color/material_grey_50</color>
-    <color name="popupBackground">#ffffffff</color>
+    <color name="windowBackground">@color/material_grey_100</color>
+    <color name="popupBackground">@color/material_grey_50</color>
 
     <color name="textColorPrimary">#ff252525</color>
     <color name="textColorSecondary">#b3252525</color>
