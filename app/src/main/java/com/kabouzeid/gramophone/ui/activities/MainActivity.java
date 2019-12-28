@@ -27,7 +27,6 @@ import com.bumptech.glide.Glide;
 import com.kabouzeid.appthemehelper.ThemeStore;
 import com.kabouzeid.appthemehelper.util.ATHUtil;
 import com.kabouzeid.appthemehelper.util.NavigationViewUtil;
-import com.kabouzeid.gramophone.dialogs.ChangelogDialog;
 import com.kabouzeid.gramophone.glide.SongGlideRequest;
 import com.kabouzeid.gramophone.helper.MusicPlayerRemote;
 import com.kabouzeid.gramophone.helper.SearchQueryHelper;
@@ -97,10 +96,7 @@ public class MainActivity extends AbsSlidingMusicPanelActivity {
         } else {
             restoreCurrentFragment();
         }
-
-        if (!checkShowIntro()) {
-            checkShowChangelog();
-        }
+        checkShowIntro();
     }
 
     private void setMusicChooser(int key) {
@@ -349,7 +345,6 @@ public class MainActivity extends AbsSlidingMusicPanelActivity {
     private boolean checkShowIntro() {
         if (!PreferenceUtil.getInstance(this).introShown()) {
             PreferenceUtil.getInstance(this).setIntroShown();
-            ChangelogDialog.setChangelogRead(this);
             blockRequestPermissions = true;
             new Handler().postDelayed(new Runnable() {
                 @Override
@@ -358,20 +353,6 @@ public class MainActivity extends AbsSlidingMusicPanelActivity {
                 }
             }, 50);
             return true;
-        }
-        return false;
-    }
-
-    private boolean checkShowChangelog() {
-        try {
-            PackageInfo pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
-            int currentVersion = pInfo.versionCode;
-            if (currentVersion != PreferenceUtil.getInstance(this).getLastChangelogVersion()) {
-                ChangelogDialog.create().show(getSupportFragmentManager(), "CHANGE_LOG_DIALOG");
-                return true;
-            }
-        } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
         }
         return false;
     }

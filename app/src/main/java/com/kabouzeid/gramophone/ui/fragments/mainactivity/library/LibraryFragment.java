@@ -82,7 +82,6 @@ public class LibraryFragment extends AbsMainActivityFragment implements CabHolde
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         getMainActivity().setStatusbarColorAuto();
         getMainActivity().setNavigationbarColorAuto();
-        getMainActivity().setTaskDescriptionColorAuto();
 
         setUpToolbar();
         setUpViewPager();

@@ -15,7 +15,6 @@ import android.widget.TextView;
 
 import com.afollestad.materialdialogs.internal.ThemeSingleton;
 import com.kabouzeid.appthemehelper.ThemeStore;
-import com.kabouzeid.gramophone.dialogs.ChangelogDialog;
 import com.kabouzeid.gramophone.ui.activities.base.AbsBaseActivity;
 import com.kabouzeid.gramophone.ui.activities.intro.AppIntroActivity;
 
@@ -51,7 +50,6 @@ public class AboutActivity extends AbsBaseActivity implements View.OnClickListen
 
     Toolbar toolbar;
     TextView appVersion;
-    LinearLayout changelog;
     LinearLayout intro;
     LinearLayout licenses;
     LinearLayout writeAnEmail;
@@ -77,7 +75,6 @@ public class AboutActivity extends AbsBaseActivity implements View.OnClickListen
         setDrawUnderStatusbar(true);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         appVersion = (TextView) findViewById(R.id.app_version);
-        changelog = (LinearLayout) findViewById(R.id.changelog);
         intro = (LinearLayout) findViewById(R.id.intro);
         licenses = (LinearLayout) findViewById(R.id.licenses);
         writeAnEmail = (LinearLayout) findViewById(R.id.write_an_email);
@@ -98,7 +95,6 @@ public class AboutActivity extends AbsBaseActivity implements View.OnClickListen
 
         setStatusbarColorAuto();
         setNavigationbarColorAuto();
-        setTaskDescriptionColorAuto();
 
         setUpViews();
     }
@@ -121,10 +117,9 @@ public class AboutActivity extends AbsBaseActivity implements View.OnClickListen
     }
 
     private void setUpOnClickListeners() {
-        changelog.setOnClickListener(this);
         intro.setOnClickListener(this);
         licenses.setOnClickListener(this);
-        addToGooglePlusCircles.setOnClickListener(this);
+//         addToGooglePlusCircles.setOnClickListener(this);
         followOnTwitter.setOnClickListener(this);
         forkOnGitHub.setOnClickListener(this);
         visitWebsite.setOnClickListener(this);
@@ -161,9 +156,7 @@ public class AboutActivity extends AbsBaseActivity implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
-        if (v == changelog) {
-            ChangelogDialog.create().show(getSupportFragmentManager(), "CHANGELOG_DIALOG");
-        } else if (v == licenses) {
+        if (v == licenses) {
             showLicenseDialog();
         } else if (v == intro) {
             startActivity(new Intent(this, AppIntroActivity.class));

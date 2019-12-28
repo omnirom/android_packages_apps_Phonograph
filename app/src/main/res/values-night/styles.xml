@@ -15,9 +15,15 @@
 -->
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android" >
-    <style name="Theme.Phonograph.Settings" parent="@android:style/Theme.DeviceDefault.Settings" >
-        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+    <style name="Theme.Phonograph.Settings" parent="@android:style/Theme.Material" >
+        <item name="android:colorAccent">@color/colorAccent</item>
+        <item name="android:colorPrimary">@color/colorPrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:statusBarColor">@color/colorPrimary</item>
         <item name="android:navigationBarColor">@color/navigationBarColor</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:windowBackground">@color/omni_color1</item>
     </style>
 
     <style name="Theme.Phonograph.Light" parent="Theme.Phonograph.Base.Light">

@@ -306,7 +306,6 @@ public class ArtistDetailActivity extends AbsSlidingMusicPanelActivity implement
         artistName.setBackgroundColor(color);
         artistName.setTextColor(MaterialValueHelper.getPrimaryTextColor(this, ColorUtil.isColorLight(color)));
         setNavigationbarColor(color);
-        setTaskDescriptionColor(color);
     }
 
     private void setUpToolbar() {
