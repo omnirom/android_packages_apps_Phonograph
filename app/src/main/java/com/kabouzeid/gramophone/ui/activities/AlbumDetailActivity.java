@@ -197,7 +197,6 @@ public class AlbumDetailActivity extends AbsSlidingMusicPanelActivity implements
         albumTitleView.setTextColor(MaterialValueHelper.getPrimaryTextColor(this, ColorUtil.isColorLight(color)));
 
         setNavigationbarColor(color);
-        setTaskDescriptionColor(color);
     }
 
     @Override

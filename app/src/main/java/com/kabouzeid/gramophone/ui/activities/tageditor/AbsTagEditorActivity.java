@@ -271,7 +271,6 @@ public abstract class AbsTagEditorActivity extends AbsBaseActivity {
         header.setBackgroundColor(paletteColorPrimary);
         setStatusbarColor(paletteColorPrimary);
         setNavigationbarColor(paletteColorPrimary);
-        setTaskDescriptionColor(paletteColorPrimary);
     }
 
     protected void writeValuesToFiles(final Map<FieldKey, String> fieldKeyValueMap, @Nullable final ArtworkInfo artworkInfo) {

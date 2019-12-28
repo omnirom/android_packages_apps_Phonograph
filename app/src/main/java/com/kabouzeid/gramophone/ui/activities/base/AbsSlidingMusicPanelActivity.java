@@ -151,7 +151,6 @@ public abstract class AbsSlidingMusicPanelActivity extends AbsMusicServiceActivi
     public void onPanelCollapsed(View panel) {
         // restore values
         super.setLightStatusbar(lightStatusbar);
-        super.setTaskDescriptionColor(taskColor);
         super.setNavigationbarColor(navigationbarColor);
 
         playerFragment.setMenuVisibility(false);
@@ -163,7 +162,6 @@ public abstract class AbsSlidingMusicPanelActivity extends AbsMusicServiceActivi
         // setting fragments values
         int playerFragmentColor = playerFragment.getPaletteColor();
         super.setLightStatusbar(false);
-        super.setTaskDescriptionColor(playerFragmentColor);
         super.setNavigationbarColor(playerFragmentColor);
 
         playerFragment.setMenuVisibility(true);
@@ -229,7 +227,6 @@ public abstract class AbsSlidingMusicPanelActivity extends AbsMusicServiceActivi
     public void onPaletteColorChanged() {
         if (getPanelState() == SlidingUpPanelLayout.PanelState.EXPANDED) {
             int playerFragmentColor = playerFragment.getPaletteColor();
-            super.setTaskDescriptionColor(playerFragmentColor);
             animateNavigationBarColor(playerFragmentColor);
         }
     }
@@ -273,14 +270,6 @@ public abstract class AbsSlidingMusicPanelActivity extends AbsMusicServiceActivi
     protected void onDestroy() {
         super.onDestroy();
         if (navigationBarColorAnimator != null) navigationBarColorAnimator.cancel(); // just in case
-    }
-
-    @Override
-    public void setTaskDescriptionColor(@ColorInt int color) {
-        this.taskColor = color;
-        if (getPanelState() == null || getPanelState() == SlidingUpPanelLayout.PanelState.COLLAPSED) {
-            super.setTaskDescriptionColor(color);
-        }
     }
 
     @Override

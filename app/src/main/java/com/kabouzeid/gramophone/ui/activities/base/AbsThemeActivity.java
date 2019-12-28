@@ -33,6 +33,7 @@ public abstract class AbsThemeActivity extends ATHToolbarActivity {
         getSharedPreferences("[[kabouzeid_app-theme-helper]]", 0).edit().putInt("activity_theme", PreferenceUtil.getInstance(this).getGeneralTheme()).commit(); // TEMPORARY FIX
         super.onCreate(savedInstanceState);
         MaterialDialogsUtil.updateMaterialDialogsThemeSingleton(this);
+        setTaskDescriptionColor(ThemeStore.accentColor(this));
     }
 
     protected void setDrawUnderStatusbar(boolean drawUnderStatusbar) {
@@ -61,12 +62,8 @@ public abstract class AbsThemeActivity extends ATHToolbarActivity {
         setStatusbarColor(ThemeStore.primaryColor(this));
     }
 
-    public void setTaskDescriptionColor(@ColorInt int color) {
+    private void setTaskDescriptionColor(@ColorInt int color) {
         ATH.setTaskDescriptionColor(this, color);
-    }
-
-    public void setTaskDescriptionColorAuto() {
-        setTaskDescriptionColor(ThemeStore.primaryColor(this));
     }
 
     public void setNavigationbarColor(int color) {

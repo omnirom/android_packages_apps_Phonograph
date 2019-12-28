@@ -58,7 +58,6 @@ public class SearchActivity extends AbsMusicServiceActivity implements SearchVie
 
         setStatusbarColorAuto();
         setNavigationbarColorAuto();
-        setTaskDescriptionColorAuto();
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new SearchAdapter(this, Collections.emptyList());

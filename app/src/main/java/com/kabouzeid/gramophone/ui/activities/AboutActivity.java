@@ -98,7 +98,6 @@ public class AboutActivity extends AbsBaseActivity implements View.OnClickListen
 
         setStatusbarColorAuto();
         setNavigationbarColorAuto();
-        setTaskDescriptionColorAuto();
 
         setUpViews();
     }

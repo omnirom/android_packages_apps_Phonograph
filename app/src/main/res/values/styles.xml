@@ -28,12 +28,13 @@
         <item name="android:progressBackgroundTint">@android:color/transparent</item>
     </style>
 
-    <style name="Theme.Phonograph.Settings" parent="@android:style/Theme.Material.Light.DarkActionBar" >
+    <style name="Theme.Phonograph.Settings" parent="@android:style/Theme.Material.Light" >
         <item name="android:colorAccent">@color/colorAccent</item>
         <item name="android:colorPrimary">@color/colorPrimary</item>
         <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="android:statusBarColor">@color/colorPrimary</item>
         <item name="android:navigationBarColor">@color/navigationBarColor</item>
+        <item name="android:windowLightStatusBar">true</item>
         <item name="android:windowLightNavigationBar">true</item>
     </style>
 
