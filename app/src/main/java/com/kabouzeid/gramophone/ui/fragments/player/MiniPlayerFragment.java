@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.kabouzeid.appthemehelper.ThemeStore;
 import com.kabouzeid.appthemehelper.util.ATHUtil;
+import com.kabouzeid.appthemehelper.util.ColorUtil;
 import com.kabouzeid.gramophone.helper.MusicPlayerRemote;
 import com.kabouzeid.gramophone.helper.MusicProgressViewUpdateHelper;
 import com.kabouzeid.gramophone.helper.PlayPauseButtonOnClickHandler;
@@ -69,6 +70,8 @@ public class MiniPlayerFragment extends AbsMusicServiceFragment implements Music
     private void setUpMiniPlayer() {
         setUpPlayPauseButton();
         progressBar.setProgressTintList(ColorStateList.valueOf(ThemeStore.accentColor(getActivity())));
+        progressBar.setProgressBackgroundTintList(ColorStateList.valueOf(
+                ColorUtil.withAlpha(ThemeStore.accentColor(getActivity()), 0.4f)));
     }
 
     private void setUpPlayPauseButton() {
