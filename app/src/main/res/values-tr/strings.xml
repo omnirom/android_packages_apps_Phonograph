@@ -279,10 +279,10 @@
     <string name="bug_report_manual">Bizzat gönderin</string>
     <string name="username">Kullanıcı adı</string>
     <string name="password">Parola</string>
-    <string name="bug_report_no_title">Lütfen bir sorun başlığı girin</string>
-    <string name="bug_report_no_description">Lütfen bir sorun açıklaması yazın</string>
-    <string name="bug_report_no_username">Lütfen geçerli GitHub kullanıcı adınızı girin</string>
-    <string name="bug_report_no_password">Lütfen geçerli GitHub parolanızı girin</string>
+    <string name="bug_report_no_title">Lütfen bir sorun başlığı dâhil edin</string>
+    <string name="bug_report_no_description">Lütfen bir sorun açıklaması dâhil edin</string>
+    <string name="bug_report_no_username">Lütfen geçerli GitHub kullanıcı adınızı dâhil edin</string>
+    <string name="bug_report_no_password">Lütfen geçerli GitHub parolanızı dâhil edin</string>
     <string name="bug_report_uploading">Rapor GitHub\'a yükleniyor…</string>
     <string name="bug_report_failed">Rapor gönderilemiyor</string>
     <string name="bug_report_failed_wrong_credentials">Kullanıcı adı veyâ parola hatâlı</string>
