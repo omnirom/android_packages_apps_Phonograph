@@ -18,7 +18,7 @@
     <string name="action_add_to_favorites">En sevilenlere ilâve et</string>
     <string name="action_remove_from_favorites">En sevilenlerden kaldır</string>
     <string name="action_search">Ara</string>
-    <string name="action_play_next">Mevcûd şarkıdan sonra çal</string>
+    <string name="action_play_next">Mevcut şarkıdan sonra çal</string>
     <string name="action_play">Çal</string>
     <string name="action_play_pause">Çal veyâ Duraklat</string>
     <string name="action_previous">Evvelki</string>
@@ -170,12 +170,12 @@
     <string name="empty">Boş</string>
     <string name="playlist_name_empty">Çalma listesi adı</string>
     <string name="song">Şarkı</string>
-    <string name="pref_summary_album_art_on_lockscreen">Mevcûd şarkıların albüm kapağını kilit ekranı duvar kâğıdı olarak kullanır.</string>
+    <string name="pref_summary_album_art_on_lockscreen">Mevcut şarkıların albüm kapağını kilit ekranı duvar kâğıdı olarak kullanır.</string>
     <string name="pref_summary_blurred_album_art">Kilit ekranındaki albüm kapağını bulanıklaştırır. Üçüncü tarafa ait uygulama ve widgetlarda sorunlara sebep olabilir.</string>
     <string name="pref_summary_classic_notification">Klasik bildirim tasarımını kullan.</string>
-    <string name="pref_summary_colored_notification">"Bildirimler alb\u00fcm kapa\u011f\u0131n\u0131n canl\u0131 renkleriyle renklendirilir."</string>
+    <string name="pref_summary_colored_notification">"Bildirimler albüm kapağının canlı renkleriyle renklendirilir."</string>
     <string name="pref_summary_gapless_playback">"Bazı cihazlarda çalma sorunlarına sebep olabilir."</string>
-    <string name="pref_summary_force_square_album_art">Şu ânda çalınıyor görünümündeki albüm kapakları dâimâ kare olur.</string>
+    <string name="pref_summary_force_square_album_art">Şu ânda çalınıyor görünümündeki albüm kapakları daima kare olur.</string>
     <string name="pref_summary_opaque_toolbar_now_playing">Araç çubuğunu renklendirir.</string>
     <string name="pref_summary_opaque_statusbar_now_playing">Durum çubuğunu renklendirir.</string>
     <string name="pref_summary_larger_title_box_now_playing">Daha yüksek başlık kutusu.</string>
@@ -199,7 +199,7 @@
     <string name="web_search">Web araması</string>
     <string name="action_sleep_timer">Uyku zamanlayıcısı</string>
     <string name="action_set">Ayarla</string>
-    <string name="cancel_current_timer">Mevcûd zamanlayıcıyı iptal et</string>
+    <string name="cancel_current_timer">Mevcut zamanlayıcıyı iptal et</string>
     <string name="sleep_timer_canceled">Uyku zamanlayıcısı iptal edildi.</string>
     <string name="sleep_timer_set">Uyku zamanlayıcısı şu ândan itibaren %d dakikalığına ayarlandı.</string>
     <string name="action_new_playlist">Yeni çalma listesi…</string>
