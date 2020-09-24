@@ -172,7 +172,7 @@ public class PlaylistsUtil {
         }
     }
 
-    public static boolean doPlaylistContains(@NonNull final Context context, final long playlistId, final int songId) {
+    public static boolean doPlaylistContains(@NonNull final Context context, final long playlistId, final long songId) {
         if (playlistId != -1) {
             try {
                 Cursor c = context.getContentResolver().query(
@@ -231,6 +231,6 @@ public class PlaylistsUtil {
     }
 
     public static File savePlaylist(Context context, Playlist playlist) throws IOException {
-        return M3UWriter.write(context, new File(Environment.getExternalStorageDirectory(), "Playlists"), playlist);
+        return M3UWriter.write(context, new File(context.getExternalFilesDir(null), "Playlists"), playlist);
     }
 }

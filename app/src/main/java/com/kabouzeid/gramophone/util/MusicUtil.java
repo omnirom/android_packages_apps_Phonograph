@@ -36,14 +36,14 @@ import java.util.List;
 public class MusicUtil {
     public static final String TAG = MusicUtil.class.getSimpleName();
 
-    public static Uri getMediaStoreAlbumCoverUri(int albumId) {
+    public static Uri getMediaStoreAlbumCoverUri(long albumId) {
         final Uri sArtworkUri = Uri
                 .parse("content://media/external/audio/albumart");
 
         return ContentUris.withAppendedId(sArtworkUri, albumId);
     }
 
-    public static Uri getSongFileUri(int songId) {
+    public static Uri getSongFileUri(long songId) {
         return ContentUris.withAppendedId(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, songId);
     }
 
@@ -63,7 +63,7 @@ public class MusicUtil {
         }
     }
 
-    public static void setRingtone(final Context context, final int id) {
+    public static void setRingtone(final Context context, final long id) {
         final ContentResolver resolver = context.getContentResolver();
         final Uri uri = getSongFileUri(id);
         try {
@@ -154,13 +154,13 @@ public class MusicUtil {
         contentResolver.delete(ContentUris.withAppendedId(localUri, albumId), null, null);
     }
 
-    public static File createAlbumArtFile() {
-        return new File(createAlbumArtDir(), String.valueOf(System.currentTimeMillis()) + ".png");
+    public static File createAlbumArtFile(Context context) {
+        return new File(createAlbumArtDir(context), String.valueOf(System.currentTimeMillis()) + ".png");
     }
 
     @SuppressWarnings("ResultOfMethodCallIgnored")
-    public static File createAlbumArtDir() {
-        File albumArtDir = new File(Environment.getExternalStorageDirectory(), "/albumthumbs/");
+    public static File createAlbumArtDir(Context context) {
+        File albumArtDir = new File(context.getExternalFilesDir(null), "/albumthumbs/");
         if (!albumArtDir.exists()) {
             albumArtDir.mkdirs();
             try {

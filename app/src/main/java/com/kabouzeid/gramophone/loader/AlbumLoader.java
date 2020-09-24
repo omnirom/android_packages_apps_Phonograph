@@ -59,7 +59,7 @@ public class AlbumLoader {
         return albums;
     }
 
-    private static Album getOrCreateAlbum(ArrayList<Album> albums, int albumId) {
+    private static Album getOrCreateAlbum(ArrayList<Album> albums, long albumId) {
         for (Album album : albums) {
             if (!album.songs.isEmpty() && album.songs.get(0).albumId == albumId) {
                 return album;
