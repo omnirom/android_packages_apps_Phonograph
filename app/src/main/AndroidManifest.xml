@@ -2,8 +2,8 @@
 <manifest package="org.omnirom.gramophone"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:versionCode="2"
-    android:versionName="1.0.1">
+    android:versionCode="3"
+    android:versionName="1.0.2">
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -11,14 +11,11 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.BROADCAST_STICKY" />
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="com.android.vending.BILLING" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
-    <uses-sdk
-        android:minSdkVersion="24"
-        android:targetSdkVersion="25" />
+    <uses-sdk android:targetSdkVersion="25" />
 
     <application
         android:name=".OmniApp"
@@ -78,15 +75,6 @@
                 <data android:mimeType="application/itunes" />
             </intent-filter>
             <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data android:mimeType="vnd.android.cursor.dir/playlist" />
-                <data android:mimeType="vnd.android.cursor.dir/albums" />
-                <data android:mimeType="vnd.android.cursor.dir/artists" />
-            </intent-filter>
-            <intent-filter>
                 <action android:name="com.cyanogenmod.eleven.AUDIO_PLAYER" />
 
                 <category android:name="android.intent.category.DEFAULT" />
@@ -110,9 +98,6 @@
             android:name="com.kabouzeid.gramophone.ui.activities.tageditor.AlbumTagEditorActivity"
             android:windowSoftInputMode="adjustResize" />
         <activity android:name="com.kabouzeid.gramophone.ui.activities.SearchActivity" />
-        <activity
-            android:name="com.kabouzeid.gramophone.ui.activities.bugreport.BugReportActivity"
-            android:label="@string/report_an_issue" />
         <activity
             android:name="com.kabouzeid.gramophone.appshortcuts.AppShortcutLauncherActivity"
             android:launchMode="singleInstance"
@@ -198,7 +183,6 @@
             android:name="com.kabouzeid.gramophone.ui.activities.SettingsActivity"
             android:label="@string/action_settings"
             android:theme="@style/Theme.Phonograph.Settings" />
-        <activity android:name="com.kabouzeid.gramophone.ui.activities.PlaylistDetailActivity" />
         <activity
             android:name="com.kabouzeid.gramophone.ui.activities.AboutActivity"
             android:label="@string/action_about" />
@@ -206,10 +190,6 @@
             android:name="com.kabouzeid.gramophone.ui.activities.intro.AppIntroActivity"
             android:label="@string/intro_label"
             android:theme="@style/Theme.Intro" />
-        <activity
-            android:name="com.kabouzeid.gramophone.appshortcuts.AppShortcutLauncherActivity"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:launchMode="singleInstance"/>
 
         <provider
             android:name="android.support.v4.content.FileProvider"

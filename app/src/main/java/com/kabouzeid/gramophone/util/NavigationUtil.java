@@ -22,7 +22,7 @@ import org.omnirom.gramophone.R;
  */
 public class NavigationUtil {
 
-    public static void goToArtist(final Activity activity, final int artistId, @Nullable Pair... sharedElements) {
+    public static void goToArtist(final Activity activity, final long artistId, @Nullable Pair... sharedElements) {
         final Intent intent = new Intent(activity, ArtistDetailActivity.class);
         intent.putExtra(ArtistDetailActivity.EXTRA_ARTIST_ID, artistId);
 
@@ -30,7 +30,7 @@ public class NavigationUtil {
         activity.startActivity(intent, ActivityOptionsCompat.makeSceneTransitionAnimation(activity, sharedElements).toBundle());
     }
 
-    public static void goToAlbum(final Activity activity, final int albumId, @Nullable Pair... sharedElements) {
+    public static void goToAlbum(final Activity activity, final long albumId, @Nullable Pair... sharedElements) {
         final Intent intent = new Intent(activity, AlbumDetailActivity.class);
         intent.putExtra(AlbumDetailActivity.EXTRA_ALBUM_ID, albumId);
 
