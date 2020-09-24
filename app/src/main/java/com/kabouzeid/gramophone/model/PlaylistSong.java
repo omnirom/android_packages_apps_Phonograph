@@ -5,10 +5,10 @@ import android.os.Parcel;
 public class PlaylistSong extends Song {
     public static final PlaylistSong EMPTY_PLAYLIST_SONG = new PlaylistSong(-1, "", -1, -1, -1, "", -1, -1, "", -1, "", -1, -1);
 
-    public final int playlistId;
+    public final long playlistId;
     public final int idInPlayList;
 
-    public PlaylistSong(int id, String title, int trackNumber, int year, long duration, String data, int dateModified, int albumId, String albumName, int artistId, String artistName, final int playlistId, final int idInPlayList) {
+    public PlaylistSong(long id, String title, int trackNumber, int year, long duration, String data, int dateModified, long albumId, String albumName, long artistId, String artistName, final long playlistId, final int idInPlayList) {
         super(id, title, trackNumber, year, duration, data, dateModified, albumId, albumName, artistId, artistName);
         this.playlistId = playlistId;
         this.idInPlayList = idInPlayList;
@@ -29,10 +29,10 @@ public class PlaylistSong extends Song {
 
     @Override
     public int hashCode() {
-        int result = super.hashCode();
+        long result = super.hashCode();
         result = 31 * result + playlistId;
         result = 31 * result + idInPlayList;
-        return result;
+        return (int)result;
     }
 
     @Override
@@ -53,13 +53,13 @@ public class PlaylistSong extends Song {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         super.writeToParcel(dest, flags);
-        dest.writeInt(this.playlistId);
+        dest.writeLong(this.playlistId);
         dest.writeInt(this.idInPlayList);
     }
 
     protected PlaylistSong(Parcel in) {
         super(in);
-        this.playlistId = in.readInt();
+        this.playlistId = in.readLong();
         this.idInPlayList = in.readInt();
     }
 

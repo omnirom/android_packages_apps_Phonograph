@@ -43,7 +43,7 @@ public class AlbumLoader {
     }
 
     @NonNull
-    public static Album getAlbum(@NonNull final Context context, int albumId) {
+    public static Album getAlbum(@NonNull final Context context, long albumId) {
         ArrayList<Song> songs = SongLoader.getSongs(SongLoader.makeSongCursor(context, AudioColumns.ALBUM_ID + "=?", new String[]{String.valueOf(albumId)}, getSongLoaderSortOrder(context)));
         return new Album(songs);
     }
@@ -59,7 +59,7 @@ public class AlbumLoader {
         return albums;
     }
 
-    private static Album getOrCreateAlbum(ArrayList<Album> albums, int albumId) {
+    private static Album getOrCreateAlbum(ArrayList<Album> albums, long albumId) {
         for (Album album : albums) {
             if (!album.songs.isEmpty() && album.songs.get(0).albumId == albumId) {
                 return album;

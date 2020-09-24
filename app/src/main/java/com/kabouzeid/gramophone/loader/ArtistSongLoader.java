@@ -16,11 +16,11 @@ import java.util.ArrayList;
 public class ArtistSongLoader extends SongLoader {
 
     @NonNull
-    public static ArrayList<Song> getArtistSongList(@NonNull final Context context, final int artistId) {
+    public static ArrayList<Song> getArtistSongList(@NonNull final Context context, final long artistId) {
         return getSongs(makeArtistSongCursor(context, artistId));
     }
 
-    public static Cursor makeArtistSongCursor(@NonNull final Context context, final int artistId) {
+    public static Cursor makeArtistSongCursor(@NonNull final Context context, final long artistId) {
         try {
             return makeSongCursor(
                     context,

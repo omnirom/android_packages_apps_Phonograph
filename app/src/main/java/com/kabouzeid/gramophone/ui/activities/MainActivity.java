@@ -295,14 +295,14 @@ public class MainActivity extends AbsSlidingMusicPanelActivity {
                 handled = true;
             }
         } else if (MediaStore.Audio.Albums.CONTENT_TYPE.equals(mimeType)) {
-            final int id = (int) parseIdFromIntent(intent, "albumId", "album");
+            final long id = (long) parseIdFromIntent(intent, "albumId", "album");
             if (id >= 0) {
                 int position = intent.getIntExtra("position", 0);
                 MusicPlayerRemote.openQueue(AlbumLoader.getAlbum(this, id).songs, position, true);
                 handled = true;
             }
         } else if (MediaStore.Audio.Artists.CONTENT_TYPE.equals(mimeType)) {
-            final int id = (int) parseIdFromIntent(intent, "artistId", "artist");
+            final long id = (long) parseIdFromIntent(intent, "artistId", "artist");
             if (id >= 0) {
                 int position = intent.getIntExtra("position", 0);
                 MusicPlayerRemote.openQueue(ArtistSongLoader.getArtistSongList(this, id), position, true);

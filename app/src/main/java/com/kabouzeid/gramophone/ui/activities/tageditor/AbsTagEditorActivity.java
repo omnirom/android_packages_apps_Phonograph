@@ -68,7 +68,7 @@ public abstract class AbsTagEditorActivity extends AbsBaseActivity {
     Toolbar toolbar;
     ImageView image;
     LinearLayout header;
-    private int id;
+    private long id;
     private int headerVariableSpace;
     private int paletteColorPrimary;
     private boolean isInNoImageMode;
@@ -299,7 +299,7 @@ public abstract class AbsTagEditorActivity extends AbsBaseActivity {
                 FileOutputStream fos = null;
                 if (info.artworkInfo != null && info.artworkInfo.artwork != null) {
                     try {
-                        albumArtFile = MusicUtil.createAlbumArtFile().getCanonicalFile();
+                        albumArtFile = MusicUtil.createAlbumArtFile(getContext()).getCanonicalFile();
                         fos = new FileOutputStream(albumArtFile);
                         info.artworkInfo.artwork.compress(Bitmap.CompressFormat.PNG, 0, new FileOutputStream(albumArtFile));
                         artwork = ArtworkFactory.createArtworkFromFile(albumArtFile);
@@ -421,16 +421,16 @@ public abstract class AbsTagEditorActivity extends AbsBaseActivity {
     }
 
     public static class ArtworkInfo {
-        public final int albumId;
+        public final long albumId;
         public final Bitmap artwork;
 
-        public ArtworkInfo(int albumId, Bitmap artwork) {
+        public ArtworkInfo(long albumId, Bitmap artwork) {
             this.albumId = albumId;
             this.artwork = artwork;
         }
     }
 
-    protected int getId() {
+    protected long getId() {
         return id;
     }
 
