@@ -22,7 +22,7 @@
         <item name="android:statusBarColor">@color/colorPrimary</item>
         <item name="android:navigationBarColor">@color/navigationBarColor</item>
         <item name="android:windowLightStatusBar">false</item>
-        <item name="android:windowLightNavigationBar">false</item>
+        <!--<item name="android:windowLightNavigationBar">false</item>-->
         <item name="android:windowBackground">@color/omni_color1</item>
         <item name="android:dialogTheme">@style/Theme.Phonograph.Dialog</item>
         <item name="android:alertDialogTheme">@style/Theme.Phonograph.AlertDialog</item>
@@ -32,7 +32,7 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@color/navigationBarColor</item>
         <item name="android:windowSharedElementsUseOverlay">false</item>
-        <item name="android:windowLightNavigationBar">false</item>
+        <!--<item name="android:windowLightNavigationBar">false</item>-->
         <item name="android:dialogTheme">@style/Theme.Phonograph.Dialog</item>
         <item name="android:alertDialogTheme">@style/Theme.Phonograph.AlertDialog</item>
     </style>

@@ -130,6 +130,9 @@ public class AlbumAdapter extends AbsMultiSelectAdapter<AlbumAdapter.ViewHolder,
     protected void loadAlbumCover(Album album, final ViewHolder holder) {
         if (holder.image == null) return;
 
+        /*Uri imageUri = MusicUtil.getMediaStoreAlbumCoverUri(song.albumId);
+        Picasso.get().load(imageUri).into(holder.image);*/
+
         SongGlideRequest.Builder.from(Glide.with(activity), album.safeGetFirstSong())
                 .checkIgnoreMediaStore(activity)
                 .generatePalette(activity).build()

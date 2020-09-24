@@ -11,7 +11,7 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@color/navigationBarColor</item>
         <item name="android:windowSharedElementsUseOverlay">false</item>
-        <item name="android:windowLightNavigationBar">true</item>
+        <!--<item name="android:windowLightNavigationBar">true</item>-->
     </style>
 
     <style name="Fab" parent="FabParent">
@@ -35,7 +35,7 @@
         <item name="android:statusBarColor">@color/colorPrimary</item>
         <item name="android:navigationBarColor">@color/navigationBarColor</item>
         <item name="android:windowLightStatusBar">true</item>
-        <item name="android:windowLightNavigationBar">true</item>
+        <!--<item name="android:windowLightNavigationBar">true</item>-->
     </style>
 
     <style name="OverFlowButton">

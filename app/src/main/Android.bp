@@ -107,3 +107,13 @@ android_library_import {
     static_libs: [
     ],
 }
+
+android_library_import {
+    name: "picasso-library-target",
+    aars: ["libs/aar/picasso-2.71828.aar"],
+
+    sdk_version: "current",
+
+    static_libs: [
+    ],
+}

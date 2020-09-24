@@ -63,7 +63,8 @@ LOCAL_STATIC_ANDROID_LIBRARIES += app-theme-helper-target \
     licensesdialog-target \
     RecyclerView-FastScroll-target \
     material-intro-target \
-    material-progressbar-library-target
+    material-progressbar-library-target \
+    picasso-library-target
 
 LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res
 # LOCAL_RESOURCE_DIR += $(foreach lib, $(LOCAL_STATIC_JAVA_AAR_LIBRARIES),\
