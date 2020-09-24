@@ -126,7 +126,7 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE_CLASS := JAVA_LIBRARIES
 LOCAL_MODULE := glide-local-target
-LOCAL_SRC_FILES := libs/glide-3.7.0.jar
+LOCAL_SRC_FILES := libs/glide-3.8.0.jar
 LOCAL_UNINSTALLABLE_MODULE := true
 LOCAL_SDK_VERSION := current
 
