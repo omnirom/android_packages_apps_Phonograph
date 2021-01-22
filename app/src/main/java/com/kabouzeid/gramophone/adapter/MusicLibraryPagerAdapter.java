@@ -32,6 +32,7 @@ public class MusicLibraryPagerAdapter extends FragmentPagerAdapter {
 
     @NonNull
     private final String[] titles;
+    private final int[] titleImages;
 
     public MusicLibraryPagerAdapter(@NonNull final Context context, final FragmentManager fragmentManager) {
         super(fragmentManager);
@@ -41,6 +42,12 @@ public class MusicLibraryPagerAdapter extends FragmentPagerAdapter {
                 context.getResources().getString(R.string.albums),
                 context.getResources().getString(R.string.artists),
                 context.getResources().getString(R.string.playlists)
+        };
+        titleImages = new int[] {
+                R.drawable.ic_track,
+                R.drawable.ic_album,
+                R.drawable.ic_artist,
+                R.drawable.ic_playlist
         };
         final MusicFragments[] fragments = MusicFragments.values();
         for (final MusicLibraryPagerAdapter.MusicFragments fragment : fragments) {
@@ -103,8 +110,11 @@ public class MusicLibraryPagerAdapter extends FragmentPagerAdapter {
     @NonNull
     @Override
     public CharSequence getPageTitle(final int position) {
-        return titles[position]
-                .toUpperCase(Locale.getDefault());
+        return titles[position];
+    }
+
+    public int getPageIcon(final int position) {
+        return titleImages[position];
     }
 
     public enum MusicFragments {

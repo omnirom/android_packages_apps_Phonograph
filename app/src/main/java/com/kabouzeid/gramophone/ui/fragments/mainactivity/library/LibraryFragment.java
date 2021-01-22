@@ -110,6 +110,11 @@ public class LibraryFragment extends AbsMainActivityFragment implements CabHolde
         tabs.setTabTextColors(normalColor, selectedColor);
         tabs.setSelectedTabIndicatorColor(ThemeStore.accentColor(getActivity()));
 
+        tabs.getTabAt(0).setIcon(pagerAdapter.getPageIcon(0));
+        tabs.getTabAt(1).setIcon(pagerAdapter.getPageIcon(1));
+        tabs.getTabAt(2).setIcon(pagerAdapter.getPageIcon(2));
+        tabs.getTabAt(3).setIcon(pagerAdapter.getPageIcon(3));
+
         int startPosition = PreferenceUtil.getInstance(getActivity()).getDefaultStartPage();
         startPosition = startPosition == -1 ? PreferenceUtil.getInstance(getActivity()).getLastPage() : startPosition;
         pager.setCurrentItem(startPosition);
