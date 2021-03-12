@@ -67,9 +67,9 @@
     <string name="label_playing_queue">Fronta</string>
     <string name="save_as_playlist">Uložit jako playlist...</string>
     <string name="no_results">Žádné výsledky</string>
-    <string name="action_re_download_artist_image">Změnit obrázek umělce</string>
-    <string name="updated_artist_image">Obrázek umělce změněn.</string>
-    <string name="could_not_update_artist_image">Nelze zm\u011bnit obr\u00e1zek um\u011blce.</string>
+    <string name="action_re_download_artist_image">Změnit obrázek interpreta</string>
+    <string name="updated_artist_image">Obrázek interpreta změněn.</string>
+    <string name="could_not_update_artist_image">Nelze změnit obrázek interpreta.</string>
     <string name="updating">Aktualizace...</string>
     <string name="added_title_to_playing_queue">"Přidána 1 skladba do fronty."</string>
     <string name="added_x_titles_to_playing_queue">Přidáno %1$d skladeb do fronty.</string>

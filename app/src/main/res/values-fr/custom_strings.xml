@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="original_author">Auteur original</string>
+    <string name="omnirom_name">OmniROM</string>
+    <string name="write_tag_error_toast">Echec d\'écriture de quelque tags</string>
+    <string name="set_artist_image">Définir la photo de l\'artiste</string>
+</resources>

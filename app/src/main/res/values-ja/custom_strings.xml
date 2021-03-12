@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="original_author">オリジナルの作者</string>
+    <string name="omnirom_name">OmniROM</string>
+    <string name="write_tag_error_toast">いくつかのタグの書き込みに失敗しました</string>
+    <string name="set_artist_image">アーティスト画像を設定</string>
+</resources>

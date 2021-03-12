@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="original_author">Asıl yapımcı</string>
+    <string name="omnirom_name">OmniROM</string>
+    <string name="write_tag_error_toast">Bazı etiketler yazılamadı</string>
+    <string name="set_artist_image">Sanatçı görüntüsünü ayarla</string>
+</resources>
