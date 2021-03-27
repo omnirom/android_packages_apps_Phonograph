@@ -1,2 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="original_author">Pôvodný autor</string>
+    <string name="omnirom_name">OmniROM</string>
+    <string name="write_tag_error_toast">Nepodarilo sa zapísať niektoré tagy</string>
+    <string name="set_artist_image">Nastaviť obrázok interpreta</string>
+</resources>
