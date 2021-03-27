@@ -2,4 +2,6 @@
 <resources>
     <string name="original_author">Originalautor</string>
     <string name="omnirom_name">OmniROM</string>
+    <string name="write_tag_error_toast">Fehler beim Schreiben einiger Tags</string>
+    <string name="set_artist_image">Bild des Künstlers festlegen</string>
 </resources>
